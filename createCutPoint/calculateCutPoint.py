@@ -235,6 +235,8 @@ def writeCutList(content, fileName):
             writeContent += str(point[0]) + ',' + str(point[1]) + ' '
         for point in content[count*2+1]:
             writeContent += str(point[0]) + ',' + str(point[1]) + ' '
+
+        
         print (writeContent)
         
 
@@ -266,7 +268,7 @@ cutPointList = calSidePointForCut(allWayPoint, alpha, beta)
 
 # pprint.pp(cutPointList)
 # print(np.shape(cutPointList))
-writeCutPointFile(cutPointList, "testWayPoint.gpx")
+# writeCutPointFile(cutPointList, "testWayPoint.gpx")
 
 # newWaypointList = calculateSideWaypoint(rightContent, alpha*2, beta*2)
 # print(newWaypointList)
