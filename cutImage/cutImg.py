@@ -82,7 +82,7 @@ def loopCalClipRaster(coordinateList, pathList, folderName):
             count += 1
             output_path = outputFolder + "/" + str(count) +".tif"
             clip_raster(raster_path, coordinate, output_path)        
-            print(f"{folderName} -------------------------------------------- {countPath} / {len(pathList)} ---------------- {(count/115)*100:.2f} % -------------------------------------------- overall: {(count/115)*countPath / len(pathList) *100:.2f} % done ")
+            print(f"{folderName} -------------------------------------------- {countPath} / {len(pathList)} ---------------- {(count/115)*100:.2f} % -------------------------------------------- overall: {((count / 115 / len(pathList)) + (countPath / len(pathList))) *100:.2f} % done ")
         countPath += 1
 
 def checkFile(path):
