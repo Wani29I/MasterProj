@@ -1,3 +1,4 @@
+import os
 import math
 import pprint
 import pyproj
@@ -65,15 +66,36 @@ def representRaster(filePath):
         raster_image=ax.imshow(data)
         plt.show()
 
-raster_path = "F:\ice-wheat\data\Processed\MAVIC-MUL\90\DJI_202405221319_001_processed\DJI_202405171319_001_processed_gdal_gps.tif"
-coordinateList = openWaypointFile("preprocessedCutPointFile.txt")
-# pprint.pprint(coordinateList)
+def readImgPath(filename):
+    content = open(filename,'r').read()
+    content = content.split("\n")
+    return content
 
-count = 0
-for coordinate in coordinateList:
-    count += 1
-    output_path = "../../testImg/test3/" + str(count) +".tif"
-    clip_raster(raster_path, coordinate, output_path)        
-    print(f"_________________________________________________________________________ {(count/115)*100:.2f} % done _________________________________________________________________________")
+def loopCalClipRaster(coordinateList, pathList, folderName):
+    countPath = 0
+    for path in pathList:
+        raster_path = path
+        count = 0
+        outputFolder =  "F:\ice-wheat\data\dataForProcess/" + folderName + path.split("\\")[-1].split("_")[1]
+        os.mkdir(outputFolder)
+        for coordinate in coordinateList:
+            count += 1
+            output_path = outputFolder + "/" + str(count) +".tif"
+            clip_raster(raster_path, coordinate, output_path)        
+            print(f"{folderName} -------------------------------------------- {countPath} / {len(pathList)} ---------------- {(count/115)*100:.2f} % -------------------------------------------- overall: {(count/115) / len(pathList) *100:.2f} % done ")
+        countPath += 1
+
+def checkFile(path):
+    with rasterio.open(path) as src:
+        x = 0
+
+coordinateList = openWaypointFile("preprocessedCutPointFile.txt")
+
+pathListRGB = readImgPath("imgPathRGB.txt")
+pathListMUL = readImgPath("imgPathMUL.txt")
+
+loopCalClipRaster(coordinateList, pathListRGB, "RGB_")
+loopCalClipRaster(coordinateList, pathListMUL, "MUL_")
+# pprint.pprint(coordinateList)
 
 # representRaster("../../testImg/test3/2.tif")
