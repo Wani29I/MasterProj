@@ -80,7 +80,9 @@ def loopCalClipRaster(coordinateList, pathList, folderName):
         os.mkdir(outputFolder)
         for coordinate in coordinateList:
             count += 1
-            output_path = outputFolder + "/" + str(count) +".tif"
+            subOutputFolder = outputFolder + "/" + str(count)
+            os.mkdir(subOutputFolder)
+            output_path = subOutputFolder + "/" + "normal" + str(count) +".tif"
             clip_raster(raster_path, coordinate, output_path)        
             print(f"{folderName} -------------------------------------------- {countPath} / {len(pathList)} ---------------- {(count/115)*100:.2f} % -------------------------------------------- overall: {((count / 115 / len(pathList)) + (countPath / len(pathList))) *100:.2f} % done ")
         countPath += 1
