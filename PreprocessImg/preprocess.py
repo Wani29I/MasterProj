@@ -10,8 +10,7 @@ from shapely.geometry import Polygon, mapping
 from rasterio.transform import Affine
 from rasterio.enums import Resampling
 from PIL import Image
-import rasterio
-from rasterio.enums import Resampling
+from rasterio.plot import show
 
 def representRaster(filePath):
     with rasterio.open(filePath) as src:
@@ -21,25 +20,41 @@ def representRaster(filePath):
         ax = fig.add_axes([0, 0, 1, 1])
         raster_image=ax.imshow(data)
         plt.show()
-# representRaster("band_1.tif")
+representRaster("rotated_image.tif")
+
+# Open the raster .tif file
+with rasterio.open("F:/ice-wheat/data/dataForProcess/RGB/RGB_202406111255/53/normal53.tif") as src:
+    # Read the data from the raster (shape will be (bands, height, width))
+    data = src.read()
+
+    # Get the metadata and affine transformation
+    profile = src.profile
+    transform = src.transform
+
+    # Rotate the image by 90 degrees (along height and width)
+    rotated_data = np.rot90(data, k=2, axes=(1, 2))
+
+    # Update the affine transformation to account for the rotated image
+    # When rotating 90 degrees, the width and height swap
+    new_transform = Affine(transform.a, transform.b, transform.c, transform.d, transform.e, transform.f)
+    new_transform = new_transform * Affine.rotation(180)
+
+    # Update the profile with the new dimensions and transformation
+    profile.update(
+        transform=new_transform,
+        width=rotated_data.shape[2],  # New width (previous height)
+        height=rotated_data.shape[1]  # New height (previous width)
+    )
+
+    # Save the rotated image
+    with rasterio.open('rotated_image.tif', 'w', **profile) as dst:
+        dst.write(rotated_data)
+
+    # Optionally, show the rotated image (select one band for display)
+    show(rotated_data[0])  # Display the first band, or modify as needed
 
 
 
-def extract_and_save_bands(input_path, output_dir):
-  """
-  Extracts specified bands from a raster image and saves them as individual GeoTIFF files.
 
-  Args:
-      input_path: Path to the input raster image.
-      output_dir: Path to the output directory.
-  """
 
-  with rasterio.open(input_path) as src:
-    num_bands = src.count
-    band_descriptions = src.descriptions 
-    print(band_descriptions)
-
-# Example usage
-input_path = "F:/ice-wheat/data/dataForProcess/RGB/RGB_202406111255/53/normal53.tif"
-output_dir = "."
-extract_and_save_bands(input_path, output_dir) 
+# "F:/ice-wheat/data/dataForProcess/RGB/RGB_202406111255/53/normal53.tif"
