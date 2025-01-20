@@ -223,20 +223,43 @@ def loopPathChangeName(path):
             coultClipped += 1
         countday += 1
 
+def adjust_luminance(input_raster, output_raster, scale_factor):
+    """
+    Adjust the luminance of a raster by scaling pixel values.
+
+    Parameters:
+    - input_raster: Path to the input raster file.
+    - output_raster: Path to save the adjusted raster.
+    - scale_factor: Factor to adjust brightness (>1 for brighter, <1 for darker).
+    """
+    with rasterio.open(input_raster) as src:
+        # Read the raster data
+        data = src.read()  # Shape: (bands, height, width)
+        
+        # Adjust luminance
+        adjusted_data = data * scale_factor
+        
+        # Clip values to the valid range
+        adjusted_data = np.clip(adjusted_data, src.profile['nodata'], src.profile['dtype'].type(np.iinfo(src.dtypes[0]).max))
+        
+        # Update metadata
+        meta = src.meta.copy()
+
+        # Save the adjusted raster
+        with rasterio.open(output_raster, 'w', **meta) as dest:
+            dest.write(adjusted_data)
+
+
 # loopPathCrop("F:/ice-wheat/data/dataForProcess/RGB", "RGB", "tiltCorrected", "crop95percent", 0.025)
 # loopPathCrop("F:/ice-wheat/data/dataForProcess/MUL", "MUL", "tiltCorrected", "crop95percent", 0.025)
 # loopPathFlip("F:/ice-wheat/data/dataForProcess/RGB", "RGB1", "crop95percent", "crop95FlipHorizontal")
 # loopPathFlip("F:/ice-wheat/data/dataForProcess/MUL", "MUL1", "crop95percent", "crop95FlipHorizontal")
 # loopPathRotate("F:/ice-wheat/data/dataForProcess/RGB", "RGB2", "crop95percent", "crop95tilt90", 90)
 # loopPathRotate("F:/ice-wheat/data/dataForProcess/MUL", "MUL2", "crop95percent", "crop95tilt90", 90)
-# loopPathRotate("F:/ice-wheat/data/dataForProcess/RGB", "RGB3", "crop95percent", "crop95tilt180", 180)
-# loopPathRotate("F:/ice-wheat/data/dataForProcess/MUL", "MUL3", "crop95percent", "crop95tilt180", 180)
-# loopPathRotate("F:/ice-wheat/data/dataForProcess/RGB", "RGB4", "crop95percent", "crop95tilt270", 270)
-# loopPathRotate("F:/ice-wheat/data/dataForProcess/MUL", "MUL4", "crop95percent", "crop95tilt270", 270)
 # loopCheckFile("F:/ice-wheat/data/dataForProcess/RGB", 11)
 # loopCheckFile("F:/ice-wheat/data/dataForProcess/MUL", 11)
 # Example usage
-loopPathChangeName("F:/ice-wheat/data/dataForProcess/MUL")
-loopPathChangeName("F:/ice-wheat/data/dataForProcess/RGB")
+# loopPathChangeName("F:/ice-wheat/data/dataForProcess/MUL")
+# loopPathChangeName("F:/ice-wheat/data/dataForProcess/RGB")
 
 # representRaster("cropped.tif")()
