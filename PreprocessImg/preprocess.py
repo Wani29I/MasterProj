@@ -153,7 +153,7 @@ def loopPathRotate(path, type, inputFileName, outputFileName, degree):
             for imageFile in os.listdir(eachClippedFolderPath):
                 if(checkFileName(imageFile, inputFileName)):
                     inputPath = eachClippedFolderPath + "/" + imageFile
-                    outputPath = eachClippedFolderPath + "/" + outputFileName + eachClippedFolder +".tif"
+                    outputPath = eachClippedFolderPath + "/" + outputFileName + "_" + eachClippedFolder +".tif"
                     rotateAndDeleteEmptySpace(inputPath, outputPath, degree)
                     print(f"{type}: -------------------- mainLoop: - {dayFolder} - {countday} / {len(os.listdir(path))} -------------------- subLoop: - {eachClippedFolder} - {coultClipped} / {len(os.listdir(dayFolderPath))}----------------------------------------------------------------------------------------------- ")
                     countImage+=1
@@ -174,7 +174,7 @@ def loopPathCrop(path, type, inputFileName, outputFileName, cropRatio):
             for imageFile in os.listdir(eachClippedFolderPath):
                 if(checkFileName(imageFile, inputFileName)):
                     inputPath = eachClippedFolderPath + "/" + imageFile
-                    outputPath = eachClippedFolderPath + "/" + outputFileName + eachClippedFolder +".tif"
+                    outputPath = eachClippedFolderPath + "/" + outputFileName + "_" + eachClippedFolder +".tif"
                     cropImage(inputPath, outputPath, cropRatio)
                     print(f"{type}: -------------------- mainLoop: - {dayFolder} - {countday} / {len(os.listdir(path))} -------------------- subLoop: - {eachClippedFolder} - {coultClipped} / {len(os.listdir(dayFolderPath))}----------------------------------------------------------------------------------------------- ")
                     countImage+=1
@@ -195,7 +195,7 @@ def loopPathFlip(path, type, inputFileName, outputFileName):
             for imageFile in os.listdir(eachClippedFolderPath):
                 if(checkFileName(imageFile, inputFileName)):
                     inputPath = eachClippedFolderPath + "/" + imageFile
-                    outputPath = eachClippedFolderPath + "/" + outputFileName + eachClippedFolder +".tif"
+                    outputPath = eachClippedFolderPath + "/" + outputFileName + "_" + eachClippedFolder +".tif"
                     flip_raster(inputPath, outputPath)
                     print(f"{type}: -------------------- mainLoop: - {dayFolder} - {countday} / {len(os.listdir(path))} -------------------- subLoop: - {eachClippedFolder} - {coultClipped} / {len(os.listdir(dayFolderPath))}----------------------------------------------------------------------------------------------- ")
                     countImage+=1
@@ -250,14 +250,14 @@ def adjust_luminance(input_raster, output_raster, scale_factor):
             dest.write(adjusted_data)
 
 
-# loopPathCrop("F:/ice-wheat/data/dataForProcess/RGB", "RGB", "tiltCorrected", "crop95percent", 0.025)
-# loopPathCrop("F:/ice-wheat/data/dataForProcess/MUL", "MUL", "tiltCorrected", "crop95percent", 0.025)
+# loopPathCrop("F:/ice-wheat/data/dataForProcess/RGB", "RGB", "crop95percent", "crop76percent", 0.1)
+# loopPathCrop("F:/ice-wheat/data/dataForProcess/MUL", "MUL", "crop95percent", "crop76percent", 0.1)
 # loopPathFlip("F:/ice-wheat/data/dataForProcess/RGB", "RGB1", "crop95percent", "crop95FlipHorizontal")
 # loopPathFlip("F:/ice-wheat/data/dataForProcess/MUL", "MUL1", "crop95percent", "crop95FlipHorizontal")
 # loopPathRotate("F:/ice-wheat/data/dataForProcess/RGB", "RGB2", "crop95percent", "crop95tilt90", 90)
 # loopPathRotate("F:/ice-wheat/data/dataForProcess/MUL", "MUL2", "crop95percent", "crop95tilt90", 90)
-# loopCheckFile("F:/ice-wheat/data/dataForProcess/RGB", 11)
-# loopCheckFile("F:/ice-wheat/data/dataForProcess/MUL", 11)
+loopCheckFile("F:/ice-wheat/data/dataForProcess/RGB", 12)
+loopCheckFile("F:/ice-wheat/data/dataForProcess/MUL", 12)
 # Example usage
 # loopPathChangeName("F:/ice-wheat/data/dataForProcess/MUL")
 # loopPathChangeName("F:/ice-wheat/data/dataForProcess/RGB")
