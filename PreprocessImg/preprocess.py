@@ -223,9 +223,10 @@ def loopPathChangeName(path):
             coultClipped += 1
         countday += 1
 
+
 def adjust_luminance(input_raster, output_raster, scale_factor):
     """
-    Adjust the luminance of a raster by scaling pixel values.
+    Adjust the luminance of all bands in a raster by scaling pixel values.
 
     Parameters:
     - input_raster: Path to the input raster file.
@@ -233,22 +234,31 @@ def adjust_luminance(input_raster, output_raster, scale_factor):
     - scale_factor: Factor to adjust brightness (>1 for brighter, <1 for darker).
     """
     with rasterio.open(input_raster) as src:
-        # Read the raster data
-        data = src.read()  # Shape: (bands, height, width)
+        # Read the raster data (shape: [bands, height, width])
+        data = src.read()
         
-        # Adjust luminance
-        adjusted_data = data * scale_factor
+        # Initialize an array for adjusted data with the same shape
+        adjusted_data = np.zeros_like(data, dtype='float32')
+
+        # Adjust luminance for each band
+        for band in range(data.shape[0]):
+            adjusted_data[band] = data[band] * scale_factor
         
-        # Clip values to the valid range
-        adjusted_data = np.clip(adjusted_data, src.profile['nodata'], src.profile['dtype'].type(np.iinfo(src.dtypes[0]).max))
-        
-        # Update metadata
-        meta = src.meta.copy()
+        # Clip adjusted values to the valid range of the raster's data type
+        dtype_info = (
+            np.iinfo(src.dtypes[0]) 
+            if np.issubdtype(src.dtypes[0], np.integer) 
+            else np.finfo(src.dtypes[0])
+        )
+        adjusted_data = np.clip(adjusted_data, dtype_info.min, dtype_info.max)
+
+        # Convert back to the original data type
+        adjusted_data = adjusted_data.astype(src.dtypes[0])
 
         # Save the adjusted raster
+        meta = src.meta.copy()
         with rasterio.open(output_raster, 'w', **meta) as dest:
             dest.write(adjusted_data)
-
 
 # loopPathCrop("F:/ice-wheat/data/dataForProcess/RGB", "RGB", "crop95percent", "crop76percent", 0.1)
 # loopPathCrop("F:/ice-wheat/data/dataForProcess/MUL", "MUL", "crop95percent", "crop76percent", 0.1)
@@ -256,10 +266,12 @@ def adjust_luminance(input_raster, output_raster, scale_factor):
 # loopPathFlip("F:/ice-wheat/data/dataForProcess/MUL", "MUL1", "crop95percent", "crop95FlipHorizontal")
 # loopPathRotate("F:/ice-wheat/data/dataForProcess/RGB", "RGB2", "crop95percent", "crop95tilt90", 90)
 # loopPathRotate("F:/ice-wheat/data/dataForProcess/MUL", "MUL2", "crop95percent", "crop95tilt90", 90)
-loopCheckFile("F:/ice-wheat/data/dataForProcess/RGB", 12)
-loopCheckFile("F:/ice-wheat/data/dataForProcess/MUL", 12)
-# Example usage
+# loopCheckFile("F:/ice-wheat/data/dataForProcess/RGB", 12)
+# loopCheckFile("F:/ice-wheat/data/dataForProcess/MUL", 12)
 # loopPathChangeName("F:/ice-wheat/data/dataForProcess/MUL")
 # loopPathChangeName("F:/ice-wheat/data/dataForProcess/RGB")
 
-# representRaster("cropped.tif")()
+# adjust_luminance("./cropped.tif", "./croppedLuminance13.tif", 100)
+
+# representRaster("cropped.tif")
+# representRaster("croppedLuminance13.tif")
