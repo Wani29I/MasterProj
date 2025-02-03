@@ -7,6 +7,7 @@ from rasterio.mask import mask
 from rasterio.plot import show
 import matplotlib.pyplot as plt
 from shapely.geometry import box
+from rio_color.operations import parse_operations
 
 def representRaster(filePath):
     with rasterio.open(filePath) as src:
@@ -97,9 +98,10 @@ def cropImage(input_raster, output_raster, offsetRatio):
     with rasterio.open(input_raster) as src:
         # Create a geometry for the crop bounds
         bounds = src.bounds
-        xOffset = (bounds.top - bounds.bottom)*offsetRatio
-        yOffset = (bounds.right - bounds.left)*offsetRatio
-        crop_bounds = (bounds.left+yOffset, bounds.bottom+xOffset, bounds.right-yOffset, bounds.top-xOffset)  # Replace with your bounding box coordinates
+        xOffset = (bounds.top - bounds.bottom) * offsetRatio
+        yOffset = (bounds.right - bounds.left) * offsetRatio
+        crop_bounds = (bounds.left + yOffset, bounds.bottom + xOffset, 
+                       bounds.right - yOffset, bounds.top - xOffset)
         crop_geom = [box(*crop_bounds)]
 
         # Crop the raster using the geometry
@@ -112,11 +114,16 @@ def cropImage(input_raster, output_raster, offsetRatio):
             "height": out_image.shape[1],
             "width": out_image.shape[2],
             "transform": out_transform,
+            "dtype": src.dtypes[0],  # Preserve original dtype
+            "nodata": src.nodata,  # Preserve nodata value
+            "compress": src.profile.get("compress", "LZW"),  # Preserve compression
+            "photometric": src.tags().get("photometric", "RGB"),  # Preserve color interpretation
         })
 
         # Write the cropped raster to a new file
         with rasterio.open(output_raster, "w", **out_meta) as dest:
             dest.write(out_image)
+
 
 def flip_raster(input_raster, output_raster):
     """
@@ -196,7 +203,7 @@ def loopPathFlip(path, type, inputFileName, outputFileName):
                 if(checkFileName(imageFile, inputFileName)):
                     inputPath = eachClippedFolderPath + "/" + imageFile
                     outputPath = eachClippedFolderPath + "/" + outputFileName + "_" + eachClippedFolder +".tif"
-                    flip_raster(inputPath, outputPath)
+                    # flip_raster(inputPath, outputPath)
                     print(f"{type}: -------------------- mainLoop: - {dayFolder} - {countday} / {len(os.listdir(path))} -------------------- subLoop: - {eachClippedFolder} - {coultClipped} / {len(os.listdir(dayFolderPath))}----------------------------------------------------------------------------------------------- ")
                     countImage+=1
                     break
@@ -211,11 +218,12 @@ def loopPathChangeName(path):
         for eachClippedFolder in os.listdir(dayFolderPath):
             eachClippedFolderPath = dayFolderPath + "/" + eachClippedFolder
             countImage = 1
+            removeNotFileType(".tif", eachClippedFolderPath)
             for imageFile in os.listdir(eachClippedFolderPath):
                 oldPath = eachClippedFolderPath + "/" + imageFile
                 newPath = oldPath[:(-len(eachClippedFolder)-4)] + "_" + oldPath[(-len(eachClippedFolder)-4):]
-                # print(f"-------------------- mainLoop: - {dayFolder} - {countday} / {len(os.listdir(path))} -------------------- subLoop: - {eachClippedFolder} - {coultClipped} / {len(os.listdir(dayFolderPath))}----------------------------------------------------------------------------------------------- ")
-                # print(eachClippedFolder)
+                print(f"----- mainLoop: - {dayFolder} - {countday} / {len(os.listdir(path))} -------------------- subLoop: - {eachClippedFolder} - {coultClipped} / {len(os.listdir(dayFolderPath))}------------------------------------------------------------------------------- ")
+                print(eachClippedFolder)
                 if(oldPath[(-len(eachClippedFolder)-5)] != "_"):
                     # os.rename(oldPath, newPath)
                     print("nope!")
@@ -223,42 +231,45 @@ def loopPathChangeName(path):
             coultClipped += 1
         countday += 1
 
+def adjustImageContrastSaturation():
+    # Define the operations
+    operations = "sigmoidal rgb 8 0.35, saturation 0.75"
 
-def adjust_luminance(input_raster, output_raster, scale_factor):
-    """
-    Adjust the luminance of all bands in a raster by scaling pixel values.
-
-    Parameters:
-    - input_raster: Path to the input raster file.
-    - output_raster: Path to save the adjusted raster.
-    - scale_factor: Factor to adjust brightness (>1 for brighter, <1 for darker).
-    """
-    with rasterio.open(input_raster) as src:
-        # Read the raster data (shape: [bands, height, width])
+    # Open the original multi-layer raster file
+    with rasterio.open('cropped.tif') as src:
+        # Read the data
         data = src.read()
-        
-        # Initialize an array for adjusted data with the same shape
-        adjusted_data = np.zeros_like(data, dtype='float32')
 
-        # Adjust luminance for each band
-        for band in range(data.shape[0]):
-            adjusted_data[band] = data[band] * scale_factor
-        
-        # Clip adjusted values to the valid range of the raster's data type
-        dtype_info = (
-            np.iinfo(src.dtypes[0]) 
-            if np.issubdtype(src.dtypes[0], np.integer) 
-            else np.finfo(src.dtypes[0])
-        )
-        adjusted_data = np.clip(adjusted_data, dtype_info.min, dtype_info.max)
+        # Normalize data to 0-1 range and cast to floatุภ
+        data = data.astype(np.float64) / 255.0
 
-        # Convert back to the original data type
-        adjusted_data = adjusted_data.astype(src.dtypes[0])
+        # Apply the color operations
+        for func in parse_operations(operations):
+            data = func(data)
 
-        # Save the adjusted raster
-        meta = src.meta.copy()
-        with rasterio.open(output_raster, 'w', **meta) as dest:
-            dest.write(adjusted_data)
+        # Denormalize back to original range and cast to uint8
+        data = np.clip(data * 255, 0, 255).astype(np.uint8)
+
+        # Update metadata
+        meta = src.meta
+        meta.update(dtype='uint8')
+
+        # Write the adjusted data to a new file
+        with rasterio.open('output.tif', 'w', **meta) as dst:
+            dst.write(data)
+
+def loopRemoveNotFileType(path):
+    countday = 1
+    for dayFolder in os.listdir(path):
+        dayFolderPath = path + "/" + dayFolder
+        coultClipped = 1
+        for eachClippedFolder in os.listdir(dayFolderPath):
+            eachClippedFolderPath = dayFolderPath + "/" + eachClippedFolder
+            countImage = 1
+            removeNotFileType(".tif", eachClippedFolderPath)
+            print(eachClippedFolderPath)
+            coultClipped += 1
+        countday += 1
 
 # loopPathCrop("F:/ice-wheat/data/dataForProcess/RGB", "RGB", "crop95percent", "crop76percent", 0.1)
 # loopPathCrop("F:/ice-wheat/data/dataForProcess/MUL", "MUL", "crop95percent", "crop76percent", 0.1)
@@ -270,6 +281,17 @@ def adjust_luminance(input_raster, output_raster, scale_factor):
 # loopCheckFile("F:/ice-wheat/data/dataForProcess/MUL", 12)
 # loopPathChangeName("F:/ice-wheat/data/dataForProcess/MUL")
 # loopPathChangeName("F:/ice-wheat/data/dataForProcess/RGB")
+
+# mac path
+# loopRemoveNotFileType("/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/MUL")
+# loopRemoveNotFileType("/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/RGB")
+
+rotateAndDeleteEmptySpace("normal_87.tif", "normal_87_fixed.tif", 13)
+rotateAndDeleteEmptySpace("normal_67.tif", "normal_67_fixed.tif", 13)
+rotateAndDeleteEmptySpace("normal_11.tif", "normal_11_fixed.tif", 13)
+cropImage("normal_87_fixed.tif","normal_87_fixed_crop95.tif", 0.01265)
+cropImage("normal_67_fixed.tif","normal_67_fixed_crop95.tif", 0.01265)
+cropImage("normal_11_fixed.tif","normal_11_fixed_crop95.tif", 0.01265)
 
 # adjust_luminance("./cropped.tif", "./croppedLuminance13.tif", 100)
 
