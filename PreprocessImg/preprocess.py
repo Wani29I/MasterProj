@@ -7,11 +7,12 @@ from rasterio.mask import mask
 from rasterio.plot import show
 import matplotlib.pyplot as plt
 from shapely.geometry import box
-from rio_color.operations import parse_operations
+from rasterio.windows import Window
+# from rio_color.operations import parse_operations
 
 def representRaster(filePath):
     with rasterio.open(filePath) as src:
-        data = src.read(1)
+        data = src.read(5)
         fig = plt.figure(figsize=[12,8])
         # Plot the raster data using matplotlib
         ax = fig.add_axes([0, 0, 1, 1])
@@ -231,12 +232,81 @@ def loopPathChangeName(path):
             coultClipped += 1
         countday += 1
 
-def adjustImageContrastSaturation():
+def loopRemoveNotFileType(path):
+    countday = 1
+    for dayFolder in os.listdir(path):
+        dayFolderPath = path + "/" + dayFolder
+        coultClipped = 1
+        for eachClippedFolder in os.listdir(dayFolderPath):
+            eachClippedFolderPath = dayFolderPath + "/" + eachClippedFolder
+            removeNotFileType(".tif", eachClippedFolderPath)
+            print(eachClippedFolderPath)
+            coultClipped += 1
+        countday += 1
+
+def loopRemoveFile(path, fileName):
+    countday = 1
+    for dayFolder in os.listdir(path):
+        dayFolderPath = path + "/" + dayFolder
+        coultClipped = 1
+        for eachClippedFolder in os.listdir(dayFolderPath):
+            eachClippedFolderPath = dayFolderPath + "/" + eachClippedFolder
+            removeFileName(fileName, eachClippedFolderPath)
+            print(eachClippedFolderPath)
+            coultClipped += 1
+        countday += 1
+
+def crop_raster(input_raster, output_raster, offset_ratio):
+    """
+    Crop a raster image while preserving all layers and avoiding color changes.
+    
+    Parameters:
+    - input_raster: Path to the input raster file.
+    - output_raster: Path to save the cropped raster file.
+    - offset_ratio: Ratio of the image to crop (e.g., 0.02 means 2% from each side).
+    """
+    with rasterio.open(input_raster) as src:
+        # Get original dimensions
+        height, width = src.height, src.width
+        
+        # data = src.read(window=window)
+        # fig = plt.figure(figsize=[12,8])
+        # # Plot the raster data using matplotlib
+        # ax = fig.add_axes([0, 0, 1, 1])
+        # raster_image=ax.imshow(data)
+        # plt.show()
+
+        # Compute cropping offsets
+        x_offset = int(width * offset_ratio)
+        y_offset = int(height * offset_ratio)
+
+        # Define new width and height
+        new_width = width - (2 * x_offset)
+        new_height = height - (2 * y_offset)
+
+        # Read only the cropped window (no color processing)
+        window = Window(x_offset, y_offset, new_width, new_height)
+        cropped_data = src.read(window=window)
+
+        # Update metadata to match the cropped size
+        out_meta = src.meta.copy()
+        out_meta.update({
+            "width": new_width,
+            "height": new_height,
+            "transform": src.window_transform(window)
+        })
+
+        # Save cropped raster
+        with rasterio.open(output_raster, "w", **out_meta) as dest:
+            dest.write(cropped_data)
+
+
+def adjustImageContrastSaturation(input, Output, operations):
     # Define the operations
-    operations = "sigmoidal rgb 8 0.35, saturation 0.75"
+    operations = operations
 
     # Open the original multi-layer raster file
-    with rasterio.open('cropped.tif') as src:
+    with rasterio.open(input) as src:
         # Read the data
         data = src.read()
 
@@ -255,43 +325,22 @@ def adjustImageContrastSaturation():
         meta.update(dtype='uint8')
 
         # Write the adjusted data to a new file
-        with rasterio.open('output.tif', 'w', **meta) as dst:
+        with rasterio.open(Output, 'w', **meta) as dst:
             dst.write(data)
 
-def loopRemoveNotFileType(path):
-    countday = 1
-    for dayFolder in os.listdir(path):
-        dayFolderPath = path + "/" + dayFolder
-        coultClipped = 1
-        for eachClippedFolder in os.listdir(dayFolderPath):
-            eachClippedFolderPath = dayFolderPath + "/" + eachClippedFolder
-            countImage = 1
-            removeNotFileType(".tif", eachClippedFolderPath)
-            print(eachClippedFolderPath)
-            coultClipped += 1
-        countday += 1
-
-# loopPathCrop("F:/ice-wheat/data/dataForProcess/RGB", "RGB", "crop95percent", "crop76percent", 0.1)
-# loopPathCrop("F:/ice-wheat/data/dataForProcess/MUL", "MUL", "crop95percent", "crop76percent", 0.1)
-# loopPathFlip("F:/ice-wheat/data/dataForProcess/RGB", "RGB1", "crop95percent", "crop95FlipHorizontal")
-# loopPathFlip("F:/ice-wheat/data/dataForProcess/MUL", "MUL1", "crop95percent", "crop95FlipHorizontal")
-# loopPathRotate("F:/ice-wheat/data/dataForProcess/RGB", "RGB2", "crop95percent", "crop95tilt90", 90)
-# loopPathRotate("F:/ice-wheat/data/dataForProcess/MUL", "MUL2", "crop95percent", "crop95tilt90", 90)
-# loopCheckFile("F:/ice-wheat/data/dataForProcess/RGB", 12)
-# loopCheckFile("F:/ice-wheat/data/dataForProcess/MUL", 12)
-# loopPathChangeName("F:/ice-wheat/data/dataForProcess/MUL")
-# loopPathChangeName("F:/ice-wheat/data/dataForProcess/RGB")
+# crop_raster("tiltCorrected1.tif","tiltCorrected1cropped.tif", 0.01)
+# adjustImageContrastSaturation("tiltCorrected1cropped.tif", "color_fixed.tif","sigmoidal rgb 8 0.35, saturation 0.75")
 
 # mac path
 # loopRemoveNotFileType("/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/MUL")
 # loopRemoveNotFileType("/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/RGB")
 
-rotateAndDeleteEmptySpace("normal_87.tif", "normal_87_fixed.tif", 13)
-rotateAndDeleteEmptySpace("normal_67.tif", "normal_67_fixed.tif", 13)
-rotateAndDeleteEmptySpace("normal_11.tif", "normal_11_fixed.tif", 13)
-cropImage("normal_87_fixed.tif","normal_87_fixed_crop95.tif", 0.01265)
-cropImage("normal_67_fixed.tif","normal_67_fixed_crop95.tif", 0.01265)
-cropImage("normal_11_fixed.tif","normal_11_fixed_crop95.tif", 0.01265)
+# rotateAndDeleteEmptySpace("normal_87.tif", "normal_87_fixed.tif", 13)
+# rotateAndDeleteEmptySpace("normal_67.tif", "normal_67_fixed.tif", 13)
+# rotateAndDeleteEmptySpace("normal_11.tif", "normal_11_fixed.tif", 13)
+# cropImage("normal_87_fixed.tif","normal_87_fixed_crop95.tif", 0.01265)
+# cropImage("normal_67_fixed.tif","normal_67_fixed_crop95.tif", 0.01265)
+# cropImage("normal_11_fixed.tif","normal_11_fixed_crop95.tif", 0.01265)
 
 # adjust_luminance("./cropped.tif", "./croppedLuminance13.tif", 100)
 
