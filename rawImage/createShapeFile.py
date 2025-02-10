@@ -32,7 +32,7 @@ def txt_to_shapefile(txt_file, output_shapefile):
         # Create a rectangle polygon
         rect = Polygon(coords)
         rectangles.append(rect)
-        ids.append(idx)
+        ids.append(idx+1)
         # break
 
     # Create a GeoDataFrame with WGS84 CRS (EPSG:4326)
