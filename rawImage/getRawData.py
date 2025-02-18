@@ -30,8 +30,9 @@ def getFileCoor(shapefilepath, pix4dpath, raw_img_folder):
 
     img_dict_sort = p4d.sort_img_by_distance(
         rev_results, roi, 
-        num=10 # only keep 1 closest images
+        num=10 # only keep 10 closest images
     )
+    return img_dict_sort
 
     return img_dict_sort
 
@@ -73,16 +74,6 @@ def show_cropped_rectangle(image_path, rectangle):
     plt.axis("off")  # Hide axis
     plt.show()
 
-# shapeFilePath=r"/Users/ice/Desktop/MasterResearch/MasterProj/rawImage/shapefileRGB/202406111255/202406111255_shapefile.shp"
-# pix4dPath=r"/Volumes/HD-PCFSU3-A/ice-wheat/data/Processed/MAVIC-RGB/DJI_202406111255_001_processed_rgb/DJI_202406111255_001_processed_rgb.p4d"
-# rawImgFolder = r"/Volumes/HD-PCFSU3-A/ice-wheat/data/RawData/MAVICK3-12M/ALL/DJI_202406111255_001_aobayamaWheat"
-
-# img_dict_sort = getFileCoor(shapeFilePath, pix4dPath, rawImgFolder)
-# firstPic = img_dict_sort["115"]
-# for index, set in img_dict_sort.items():
-#     for fileName, shape in set.items():
-#         show_cropped_rectangle(rawImgFolder+'/'+fileName+".JPG", shape[1:])
-
 shapeFilePathList = getFilePath(filePath = "/Users/ice/Desktop/MasterResearch/MasterProj/rawImage/shapefileRGB", filetype = ".shp")
 pix4dPathList = getFilePath(filePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/Processed/MAVIC-RGB", filetype = ".p4d")
 rawImgFilePathList = getAllfilePath(filePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/RawData/MAVICK3-12M/ALL")
@@ -109,11 +100,12 @@ allPath = {}
 for key in shapeFilePathDict.keys():
     if (key == '202406241205'):
         continue
-    allPath[key] = [shapeFilePathDict[key], pix4dPathDict[key], rawImgFilePathDict[key]]
+    allPath[int(key)] = [shapeFilePathDict[key], pix4dPathDict[key], rawImgFilePathDict[key]]
 
-for key, pathList in allPath.items():
-    pprint.pprint(pathList)
+for key, pathList in sorted(allPath.items()):
     img_dict_sort = getFileCoor(pathList[0], pathList[1], pathList[2])
     # for index, set in img_dict_sort.items():
     #     for fileName, shape in set.items():
     #         show_cropped_rectangle(pathList[2]+'/'+fileName+".JPG", shape[1:])
+
+
