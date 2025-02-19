@@ -73,7 +73,7 @@ def show_cropped_rectangle(image_path, rectangle):
     plt.show()
 
 def writeFile(key, img_dict):
-    rawImgDir = "/Users/ice/Desktop/MasterResearch/MasterProj/rawImage/rawImage/"
+    rawImgDir = "/Users/ice/Desktop/MasterResearch/MasterProj/rawImage/rawImgPathData/"
     file = open(rawImgDir + str(key) + ".txt", "a")
     for index, fileShape in img_dict.items():
         file.write(index)
