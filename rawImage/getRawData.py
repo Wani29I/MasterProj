@@ -34,8 +34,6 @@ def getFileCoor(shapefilepath, pix4dpath, raw_img_folder):
     )
     return img_dict_sort
 
-    return img_dict_sort
-
 def show_cropped_rectangle(image_path, rectangle):
     """
     Extracts and displays the cropped region inside the rectangle.
@@ -74,6 +72,18 @@ def show_cropped_rectangle(image_path, rectangle):
     plt.axis("off")  # Hide axis
     plt.show()
 
+def writeFile(key, img_dict):
+    rawImgDir = "/Users/ice/Desktop/MasterResearch/MasterProj/rawImage/rawImage/"
+    file = open(rawImgDir + str(key) + ".txt", "a")
+    for index, fileShape in img_dict.items():
+        file.write(index)
+        file.write("\n")
+        for fileName, shapeIndex in fileShape.items():
+            content = fileName + ':' + str(shapeIndex[0]) + ',' + str(shapeIndex[1]) + ',' + str(shapeIndex[2]) + ',' + str(shapeIndex[3])
+            file.write(content)
+            file.write("\n")
+    file.close()
+
 shapeFilePathList = getFilePath(filePath = "/Users/ice/Desktop/MasterResearch/MasterProj/rawImage/shapefileRGB", filetype = ".shp")
 pix4dPathList = getFilePath(filePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/Processed/MAVIC-RGB", filetype = ".p4d")
 rawImgFilePathList = getAllfilePath(filePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/RawData/MAVICK3-12M/ALL")
@@ -104,8 +114,10 @@ for key in shapeFilePathDict.keys():
 
 for key, pathList in sorted(allPath.items()):
     img_dict_sort = getFileCoor(pathList[0], pathList[1], pathList[2])
-    # for index, set in img_dict_sort.items():
-    #     for fileName, shape in set.items():
-    #         show_cropped_rectangle(pathList[2]+'/'+fileName+".JPG", shape[1:])
+    writeFile(key, img_dict_sort)
 
+# img_dict_sort = getFileCoor(allPath[202406041351][0], allPath[202406041351][1], allPath[202406041351][2])
+# for index, set in img_dict_sort.items():
+#     for fileName, shape in set.items():
+#         show_cropped_rectangle(allPath[202406041351][2]+'/'+fileName+".JPG", shape[1:])
 
