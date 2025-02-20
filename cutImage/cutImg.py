@@ -91,13 +91,14 @@ def checkFile(path):
     with rasterio.open(path) as src:
         x = 0
 
-coordinateList = openWaypointFile("preprocessedCutPointFile.txt")
+if __name__ == '__main__':
+    coordinateList = openWaypointFile("preprocessedCutPointFile.txt")
 
-pathListRGB = readImgPath("imgPathRGB.txt")
-pathListMUL = readImgPath("imgPathMUL.txt")
+    pathListRGB = readImgPath("imgPathRGB.txt")
+    pathListMUL = readImgPath("imgPathMUL.txt")
 
-loopCalClipRaster(coordinateList, pathListRGB, "RGB_")
-loopCalClipRaster(coordinateList, pathListMUL, "MUL_")
-# pprint.pprint(coordinateList)
+    loopCalClipRaster(coordinateList, pathListRGB, "RGB_")
+    loopCalClipRaster(coordinateList, pathListMUL, "MUL_")
+    # pprint.pprint(coordinateList)
 
-# representRaster("../../testImg/test3/2.tif")
+    # representRaster("../../testImg/test3/2.tif")

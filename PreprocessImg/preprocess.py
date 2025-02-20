@@ -301,32 +301,32 @@ def crop_raster(input_raster, output_raster, offset_ratio):
             dest.write(cropped_data)
 
 
-def adjustImageContrastSaturation(input, Output, operations):
-    # Define the operations
-    operations = operations
+# def adjustImageContrastSaturation(input, Output, operations):
+#     # Define the operations
+#     operations = operations
 
-    # Open the original multi-layer raster file
-    with rasterio.open(input) as src:
-        # Read the data
-        data = src.read()
+#     # Open the original multi-layer raster file
+#     with rasterio.open(input) as src:
+#         # Read the data
+#         data = src.read()
 
-        # Normalize data to 0-1 range and cast to floatุภ
-        data = data.astype(np.float64) / 255.0
+#         # Normalize data to 0-1 range and cast to floatุภ
+#         data = data.astype(np.float64) / 255.0
 
-        # Apply the color operations
-        for func in parse_operations(operations):
-            data = func(data)
+#         # Apply the color operations
+#         for func in parse_operations(operations):
+#             data = func(data)
 
-        # Denormalize back to original range and cast to uint8
-        data = np.clip(data * 255, 0, 255).astype(np.uint8)
+#         # Denormalize back to original range and cast to uint8
+#         data = np.clip(data * 255, 0, 255).astype(np.uint8)
 
-        # Update metadata
-        meta = src.meta
-        meta.update(dtype='uint8')
+#         # Update metadata
+#         meta = src.meta
+#         meta.update(dtype='uint8')
 
-        # Write the adjusted data to a new file
-        with rasterio.open(Output, 'w', **meta) as dst:
-            dst.write(data)
+#         # Write the adjusted data to a new file
+#         with rasterio.open(Output, 'w', **meta) as dst:
+#             dst.write(data)
 
 # crop_raster("tiltCorrected1.tif","tiltCorrected1cropped.tif", 0.01)
 # adjustImageContrastSaturation("tiltCorrected1cropped.tif", "color_fixed.tif","sigmoidal rgb 8 0.35, saturation 0.75")

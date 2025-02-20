@@ -72,8 +72,9 @@ def callChangeLatLon(cutPointList):
         newData.append(newLine)
     return newData
 
-cutPoint = openWaypointFile("cutPointList.txt")
-cutPoint = rearrange(cutPoint)
-cutPoint = callChangeLatLon(cutPoint)
-writeFile(cutPoint, "preprocessedCutPointFile.txt")
-# pprint.pprint(cutPoint)
+if __name__ == '__main__':
+    cutPoint = openWaypointFile("cutPointList.txt")
+    cutPoint = rearrange(cutPoint)
+    cutPoint = callChangeLatLon(cutPoint)
+    writeFile(cutPoint, "preprocessedCutPointFile.txt")
+    # pprint.pprint(cutPoint)
