@@ -38,6 +38,8 @@ def txt_to_shapefile(txt_file, offset):
         coords[0], coords[1] = coords[1], coords[0]
 
         # calculate offset for each shapefile
+        # offset: lon lat
+        # cutpoint: lat lon
         for ite, eachCoords in enumerate(coords):
             coords[ite] = (coords[ite][0] + offset[1],coords[ite][1] + offset[0])
 

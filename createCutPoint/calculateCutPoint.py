@@ -253,24 +253,25 @@ def writeCutList(content, fileName):
         file.write("\n")
     file.close()
 
-content = openWaypointFile("waypoint.txt") 
-rightContent = openWaypointFile("rightFieldWaypoint.txt") 
-allRightContent = openWaypointFile("allRightFieldWaypoint.txt") 
+if __name__ == '__main__':
+    content = openWaypointFile("waypoint.txt") 
+    rightContent = openWaypointFile("rightFieldWaypoint.txt") 
+    allRightContent = openWaypointFile("allRightFieldWaypoint.txt") 
 
-alpha, beta = calAlphaBetaWaypoint(content)
-longx, longy = calLong(content)
-content = clearEndpoint(content)
+    alpha, beta = calAlphaBetaWaypoint(content)
+    longx, longy = calLong(content)
+    content = clearEndpoint(content)
 
 
-allWayPoint = meargePointList(content, allRightContent)
-allWayPoint = addRightEndpoint(allWayPoint, longx, longy)
-cutPointList = calSidePointForCut(allWayPoint, alpha, beta)
+    allWayPoint = meargePointList(content, allRightContent)
+    allWayPoint = addRightEndpoint(allWayPoint, longx, longy)
+    cutPointList = calSidePointForCut(allWayPoint, alpha, beta)
 
-# pprint.pp(cutPointList)
-# print(np.shape(cutPointList))
-# writeCutPointFile(cutPointList, "testWayPoint.gpx")
+    # pprint.pp(cutPointList)
+    # print(np.shape(cutPointList))
+    # writeCutPointFile(cutPointList, "testWayPoint.gpx")
 
-# newWaypointList = calculateSideWaypoint(rightContent, alpha*2, beta*2)
-# print(newWaypointList)
-# writeWayPointFileSimple(newWaypointList, "allRightFieldWaypoint.gpx")
-# writeCutList(cutPointList, "cutPointList.txt")
+    # newWaypointList = calculateSideWaypoint(rightContent, alpha*2, beta*2)
+    # print(newWaypointList)
+    # writeWayPointFileSimple(newWaypointList, "allRightFieldWaypoint.gpx")
+    # writeCutList(cutPointList, "cutPointList.txt")

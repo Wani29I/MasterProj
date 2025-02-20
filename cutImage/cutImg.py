@@ -71,12 +71,12 @@ def readImgPath(filename):
     content = content.split("\n")
     return content
 
-def loopCalClipRaster(coordinateList, pathList, folderName):
+def loopCalClipRaster(coordinateList, pathList, outputFolderPath, folderName):
     countPath = 0
     for path in pathList:
         raster_path = path
         count = 0
-        outputFolder =  "F:\ice-wheat\data\dataForProcess/" + folderName + path.split("\\")[-1].split("_")[1]
+        outputFolder =  outputFolderPath + folderName + path.split("\\")[-1].split("_")[1]
         os.mkdir(outputFolder)
         for coordinate in coordinateList:
             count += 1
@@ -97,8 +97,8 @@ if __name__ == '__main__':
     pathListRGB = readImgPath("imgPathRGB.txt")
     pathListMUL = readImgPath("imgPathMUL.txt")
 
-    loopCalClipRaster(coordinateList, pathListRGB, "RGB_")
-    loopCalClipRaster(coordinateList, pathListMUL, "MUL_")
+    loopCalClipRaster(coordinateList, pathListRGB, "F:\ice-wheat\data\dataForProcess/", "RGB_")
+    loopCalClipRaster(coordinateList, pathListMUL, "F:\ice-wheat\data\dataForProcess/", "MUL_")
     # pprint.pprint(coordinateList)
 
     # representRaster("../../testImg/test3/2.tif")
