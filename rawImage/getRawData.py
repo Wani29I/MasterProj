@@ -84,40 +84,41 @@ def writeFile(key, img_dict):
             file.write("\n")
     file.close()
 
-shapeFilePathList = getFilePath(filePath = "/Users/ice/Desktop/MasterResearch/MasterProj/rawImage/shapefileRGB", filetype = ".shp")
-pix4dPathList = getFilePath(filePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/Processed/MAVIC-RGB", filetype = ".p4d")
-rawImgFilePathList = getAllfilePath(filePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/RawData/MAVICK3-12M/ALL")
+if __name__ == '__main__':
+    shapeFilePathList = getFilePath(filePath = "/Users/ice/Desktop/MasterResearch/MasterProj/rawImage/shapefileRGB", filetype = ".shp")
+    pix4dPathList = getFilePath(filePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/Processed/MAVIC-RGB", filetype = ".p4d")
+    rawImgFilePathList = getAllfilePath(filePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/RawData/MAVICK3-12M/ALL")
 
-shapeFilePathDict = {}
-for shapeFilePathIndex in range(len(shapeFilePathList)):
-    shapeFilePath = shapeFilePathList[shapeFilePathIndex]
-    shapeFilePathKey = shapeFilePath.split('/')[-2]
-    shapeFilePathDict[shapeFilePathKey] = shapeFilePath
+    shapeFilePathDict = {}
+    for shapeFilePathIndex in range(len(shapeFilePathList)):
+        shapeFilePath = shapeFilePathList[shapeFilePathIndex]
+        shapeFilePathKey = shapeFilePath.split('/')[-2]
+        shapeFilePathDict[shapeFilePathKey] = shapeFilePath
 
-pix4dPathDict = {}
-for pix4dPathIndex in range(len(pix4dPathList)):
-    pix4dPath = pix4dPathList[pix4dPathIndex]
-    pix4dPathKey = pix4dPath.split('/')[-2].split('_')[1]
-    pix4dPathDict[pix4dPathKey] = pix4dPath
+    pix4dPathDict = {}
+    for pix4dPathIndex in range(len(pix4dPathList)):
+        pix4dPath = pix4dPathList[pix4dPathIndex]
+        pix4dPathKey = pix4dPath.split('/')[-2].split('_')[1]
+        pix4dPathDict[pix4dPathKey] = pix4dPath
 
-rawImgFilePathDict = {}
-for rawImgFilePathListIndex in range(len(rawImgFilePathList)):
-    rawImgFilePath = rawImgFilePathList[rawImgFilePathListIndex]
-    rawImgFilePathKey = rawImgFilePath.split('/')[-1].split('_')[1]
-    rawImgFilePathDict[rawImgFilePathKey] = rawImgFilePath
+    rawImgFilePathDict = {}
+    for rawImgFilePathListIndex in range(len(rawImgFilePathList)):
+        rawImgFilePath = rawImgFilePathList[rawImgFilePathListIndex]
+        rawImgFilePathKey = rawImgFilePath.split('/')[-1].split('_')[1]
+        rawImgFilePathDict[rawImgFilePathKey] = rawImgFilePath
 
-allPath = {}
-for key in shapeFilePathDict.keys():
-    if (key == '202406241205'):
-        continue
-    allPath[int(key)] = [shapeFilePathDict[key], pix4dPathDict[key], rawImgFilePathDict[key]]
+    allPath = {}
+    for key in shapeFilePathDict.keys():
+        if (key == '202406241205'):
+            continue
+        allPath[int(key)] = [shapeFilePathDict[key], pix4dPathDict[key], rawImgFilePathDict[key]]
 
-for key, pathList in sorted(allPath.items()):
-    img_dict_sort = getFileCoor(pathList[0], pathList[1], pathList[2])
-    writeFile(key, img_dict_sort)
+    for key, pathList in sorted(allPath.items()):
+        img_dict_sort = getFileCoor(pathList[0], pathList[1], pathList[2])
+        writeFile(key, img_dict_sort)
 
-# img_dict_sort = getFileCoor(allPath[202406041351][0], allPath[202406041351][1], allPath[202406041351][2])
-# for index, set in img_dict_sort.items():
-#     for fileName, shape in set.items():
-#         show_cropped_rectangle(allPath[202406041351][2]+'/'+fileName+".JPG", shape[1:])
+    # img_dict_sort = getFileCoor(allPath[202406041351][0], allPath[202406041351][1], allPath[202406041351][2])
+    # for index, set in img_dict_sort.items():
+    #     for fileName, shape in set.items():
+    #         show_cropped_rectangle(allPath[202406041351][2]+'/'+fileName+".JPG", shape[1:])
 
