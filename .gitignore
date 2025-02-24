@@ -1,4 +1,6 @@
 *.tif
 *.xml
+*.jpg
+*.JPG
 # *.ipynb
 EasyIDP/
