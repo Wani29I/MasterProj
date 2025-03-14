@@ -1,2 +1,2 @@
-Mac:/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData/RGB
-Windows:D:/ice-wheat/data/dataForProcess/mainData/RGB
+Mac:/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData
+Windows:D:/ice-wheat/data/dataForProcess/mainData
