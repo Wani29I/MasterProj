@@ -1,0 +1,3726 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:b="http://www.bizstation.jp/waypoint_extension" creator="Drogger GPS for Android 2.12.229" version="1.1">
+<wpt lat="37.362979152" lon="140.98506912">
+		<ele>66.0189</ele>
+		<time>2025-02-14T10:46:51.874+09:00</time>
+		<geoidheight>41.1521</geoidheight>
+		<name>tomi1</name>
+		<cmt>Raw-data lat=37.362979152 lon=140.98506912 ellipsoidHeight=107.171 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>1.0619322</vdop>
+		<pdop>1.21</pdop>
+		<extensions>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T10:46:22.000</b:starttime>
+				<b:endtime>2025-02-14T10:46:51.874</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0025</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0041</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:6 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2776.9158</b:vectorX>
+				<b:vectorY>998.1351</b:vectorY>
+				<b:vectorZ>2084.4350</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363808925" lon="140.985724641">
+		<ele>64.4511</ele>
+		<time>2025-02-14T10:52:25.625+09:00</time>
+		<geoidheight>41.1479</geoidheight>
+		<name>tomi2</name>
+		<cmt>Raw-data lat=37.363808925 lon=140.985724641 ellipsoidHeight=105.599 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.59</hdop>
+		<vdop>1.1359137</vdop>
+		<pdop>1.28</pdop>
+		<extensions>
+			<b:pointNumber>2</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T10:51:55.750</b:starttime>
+				<b:endtime>2025-02-14T10:52:25.625</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0465</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0044</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2784.7543</b:vectorX>
+				<b:vectorY>917.0453</b:vectorY>
+				<b:vectorZ>2156.6771</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363753225" lon="140.985905537">
+		<ele>64.4840</ele>
+		<time>2025-02-14T10:53:06.375+09:00</time>
+		<geoidheight>41.1460</geoidheight>
+		<name>tomi3</name>
+		<cmt>Raw-data lat=37.363753225 lon=140.985905537 ellipsoidHeight=105.63 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.59</hdop>
+		<vdop>1.1359137</vdop>
+		<pdop>1.28</pdop>
+		<extensions>
+			<b:pointNumber>3</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T10:52:36.500</b:starttime>
+				<b:endtime>2025-02-14T10:53:06.375</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>2.4842</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0535</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.019</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2771.7322</b:vectorX>
+				<b:vectorY>906.9711</b:vectorY>
+				<b:vectorZ>2151.7825</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363748892" lon="140.985918944">
+		<ele>64.4752</ele>
+		<time>2025-02-14T10:53:52.750+09:00</time>
+		<geoidheight>41.1458</geoidheight>
+		<name>tomi3</name>
+		<cmt>Raw-data lat=37.363748892 lon=140.985918944 ellipsoidHeight=105.621 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.59</hdop>
+		<vdop>1.1246332</vdop>
+		<pdop>1.27</pdop>
+		<extensions>
+			<b:pointNumber>3</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T10:53:22.875</b:starttime>
+				<b:endtime>2025-02-14T10:53:52.750</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0087</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0028</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2770.7633</b:vectorX>
+				<b:vectorY>906.2275</b:vectorY>
+				<b:vectorZ>2151.3949</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364184385" lon="140.98616422">
+		<ele>64.6444</ele>
+		<time>2025-02-14T10:55:21.750+09:00</time>
+		<geoidheight>41.1446</geoidheight>
+		<name>tomi4</name>
+		<cmt>Raw-data lat=37.364184385 lon=140.98616422 ellipsoidHeight=105.789 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.59</hdop>
+		<vdop>1.1246332</vdop>
+		<pdop>1.27</pdop>
+		<extensions>
+			<b:pointNumber>4</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T10:54:51.750</b:starttime>
+				<b:endtime>2025-02-14T10:55:21.750</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0158</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0048</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2779.7726</b:vectorX>
+				<b:vectorY>870.9637</b:vectorY>
+				<b:vectorZ>2189.9123</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364251357" lon="140.985891731">
+		<ele>64.8685</ele>
+		<time>2025-02-14T10:56:27.250+09:00</time>
+		<geoidheight>41.1475</geoidheight>
+		<name>tomi5</name>
+		<cmt>Raw-data lat=37.364251357 lon=140.985891731 ellipsoidHeight=106.016 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.59</hdop>
+		<vdop>1.1246332</vdop>
+		<pdop>1.27</pdop>
+		<extensions>
+			<b:pointNumber>5</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T10:55:57.250</b:starttime>
+				<b:endtime>2025-02-14T10:56:27.250</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0343</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0042</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2798.3331</b:vectorX>
+				<b:vectorY>886.9934</b:vectorY>
+				<b:vectorZ>2195.9578</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363966588" lon="140.985807307">
+		<ele>64.4064</ele>
+		<time>2025-02-14T10:59:20.500+09:00</time>
+		<geoidheight>41.1476</geoidheight>
+		<name>tomi6</name>
+		<cmt>Raw-data lat=37.363966588 lon=140.985807307 ellipsoidHeight=105.554 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.59</hdop>
+		<vdop>1.1133283</vdop>
+		<pdop>1.26</pdop>
+		<extensions>
+			<b:pointNumber>6</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T10:58:50.625</b:starttime>
+				<b:endtime>2025-02-14T10:59:20.500</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0328</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0045</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2788.4232</b:vectorX>
+				<b:vectorY>904.6477</b:vectorY>
+				<b:vectorZ>2170.5575</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363970094" lon="140.985796973">
+		<ele>64.4173</ele>
+		<time>2025-02-14T11:00:02.500+09:00</time>
+		<geoidheight>41.1477</geoidheight>
+		<name>tomi7</name>
+		<cmt>Raw-data lat=37.363970094 lon=140.985796973 ellipsoidHeight=105.565 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.64</hdop>
+		<vdop>1.3455482</vdop>
+		<pdop>1.49</pdop>
+		<extensions>
+			<b:pointNumber>7</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T10:59:32.500</b:starttime>
+				<b:endtime>2025-02-14T11:00:02.500</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.023</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0045</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2789.1762</b:vectorX>
+				<b:vectorY>905.2159</b:vectorY>
+				<b:vectorZ>2170.8735</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363952311" lon="140.985816331">
+		<ele>64.3546</ele>
+		<time>2025-02-14T11:00:58.125+09:00</time>
+		<geoidheight>41.1474</geoidheight>
+		<name>tomi8</name>
+		<cmt>Raw-data lat=37.363952311 lon=140.985816331 ellipsoidHeight=105.502 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.64</hdop>
+		<vdop>1.3455482</vdop>
+		<pdop>1.49</pdop>
+		<extensions>
+			<b:pointNumber>8</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:00:28.250</b:starttime>
+				<b:endtime>2025-02-14T11:00:58.125</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0205</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0043</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2787.2049</b:vectorX>
+				<b:vectorY>904.6059</b:vectorY>
+				<b:vectorZ>2169.2666</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363955025" lon="140.985805633">
+		<ele>64.3714</ele>
+		<time>2025-02-14T11:01:39.375+09:00</time>
+		<geoidheight>41.1476</geoidheight>
+		<name>tomi9</name>
+		<cmt>Raw-data lat=37.363955025 lon=140.985805633 ellipsoidHeight=105.519 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.64</hdop>
+		<vdop>1.3455482</vdop>
+		<pdop>1.49</pdop>
+		<extensions>
+			<b:pointNumber>9</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:01:09.375</b:starttime>
+				<b:endtime>2025-02-14T11:01:39.375</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0417</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0041</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2787.9331</b:vectorX>
+				<b:vectorY>905.2357</b:vectorY>
+				<b:vectorZ>2169.5163</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363942092" lon="140.985805467">
+		<ele>64.3365</ele>
+		<time>2025-02-14T11:03:05.125+09:00</time>
+		<geoidheight>41.1475</geoidheight>
+		<name>tomi10</name>
+		<cmt>Raw-data lat=37.363942092 lon=140.985805467 ellipsoidHeight=105.484 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.64</hdop>
+		<vdop>1.3455482</vdop>
+		<pdop>1.49</pdop>
+		<extensions>
+			<b:pointNumber>10</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:02:35.250</b:starttime>
+				<b:endtime>2025-02-14T11:03:05.125</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0499</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0075</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2787.2871</b:vectorX>
+				<b:vectorY>905.7780</b:vectorY>
+				<b:vectorZ>2168.3542</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363945585" lon="140.98579536">
+		<ele>64.3484</ele>
+		<time>2025-02-14T11:03:45.375+09:00</time>
+		<geoidheight>41.1476</geoidheight>
+		<name>tomi11</name>
+		<cmt>Raw-data lat=37.363945585 lon=140.98579536 ellipsoidHeight=105.496 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.64</hdop>
+		<vdop>1.3455482</vdop>
+		<pdop>1.49</pdop>
+		<extensions>
+			<b:pointNumber>11</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:03:15.500</b:starttime>
+				<b:endtime>2025-02-14T11:03:45.375</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0279</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.006</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2788.0261</b:vectorX>
+				<b:vectorY>906.3316</b:vectorY>
+				<b:vectorZ>2168.6696</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363949067" lon="140.985784978">
+		<ele>64.3633</ele>
+		<time>2025-02-14T11:04:32.125+09:00</time>
+		<geoidheight>41.1477</geoidheight>
+		<name>tomi12</name>
+		<cmt>Raw-data lat=37.363949067 lon=140.985784978 ellipsoidHeight=105.511 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.64</hdop>
+		<vdop>1.3455482</vdop>
+		<pdop>1.49</pdop>
+		<extensions>
+			<b:pointNumber>12</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:04:00.500</b:starttime>
+				<b:endtime>2025-02-14T11:04:32.125</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0167</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0101</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2788.7781</b:vectorX>
+				<b:vectorY>906.9060</b:vectorY>
+				<b:vectorZ>2168.9859</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363932782" lon="140.985793245">
+		<ele>64.3594</ele>
+		<time>2025-02-14T11:05:33.125+09:00</time>
+		<geoidheight>41.1476</geoidheight>
+		<name>tomi13</name>
+		<cmt>Raw-data lat=37.363932782 lon=140.985793245 ellipsoidHeight=105.507 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.64</hdop>
+		<vdop>1.3455482</vdop>
+		<pdop>1.49</pdop>
+		<extensions>
+			<b:pointNumber>13</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:05:03.250</b:starttime>
+				<b:endtime>2025-02-14T11:05:33.125</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0404</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0051</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2787.4672</b:vectorX>
+				<b:vectorY>907.0255</b:vectorY>
+				<b:vectorZ>2167.5469</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363936536" lon="140.985782713">
+		<ele>64.3703</ele>
+		<time>2025-02-14T11:06:11.125+09:00</time>
+		<geoidheight>41.1477</geoidheight>
+		<name>tomi14</name>
+		<cmt>Raw-data lat=37.363936536 lon=140.985782713 ellipsoidHeight=105.518 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.64</hdop>
+		<vdop>1.3455482</vdop>
+		<pdop>1.49</pdop>
+		<extensions>
+			<b:pointNumber>14</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:05:41.250</b:starttime>
+				<b:endtime>2025-02-14T11:06:11.125</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0194</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0047</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:6 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2788.2442</b:vectorX>
+				<b:vectorY>907.5968</b:vectorY>
+				<b:vectorZ>2167.8847</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363939709" lon="140.985772301">
+		<ele>64.3732</ele>
+		<time>2025-02-14T11:06:50.625+09:00</time>
+		<geoidheight>41.1478</geoidheight>
+		<name>tomi15</name>
+		<cmt>Raw-data lat=37.363939709 lon=140.985772301 ellipsoidHeight=105.521 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1485642</vdop>
+		<pdop>1.31</pdop>
+		<extensions>
+			<b:pointNumber>15</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:06:20.750</b:starttime>
+				<b:endtime>2025-02-14T11:06:50.625</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0212</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0029</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2788.9891</b:vectorX>
+				<b:vectorY>908.1804</b:vectorY>
+				<b:vectorZ>2168.1665</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363907403" lon="140.985897303">
+		<ele>64.4515</ele>
+		<time>2025-02-14T11:08:44.375+09:00</time>
+		<geoidheight>41.1465</geoidheight>
+		<name>tomiWheat1</name>
+		<cmt>Raw-data lat=37.363907403 lon=140.985897303 ellipsoidHeight=105.598 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1485642</vdop>
+		<pdop>1.31</pdop>
+		<extensions>
+			<b:pointNumber>1</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:08:14.500</b:starttime>
+				<b:endtime>2025-02-14T11:08:44.375</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.011</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0037</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2780.2799</b:vectorX>
+				<b:vectorY>900.9847</b:vectorY>
+				<b:vectorZ>2165.3634</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363905152" lon="140.985925494">
+		<ele>64.4608</ele>
+		<time>2025-02-14T11:09:27.375+09:00</time>
+		<geoidheight>41.1462</geoidheight>
+		<name>tomiWheat2</name>
+		<cmt>Raw-data lat=37.363905152 lon=140.985925494 ellipsoidHeight=105.607 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1485642</vdop>
+		<pdop>1.31</pdop>
+		<extensions>
+			<b:pointNumber>2</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:08:57.500</b:starttime>
+				<b:endtime>2025-02-14T11:09:27.375</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0174</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0039</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2778.5844</b:vectorX>
+				<b:vectorY>899.1442</b:vectorY>
+				<b:vectorZ>2165.1703</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363922614" lon="140.985894843">
+		<ele>64.4544</ele>
+		<time>2025-02-14T11:10:09.125+09:00</time>
+		<geoidheight>41.1466</geoidheight>
+		<name>tomiWheat3</name>
+		<cmt>Raw-data lat=37.363922614 lon=140.985894843 ellipsoidHeight=105.601 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1485642</vdop>
+		<pdop>1.31</pdop>
+		<extensions>
+			<b:pointNumber>3</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:09:39.250</b:starttime>
+				<b:endtime>2025-02-14T11:10:09.125</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0078</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0028</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2781.2113</b:vectorX>
+				<b:vectorY>900.5105</b:vectorY>
+				<b:vectorZ>2166.7070</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363923657" lon="140.985913797">
+		<ele>64.4426</ele>
+		<time>2025-02-14T11:10:49.000+09:00</time>
+		<geoidheight>41.1464</geoidheight>
+		<name>tomiWheat4</name>
+		<cmt>Raw-data lat=37.363923657 lon=140.985913797 ellipsoidHeight=105.589 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1485642</vdop>
+		<pdop>1.31</pdop>
+		<extensions>
+			<b:pointNumber>4</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:10:18.625</b:starttime>
+				<b:endtime>2025-02-14T11:10:49.000</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.024</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0047</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.011</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2780.2163</b:vectorX>
+				<b:vectorY>899.1557</b:vectorY>
+				<b:vectorZ>2166.7918</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363922762" lon="140.985934896">
+		<ele>64.4438</ele>
+		<time>2025-02-14T11:11:27.875+09:00</time>
+		<geoidheight>41.1462</geoidheight>
+		<name>tomiWheat5</name>
+		<cmt>Raw-data lat=37.363922762 lon=140.985934896 ellipsoidHeight=105.59 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1485642</vdop>
+		<pdop>1.31</pdop>
+		<extensions>
+			<b:pointNumber>5</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:10:57.875</b:starttime>
+				<b:endtime>2025-02-14T11:11:27.875</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0219</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0041</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.011</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2778.9922</b:vectorX>
+				<b:vectorY>897.7418</b:vectorY>
+				<b:vectorZ>2166.7134</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363922139" lon="140.985957673">
+		<ele>64.4310</ele>
+		<time>2025-02-14T11:12:10.125+09:00</time>
+		<geoidheight>41.1460</geoidheight>
+		<name>tomiWheat6</name>
+		<cmt>Raw-data lat=37.363922139 lon=140.985957673 ellipsoidHeight=105.577 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1485642</vdop>
+		<pdop>1.31</pdop>
+		<extensions>
+			<b:pointNumber>6</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:11:40.250</b:starttime>
+				<b:endtime>2025-02-14T11:12:10.125</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0168</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.005</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2777.6974</b:vectorX>
+				<b:vectorY>896.1940</b:vectorY>
+				<b:vectorZ>2166.6506</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363922469" lon="140.985976064">
+		<ele>64.4322</ele>
+		<time>2025-02-14T11:12:52.375+09:00</time>
+		<geoidheight>41.1458</geoidheight>
+		<name>tomiWheat7</name>
+		<cmt>Raw-data lat=37.363922469 lon=140.985976064 ellipsoidHeight=105.578 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1485642</vdop>
+		<pdop>1.31</pdop>
+		<extensions>
+			<b:pointNumber>7</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:12:22.500</b:starttime>
+				<b:endtime>2025-02-14T11:12:52.375</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0532</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.006</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2776.6885</b:vectorX>
+				<b:vectorY>894.9146</b:vectorY>
+				<b:vectorZ>2166.6803</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.36392283" lon="140.985994135">
+		<ele>64.4504</ele>
+		<time>2025-02-14T11:13:33.250+09:00</time>
+		<geoidheight>41.1456</geoidheight>
+		<name>tomiWheat8</name>
+		<cmt>Raw-data lat=37.36392283 lon=140.985994135 ellipsoidHeight=105.596 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1371455</vdop>
+		<pdop>1.3</pdop>
+		<extensions>
+			<b:pointNumber>8</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:13:03.375</b:starttime>
+				<b:endtime>2025-02-14T11:13:33.250</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0396</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0042</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2775.6885</b:vectorX>
+				<b:vectorY>893.6645</b:vectorY>
+				<b:vectorZ>2166.7230</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363947559" lon="140.985942951">
+		<ele>64.4128</ele>
+		<time>2025-02-14T11:14:16.250+09:00</time>
+		<geoidheight>41.1462</geoidheight>
+		<name>tomiWheat9</name>
+		<cmt>Raw-data lat=37.363947559 lon=140.985942951 ellipsoidHeight=105.559 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1371455</vdop>
+		<pdop>1.3</pdop>
+		<extensions>
+			<b:pointNumber>9</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:13:46.375</b:starttime>
+				<b:endtime>2025-02-14T11:14:16.250</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0176</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0038</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.011</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2779.8599</b:vectorX>
+				<b:vectorY>896.1205</b:vectorY>
+				<b:vectorZ>2168.8820</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363946509" lon="140.985964757">
+		<ele>64.4061</ele>
+		<time>2025-02-14T11:14:56.375+09:00</time>
+		<geoidheight>41.1459</geoidheight>
+		<name>tomiWheat10</name>
+		<cmt>Raw-data lat=37.363946509 lon=140.985964757 ellipsoidHeight=105.552 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1371455</vdop>
+		<pdop>1.3</pdop>
+		<extensions>
+			<b:pointNumber>10</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:14:26.500</b:starttime>
+				<b:endtime>2025-02-14T11:14:56.375</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0135</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0031</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2778.5932</b:vectorX>
+				<b:vectorY>894.6606</b:vectorY>
+				<b:vectorZ>2168.7851</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363964292" lon="140.985931866">
+		<ele>64.3977</ele>
+		<time>2025-02-14T11:15:39.875+09:00</time>
+		<geoidheight>41.1463</geoidheight>
+		<name>tomiWheat11</name>
+		<cmt>Raw-data lat=37.363964292 lon=140.985931866 ellipsoidHeight=105.544 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1371455</vdop>
+		<pdop>1.3</pdop>
+		<extensions>
+			<b:pointNumber>11</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:15:09.875</b:starttime>
+				<b:endtime>2025-02-14T11:15:39.875</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.017</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0043</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2781.3630</b:vectorX>
+				<b:vectorY>896.1665</b:vectorY>
+				<b:vectorZ>2170.3489</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363982563" lon="140.98589862">
+		<ele>64.3813</ele>
+		<time>2025-02-14T11:16:23.500+09:00</time>
+		<geoidheight>41.1467</geoidheight>
+		<name>tomiWheat12</name>
+		<cmt>Raw-data lat=37.363982563 lon=140.98589862 ellipsoidHeight=105.528 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1371455</vdop>
+		<pdop>1.3</pdop>
+		<extensions>
+			<b:pointNumber>12</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:15:53.625</b:starttime>
+				<b:endtime>2025-02-14T11:16:23.500</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.026</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0044</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.011</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2784.1831</b:vectorX>
+				<b:vectorY>897.6722</b:vectorY>
+				<b:vectorZ>2171.9509</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363981796" lon="140.985917756">
+		<ele>64.3995</ele>
+		<time>2025-02-14T11:17:03.000+09:00</time>
+		<geoidheight>41.1465</geoidheight>
+		<name>tomiWheat13</name>
+		<cmt>Raw-data lat=37.363981796 lon=140.985917756 ellipsoidHeight=105.546 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1256998</vdop>
+		<pdop>1.29</pdop>
+		<extensions>
+			<b:pointNumber>13</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:16:33.125</b:starttime>
+				<b:endtime>2025-02-14T11:17:03.000</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0164</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0037</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2783.0647</b:vectorX>
+				<b:vectorY>896.3965</b:vectorY>
+				<b:vectorZ>2171.8942</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.363999135" lon="140.98588897">
+		<ele>64.3932</ele>
+		<time>2025-02-14T11:18:07.250+09:00</time>
+		<geoidheight>41.1468</geoidheight>
+		<name>tomiWheat14</name>
+		<cmt>Raw-data lat=37.363999135 lon=140.98588897 ellipsoidHeight=105.54 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1256998</vdop>
+		<pdop>1.29</pdop>
+		<extensions>
+			<b:pointNumber>14</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:17:37.375</b:starttime>
+				<b:endtime>2025-02-14T11:18:07.250</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0224</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0035</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2785.5811</b:vectorX>
+				<b:vectorY>897.6397</b:vectorY>
+				<b:vectorZ>2173.4200</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364013565" lon="140.985866714">
+		<ele>64.3889</ele>
+		<time>2025-02-14T11:18:54.125+09:00</time>
+		<geoidheight>41.1471</geoidheight>
+		<name>tomiWheat15</name>
+		<cmt>Raw-data lat=37.364013565 lon=140.985866714 ellipsoidHeight=105.536 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.63</hdop>
+		<vdop>1.1256998</vdop>
+		<pdop>1.29</pdop>
+		<extensions>
+			<b:pointNumber>15</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:18:24.250</b:starttime>
+				<b:endtime>2025-02-14T11:18:54.125</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0112</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0037</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:7 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2787.5799</b:vectorX>
+				<b:vectorY>898.5578</b:vectorY>
+				<b:vectorZ>2174.6905</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364161874" lon="140.985961943">
+		<ele>64.3934</ele>
+		<time>2025-02-14T11:20:13.500+09:00</time>
+		<geoidheight>41.1466</geoidheight>
+		<name>tomiWheat16</name>
+		<cmt>Raw-data lat=37.364161874 lon=140.985961943 ellipsoidHeight=105.54 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.11933</vdop>
+		<pdop>1.27</pdop>
+		<extensions>
+			<b:pointNumber>16</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:19:43.625</b:starttime>
+				<b:endtime>2025-02-14T11:20:13.500</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0243</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0039</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2790.0285</b:vectorX>
+				<b:vectorY>885.7166</b:vectorY>
+				<b:vectorZ>2187.7755</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364154158" lon="140.986002701">
+		<ele>64.4258</ele>
+		<time>2025-02-14T11:21:01.500+09:00</time>
+		<geoidheight>41.1462</geoidheight>
+		<name>tomiWheat17</name>
+		<cmt>Raw-data lat=37.364154158 lon=140.986002701 ellipsoidHeight=105.572 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.1079711</vdop>
+		<pdop>1.26</pdop>
+		<extensions>
+			<b:pointNumber>17</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:20:31.625</b:starttime>
+				<b:endtime>2025-02-14T11:21:01.500</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0233</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0039</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2787.3320</b:vectorX>
+				<b:vectorY>883.2544</b:vectorY>
+				<b:vectorZ>2187.1143</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364175711" lon="140.985961769">
+		<ele>64.4024</ele>
+		<time>2025-02-14T11:21:45.625+09:00</time>
+		<geoidheight>41.1466</geoidheight>
+		<name>tomiWheat18</name>
+		<cmt>Raw-data lat=37.364175711 lon=140.985961769 ellipsoidHeight=105.549 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.1079711</vdop>
+		<pdop>1.26</pdop>
+		<extensions>
+			<b:pointNumber>18</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:21:15.750</b:starttime>
+				<b:endtime>2025-02-14T11:21:45.625</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0241</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0056</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2790.7568</b:vectorX>
+				<b:vectorY>885.1464</b:vectorY>
+				<b:vectorZ>2189.0015</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364170693" lon="140.985994338">
+		<ele>64.4317</ele>
+		<time>2025-02-14T11:22:29.125+09:00</time>
+		<geoidheight>41.1463</geoidheight>
+		<name>tomiWheat19</name>
+		<cmt>Raw-data lat=37.364170693 lon=140.985994338 ellipsoidHeight=105.578 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.1079711</vdop>
+		<pdop>1.26</pdop>
+		<extensions>
+			<b:pointNumber>19</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:21:59.250</b:starttime>
+				<b:endtime>2025-02-14T11:22:29.125</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0231</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0027</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2788.6600</b:vectorX>
+				<b:vectorY>883.1319</b:vectorY>
+				<b:vectorZ>2188.5765</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364182223" lon="140.985981589">
+		<ele>64.4185</ele>
+		<time>2025-02-14T11:23:12.375+09:00</time>
+		<geoidheight>41.1465</geoidheight>
+		<name>tomiWheat20</name>
+		<cmt>Raw-data lat=37.364182223 lon=140.985981589 ellipsoidHeight=105.565 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0965856</vdop>
+		<pdop>1.25</pdop>
+		<extensions>
+			<b:pointNumber>20</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:22:42.500</b:starttime>
+				<b:endtime>2025-02-14T11:23:12.375</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0104</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0036</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2789.9824</b:vectorX>
+				<b:vectorY>883.5141</b:vectorY>
+				<b:vectorZ>2189.5857</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364177243" lon="140.986015626">
+		<ele>64.4369</ele>
+		<time>2025-02-14T11:23:54.875+09:00</time>
+		<geoidheight>41.1461</geoidheight>
+		<name>tomiWheat21</name>
+		<cmt>Raw-data lat=37.364177243 lon=140.986015626 ellipsoidHeight=105.583 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0965856</vdop>
+		<pdop>1.25</pdop>
+		<extensions>
+			<b:pointNumber>21</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:23:25.000</b:starttime>
+				<b:endtime>2025-02-14T11:23:54.875</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.011</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0036</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2787.8126</b:vectorX>
+				<b:vectorY>881.3914</b:vectorY>
+				<b:vectorZ>2189.1573</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364188119" lon="140.986004505">
+		<ele>64.4318</ele>
+		<time>2025-02-14T11:24:35.875+09:00</time>
+		<geoidheight>41.1462</geoidheight>
+		<name>tomiWheat22</name>
+		<cmt>Raw-data lat=37.364188119 lon=140.986004505 ellipsoidHeight=105.578 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0965856</vdop>
+		<pdop>1.25</pdop>
+		<extensions>
+			<b:pointNumber>22</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:24:06.000</b:starttime>
+				<b:endtime>2025-02-14T11:24:35.875</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0124</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0037</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2789.0050</b:vectorX>
+				<b:vectorY>881.6932</b:vectorY>
+				<b:vectorZ>2190.1136</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364202048" lon="140.985982355">
+		<ele>64.4455</ele>
+		<time>2025-02-14T11:25:18.750+09:00</time>
+		<geoidheight>41.1465</geoidheight>
+		<name>tomiWheat23</name>
+		<cmt>Raw-data lat=37.364202048 lon=140.985982355 ellipsoidHeight=105.592 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0851728</vdop>
+		<pdop>1.24</pdop>
+		<extensions>
+			<b:pointNumber>23</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:24:48.875</b:starttime>
+				<b:endtime>2025-02-14T11:25:18.750</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0228</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0036</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2790.9606</b:vectorX>
+				<b:vectorY>882.6342</b:vectorY>
+				<b:vectorZ>2191.3508</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364200025" lon="140.986010242">
+		<ele>64.4348</ele>
+		<time>2025-02-14T11:26:00.000+09:00</time>
+		<geoidheight>41.1462</geoidheight>
+		<name>tomiWheat24</name>
+		<cmt>Raw-data lat=37.364200025 lon=140.986010242 ellipsoidHeight=105.581 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0851728</vdop>
+		<pdop>1.24</pdop>
+		<extensions>
+			<b:pointNumber>24</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:25:30.125</b:starttime>
+				<b:endtime>2025-02-14T11:26:00.000</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0225</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0045</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2789.3064</b:vectorX>
+				<b:vectorY>880.7950</b:vectorY>
+				<b:vectorZ>2191.1657</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364202787" lon="140.98602416">
+		<ele>64.4379</ele>
+		<time>2025-02-14T11:26:41.125+09:00</time>
+		<geoidheight>41.1461</geoidheight>
+		<name>tomiWheat25</name>
+		<cmt>Raw-data lat=37.364202787 lon=140.98602416 ellipsoidHeight=105.584 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0737318</vdop>
+		<pdop>1.23</pdop>
+		<extensions>
+			<b:pointNumber>25</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:26:11.250</b:starttime>
+				<b:endtime>2025-02-14T11:26:41.125</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0323</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.003</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2788.6729</b:vectorX>
+				<b:vectorY>879.7214</b:vectorY>
+				<b:vectorZ>2191.4112</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364212536" lon="140.986015215">
+		<ele>64.4428</ele>
+		<time>2025-02-14T11:27:21.500+09:00</time>
+		<geoidheight>41.1462</geoidheight>
+		<name>tomiWheat26</name>
+		<cmt>Raw-data lat=37.364212536 lon=140.986015215 ellipsoidHeight=105.589 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0737318</vdop>
+		<pdop>1.23</pdop>
+		<extensions>
+			<b:pointNumber>26</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:26:51.625</b:starttime>
+				<b:endtime>2025-02-14T11:27:21.500</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0373</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0095</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2789.6788</b:vectorX>
+				<b:vectorY>879.9263</b:vectorY>
+				<b:vectorZ>2192.2742</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364226568" lon="140.985992142">
+		<ele>64.4245</ele>
+		<time>2025-02-14T11:28:04.000+09:00</time>
+		<geoidheight>41.1465</geoidheight>
+		<name>tomiWheat27</name>
+		<cmt>Raw-data lat=37.364226568 lon=140.985992142 ellipsoidHeight=105.571 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0737318</vdop>
+		<pdop>1.23</pdop>
+		<extensions>
+			<b:pointNumber>27</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:27:34.125</b:starttime>
+				<b:endtime>2025-02-14T11:28:04.000</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0192</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0048</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2791.7110</b:vectorX>
+				<b:vectorY>880.9104</b:vectorY>
+				<b:vectorZ>2193.5010</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364220695" lon="140.986030479">
+		<ele>64.4709</ele>
+		<time>2025-02-14T11:28:58.000+09:00</time>
+		<geoidheight>41.1461</geoidheight>
+		<name>tomiWheat28</name>
+		<cmt>Raw-data lat=37.364220695 lon=140.986030479 ellipsoidHeight=105.617 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0622618</vdop>
+		<pdop>1.22</pdop>
+		<extensions>
+			<b:pointNumber>28</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:28:28.125</b:starttime>
+				<b:endtime>2025-02-14T11:28:58.000</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0134</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0031</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2789.2373</b:vectorX>
+				<b:vectorY>878.5437</b:vectorY>
+				<b:vectorZ>2193.0109</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364234613" lon="140.986008846">
+		<ele>64.4557</ele>
+		<time>2025-02-14T11:29:39.625+09:00</time>
+		<geoidheight>41.1463</geoidheight>
+		<name>tomiWheat29</name>
+		<cmt>Raw-data lat=37.364234613 lon=140.986008846 ellipsoidHeight=105.602 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0622618</vdop>
+		<pdop>1.22</pdop>
+		<extensions>
+			<b:pointNumber>29</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:29:09.750</b:starttime>
+				<b:endtime>2025-02-14T11:29:39.625</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0321</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0035</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2791.1814</b:vectorX>
+				<b:vectorY>879.4351</b:vectorY>
+				<b:vectorZ>2194.2295</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364230184" lon="140.986043175">
+		<ele>64.4740</ele>
+		<time>2025-02-14T11:30:27.000+09:00</time>
+		<geoidheight>41.1460</geoidheight>
+		<name>tomiWheat30</name>
+		<cmt>Raw-data lat=37.364230184 lon=140.986043175 ellipsoidHeight=105.62 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0507617</vdop>
+		<pdop>1.21</pdop>
+		<extensions>
+			<b:pointNumber>30</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:29:57.125</b:starttime>
+				<b:endtime>2025-02-14T11:30:27.000</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0163</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0039</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2789.0241</b:vectorX>
+				<b:vectorY>877.2690</b:vectorY>
+				<b:vectorZ>2193.8497</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364146187" lon="140.98592418">
+		<ele>64.4061</ele>
+		<time>2025-02-14T11:32:58.625+09:00</time>
+		<geoidheight>41.1469</geoidheight>
+		<name>tomiWheatInside1</name>
+		<cmt>Raw-data lat=37.364146187 lon=140.98592418 ellipsoidHeight=105.553 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0276673</vdop>
+		<pdop>1.19</pdop>
+		<extensions>
+			<b:pointNumber>1</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:32:28.750</b:starttime>
+				<b:endtime>2025-02-14T11:32:58.625</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0364</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0038</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2791.3054</b:vectorX>
+				<b:vectorY>888.9875</b:vectorY>
+				<b:vectorZ>2186.3996</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364132549" lon="140.985944421">
+		<ele>64.3953</ele>
+		<time>2025-02-14T11:33:40.500+09:00</time>
+		<geoidheight>41.1467</geoidheight>
+		<name>tomiWheatInside2</name>
+		<cmt>Raw-data lat=37.364132549 lon=140.985944421 ellipsoidHeight=105.542 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0276673</vdop>
+		<pdop>1.19</pdop>
+		<extensions>
+			<b:pointNumber>2</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:33:10.625</b:starttime>
+				<b:endtime>2025-02-14T11:33:40.500</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0293</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.004</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2789.4697</b:vectorX>
+				<b:vectorY>888.1671</b:vectorY>
+				<b:vectorZ>2185.1899</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364134973" lon="140.985916461">
+		<ele>64.3920</ele>
+		<time>2025-02-14T11:34:24.500+09:00</time>
+		<geoidheight>41.1470</geoidheight>
+		<name>tomiWheatInside3</name>
+		<cmt>Raw-data lat=37.364134973 lon=140.985916461 ellipsoidHeight=105.539 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0276673</vdop>
+		<pdop>1.19</pdop>
+		<extensions>
+			<b:pointNumber>3</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:33:54.625</b:starttime>
+				<b:endtime>2025-02-14T11:34:24.500</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0243</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0035</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2791.1577</b:vectorX>
+				<b:vectorY>889.9873</b:vectorY>
+				<b:vectorZ>2185.4019</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364119931" lon="140.985940384">
+		<ele>64.3793</ele>
+		<time>2025-02-14T11:35:06.625+09:00</time>
+		<geoidheight>41.1467</geoidheight>
+		<name>tomiWheatInside4</name>
+		<cmt>Raw-data lat=37.364119931 lon=140.985940384 ellipsoidHeight=105.526 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0160708</vdop>
+		<pdop>1.18</pdop>
+		<extensions>
+			<b:pointNumber>4</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:34:36.750</b:starttime>
+				<b:endtime>2025-02-14T11:35:06.625</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0197</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0046</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2789.0444</b:vectorX>
+				<b:vectorY>888.9720</b:vectorY>
+				<b:vectorZ>2184.0671</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364123598" lon="140.985909487">
+		<ele>64.3690</ele>
+		<time>2025-02-14T11:35:50.250+09:00</time>
+		<geoidheight>41.1470</geoidheight>
+		<name>tomiWheatInside5</name>
+		<cmt>Raw-data lat=37.364123598 lon=140.985909487 ellipsoidHeight=105.516 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0160708</vdop>
+		<pdop>1.18</pdop>
+		<extensions>
+			<b:pointNumber>5</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:35:20.375</b:starttime>
+				<b:endtime>2025-02-14T11:35:50.250</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0154</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0045</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2790.9655</b:vectorX>
+				<b:vectorY>890.9382</b:vectorY>
+				<b:vectorZ>2184.3845</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364084645" lon="140.986023752">
+		<ele>64.4352</ele>
+		<time>2025-02-14T11:37:22.750+09:00</time>
+		<geoidheight>41.1458</geoidheight>
+		<name>tomiWheatInside6</name>
+		<cmt>Raw-data lat=37.364084645 lon=140.986023752 ellipsoidHeight=105.581 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>1.0044401</vdop>
+		<pdop>1.17</pdop>
+		<extensions>
+			<b:pointNumber>6</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:36:52.875</b:starttime>
+				<b:endtime>2025-02-14T11:37:22.750</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0282</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0048</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2782.5146</b:vectorX>
+				<b:vectorY>884.7573</b:vectorY>
+				<b:vectorZ>2180.9879</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364084377" lon="140.9860458">
+		<ele>64.4475</ele>
+		<time>2025-02-14T11:38:05.750+09:00</time>
+		<geoidheight>41.1455</geoidheight>
+		<name>tomiWheatInside7</name>
+		<cmt>Raw-data lat=37.364084377 lon=140.9860458 ellipsoidHeight=105.593 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.6</hdop>
+		<vdop>0.99277383</vdop>
+		<pdop>1.16</pdop>
+		<extensions>
+			<b:pointNumber>7</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:37:35.875</b:starttime>
+				<b:endtime>2025-02-14T11:38:05.750</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0313</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0046</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:7 R:5 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2781.2636</b:vectorX>
+				<b:vectorY>883.2571</b:vectorY>
+				<b:vectorZ>2180.9715</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364097005" lon="140.98602806">
+		<ele>64.4573</ele>
+		<time>2025-02-14T11:38:51.000+09:00</time>
+		<geoidheight>41.1457</geoidheight>
+		<name>tomiWheatInside8</name>
+		<cmt>Raw-data lat=37.364097005 lon=140.98602806 ellipsoidHeight=105.603 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.98142755</vdop>
+		<pdop>1.14</pdop>
+		<extensions>
+			<b:pointNumber>8</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:38:21.000</b:starttime>
+				<b:endtime>2025-02-14T11:38:51.000</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0241</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0039</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2782.9076</b:vectorX>
+				<b:vectorY>883.9477</b:vectorY>
+				<b:vectorZ>2182.0915</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364092403" lon="140.986063914">
+		<ele>64.4606</ele>
+		<time>2025-02-14T11:39:33.750+09:00</time>
+		<geoidheight>41.1454</geoidheight>
+		<name>tomiWheatInside9</name>
+		<cmt>Raw-data lat=37.364092403 lon=140.986063914 ellipsoidHeight=105.606 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.98142755</vdop>
+		<pdop>1.14</pdop>
+		<extensions>
+			<b:pointNumber>9</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:39:03.875</b:starttime>
+				<b:endtime>2025-02-14T11:39:33.750</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0371</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0026</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2780.6655</b:vectorX>
+				<b:vectorY>881.6765</b:vectorY>
+				<b:vectorZ>2181.6874</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364104358" lon="140.986050792">
+		<ele>64.4565</ele>
+		<time>2025-02-14T11:40:18.000+09:00</time>
+		<geoidheight>41.1455</geoidheight>
+		<name>tomiWheatInside10</name>
+		<cmt>Raw-data lat=37.364104358 lon=140.986050792 ellipsoidHeight=105.602 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.9697938</vdop>
+		<pdop>1.13</pdop>
+		<extensions>
+			<b:pointNumber>10</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:39:48.124</b:starttime>
+				<b:endtime>2025-02-14T11:40:18.000</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0333</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0037</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2782.0254</b:vectorX>
+				<b:vectorY>882.0708</b:vectorY>
+				<b:vectorZ>2182.7395</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364062016" lon="140.986031683">
+		<ele>64.4374</ele>
+		<time>2025-02-14T11:41:15.499+09:00</time>
+		<geoidheight>41.1456</geoidheight>
+		<name>tomiWheatInside11</name>
+		<cmt>Raw-data lat=37.364062016 lon=140.986031683 ellipsoidHeight=105.583 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.9697938</vdop>
+		<pdop>1.13</pdop>
+		<extensions>
+			<b:pointNumber>11</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:40:45.624</b:starttime>
+				<b:endtime>2025-02-14T11:41:15.499</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0343</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0037</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2780.8868</b:vectorX>
+				<b:vectorY>885.1719</b:vectorY>
+				<b:vectorZ>2178.9930</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364065083" lon="140.986003131">
+		<ele>64.3911</ele>
+		<time>2025-02-14T11:41:59.249+09:00</time>
+		<geoidheight>41.1459</geoidheight>
+		<name>tomiWheatInside12</name>
+		<cmt>Raw-data lat=37.364065083 lon=140.986003131 ellipsoidHeight=105.537 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.9697938</vdop>
+		<pdop>1.13</pdop>
+		<extensions>
+			<b:pointNumber>12</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:41:29.374</b:starttime>
+				<b:endtime>2025-02-14T11:41:59.249</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.027</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0037</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2782.6680</b:vectorX>
+				<b:vectorY>886.9841</b:vectorY>
+				<b:vectorZ>2179.2356</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364050827" lon="140.986023785">
+		<ele>64.4233</ele>
+		<time>2025-02-14T11:42:40.874+09:00</time>
+		<geoidheight>41.1457</geoidheight>
+		<name>tomiWheatInside13</name>
+		<cmt>Raw-data lat=37.364050827 lon=140.986023785 ellipsoidHeight=105.569 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.9581232</vdop>
+		<pdop>1.12</pdop>
+		<extensions>
+			<b:pointNumber>13</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:42:11.000</b:starttime>
+				<b:endtime>2025-02-14T11:42:40.874</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0223</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0031</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2780.7503</b:vectorX>
+				<b:vectorY>886.1829</b:vectorY>
+				<b:vectorZ>2177.9975</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364053831" lon="140.985996873">
+		<ele>64.4131</ele>
+		<time>2025-02-14T11:43:25.374+09:00</time>
+		<geoidheight>41.1459</geoidheight>
+		<name>tomiWheatInside14</name>
+		<cmt>Raw-data lat=37.364053831 lon=140.985996873 ellipsoidHeight=105.559 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.9581232</vdop>
+		<pdop>1.12</pdop>
+		<extensions>
+			<b:pointNumber>14</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:42:55.499</b:starttime>
+				<b:endtime>2025-02-14T11:43:25.374</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0154</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.003</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2782.4145</b:vectorX>
+				<b:vectorY>887.9030</b:vectorY>
+				<b:vectorZ>2178.2564</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364040073" lon="140.986013716">
+		<ele>64.4373</ele>
+		<time>2025-02-14T11:44:11.374+09:00</time>
+		<geoidheight>41.1457</geoidheight>
+		<name>tomiWheatInside15</name>
+		<cmt>Raw-data lat=37.364040073 lon=140.986013716 ellipsoidHeight=105.583 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.9581232</vdop>
+		<pdop>1.12</pdop>
+		<extensions>
+			<b:pointNumber>15</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:43:41.499</b:starttime>
+				<b:endtime>2025-02-14T11:44:11.374</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0254</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0031</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2780.7404</b:vectorX>
+				<b:vectorY>887.3390</b:vectorY>
+				<b:vectorZ>2177.0573</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364073242" lon="140.985915935">
+		<ele>64.3702</ele>
+		<time>2025-02-14T11:44:58.874+09:00</time>
+		<geoidheight>41.1468</geoidheight>
+		<name>tomiWheatInside16</name>
+		<cmt>Raw-data lat=37.364073242 lon=140.985915935 ellipsoidHeight=105.517 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.9464143</vdop>
+		<pdop>1.11</pdop>
+		<extensions>
+			<b:pointNumber>16</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:44:29.000</b:starttime>
+				<b:endtime>2025-02-14T11:44:58.874</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0146</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0029</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2787.9699</b:vectorX>
+				<b:vectorY>892.6300</b:vectorY>
+				<b:vectorZ>2179.9432</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364086177" lon="140.985897843">
+		<ele>64.3840</ele>
+		<time>2025-02-14T11:45:41.499+09:00</time>
+		<geoidheight>41.1470</geoidheight>
+		<name>tomiWheatInside17</name>
+		<cmt>Raw-data lat=37.364086177 lon=140.985897843 ellipsoidHeight=105.531 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.9464143</vdop>
+		<pdop>1.11</pdop>
+		<extensions>
+			<b:pointNumber>17</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:45:11.624</b:starttime>
+				<b:endtime>2025-02-14T11:45:41.499</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0371</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0024</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2789.6471</b:vectorX>
+				<b:vectorY>893.3338</b:vectorY>
+				<b:vectorZ>2181.0927</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364084651" lon="140.985923487">
+		<ele>64.3762</ele>
+		<time>2025-02-14T11:46:20.749+09:00</time>
+		<geoidheight>41.1468</geoidheight>
+		<name>tomiWheatInside18</name>
+		<cmt>Raw-data lat=37.364084651 lon=140.985923487 ellipsoidHeight=105.523 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.93466574</vdop>
+		<pdop>1.1</pdop>
+		<extensions>
+			<b:pointNumber>18</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:45:50.874</b:starttime>
+				<b:endtime>2025-02-14T11:46:20.749</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0186</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0028</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2788.1421</b:vectorX>
+				<b:vectorY>891.6294</b:vectorY>
+				<b:vectorZ>2180.9532</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364098511" lon="140.985903551">
+		<ele>64.3950</ele>
+		<time>2025-02-14T11:47:03.624+09:00</time>
+		<geoidheight>41.1470</geoidheight>
+		<name>tomiWheatInside19</name>
+		<cmt>Raw-data lat=37.364098511 lon=140.985903551 ellipsoidHeight=105.542 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.93466574</vdop>
+		<pdop>1.1</pdop>
+		<extensions>
+			<b:pointNumber>19</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:46:33.749</b:starttime>
+				<b:endtime>2025-02-14T11:47:03.624</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0167</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0035</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2789.9675</b:vectorX>
+				<b:vectorY>892.4235</b:vectorY>
+				<b:vectorZ>2182.1874</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364096042" lon="140.985929123">
+		<ele>64.3823</ele>
+		<time>2025-02-14T11:47:45.499+09:00</time>
+		<geoidheight>41.1467</geoidheight>
+		<name>tomiWheatInside20</name>
+		<cmt>Raw-data lat=37.364096042 lon=140.985929123 ellipsoidHeight=105.529 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.93466574</vdop>
+		<pdop>1.1</pdop>
+		<extensions>
+			<b:pointNumber>20</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:47:15.624</b:starttime>
+				<b:endtime>2025-02-14T11:47:45.499</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0288</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0033</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2788.4203</b:vectorX>
+				<b:vectorY>890.7615</b:vectorY>
+				<b:vectorZ>2181.9617</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364063455" lon="140.985885712">
+		<ele>64.3799</ele>
+		<time>2025-02-14T11:48:34.749+09:00</time>
+		<geoidheight>41.1471</geoidheight>
+		<name>tomiWheatInside21</name>
+		<cmt>Raw-data lat=37.364063455 lon=140.985885712 ellipsoidHeight=105.527 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.922876</vdop>
+		<pdop>1.09</pdop>
+		<extensions>
+			<b:pointNumber>21</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:48:04.874</b:starttime>
+				<b:endtime>2025-02-14T11:48:34.749</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.025</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0028</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2789.1370</b:vectorX>
+				<b:vectorY>895.1302</b:vectorY>
+				<b:vectorZ>2179.0859</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364050152" lon="140.985905595">
+		<ele>64.3972</ele>
+		<time>2025-02-14T11:49:18.000+09:00</time>
+		<geoidheight>41.1468</geoidheight>
+		<name>tomiWheatInside22</name>
+		<cmt>Raw-data lat=37.364050152 lon=140.985905595 ellipsoidHeight=105.544 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.922876</vdop>
+		<pdop>1.09</pdop>
+		<extensions>
+			<b:pointNumber>22</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:48:48.124</b:starttime>
+				<b:endtime>2025-02-14T11:49:18.000</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0121</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0027</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2787.3215</b:vectorX>
+				<b:vectorY>894.3342</b:vectorY>
+				<b:vectorZ>2177.9228</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364053088" lon="140.985876102">
+		<ele>64.3949</ele>
+		<time>2025-02-14T11:49:59.749+09:00</time>
+		<geoidheight>41.1471</geoidheight>
+		<name>tomiWheatInside23</name>
+		<cmt>Raw-data lat=37.364053088 lon=140.985876102 ellipsoidHeight=105.542 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.9110434</vdop>
+		<pdop>1.08</pdop>
+		<extensions>
+			<b:pointNumber>23</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:49:29.874</b:starttime>
+				<b:endtime>2025-02-14T11:49:59.749</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0494</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0029</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2789.1211</b:vectorX>
+				<b:vectorY>896.2388</b:vectorY>
+				<b:vectorZ>2178.1805</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.36404137" lon="140.985889554">
+		<ele>64.3790</ele>
+		<time>2025-02-14T11:50:41.499+09:00</time>
+		<geoidheight>41.1470</geoidheight>
+		<name>tomiWheatInside24</name>
+		<cmt>Raw-data lat=37.36404137 lon=140.985889554 ellipsoidHeight=105.526 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.9110434</vdop>
+		<pdop>1.08</pdop>
+		<extensions>
+			<b:pointNumber>24</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:50:11.624</b:starttime>
+				<b:endtime>2025-02-14T11:50:41.499</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0234</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0035</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2787.7675</b:vectorX>
+				<b:vectorY>895.8017</b:vectorY>
+				<b:vectorZ>2177.1372</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364040468" lon="140.985869749">
+		<ele>64.3928</ele>
+		<time>2025-02-14T11:51:22.124+09:00</time>
+		<geoidheight>41.1472</geoidheight>
+		<name>tomiWheatInside25</name>
+		<cmt>Raw-data lat=37.364040468 lon=140.985869749 ellipsoidHeight=105.54 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.9110434</vdop>
+		<pdop>1.08</pdop>
+		<extensions>
+			<b:pointNumber>25</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:50:52.249</b:starttime>
+				<b:endtime>2025-02-14T11:51:22.124</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0147</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0026</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2788.8161</b:vectorX>
+				<b:vectorY>897.2102</b:vectorY>
+				<b:vectorZ>2177.0661</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364006493" lon="140.985971318">
+		<ele>64.4249</ele>
+		<time>2025-02-14T11:52:12.874+09:00</time>
+		<geoidheight>41.1461</geoidheight>
+		<name>tomiWheatInside26</name>
+		<cmt>Raw-data lat=37.364006493 lon=140.985971318 ellipsoidHeight=105.571 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.89916635</vdop>
+		<pdop>1.07</pdop>
+		<extensions>
+			<b:pointNumber>26</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:51:43.000</b:starttime>
+				<b:endtime>2025-02-14T11:52:12.874</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0323</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0036</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2781.3548</b:vectorX>
+				<b:vectorY>891.6751</b:vectorY>
+				<b:vectorZ>2174.0879</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364007961" lon="140.985987507">
+		<ele>64.4151</ele>
+		<time>2025-02-14T11:52:56.749+09:00</time>
+		<geoidheight>41.1459</geoidheight>
+		<name>tomiWheatInside27</name>
+		<cmt>Raw-data lat=37.364007961 lon=140.985987507 ellipsoidHeight=105.561 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.89916635</vdop>
+		<pdop>1.07</pdop>
+		<extensions>
+			<b:pointNumber>27</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:52:26.874</b:starttime>
+				<b:endtime>2025-02-14T11:52:56.749</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0118</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0039</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2780.5350</b:vectorX>
+				<b:vectorY>890.4936</b:vectorY>
+				<b:vectorZ>2174.2113</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364020303" lon="140.985973656">
+		<ele>64.3919</ele>
+		<time>2025-02-14T11:53:38.374+09:00</time>
+		<geoidheight>41.1461</geoidheight>
+		<name>tomiWheatInside28</name>
+		<cmt>Raw-data lat=37.364020303 lon=140.985973656 ellipsoidHeight=105.538 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>31</sat>
+		<hdop>0.58</hdop>
+		<vdop>0.88724285</vdop>
+		<pdop>1.06</pdop>
+		<extensions>
+			<b:pointNumber>28</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:53:08.499</b:starttime>
+				<b:endtime>2025-02-14T11:53:38.374</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.041</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0021</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:8 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2781.9675</b:vectorX>
+				<b:vectorY>890.9121</b:vectorY>
+				<b:vectorZ>2175.2861</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364017379" lon="140.986002641">
+		<ele>64.4302</ele>
+		<time>2025-02-14T11:54:27.374+09:00</time>
+		<geoidheight>41.1458</geoidheight>
+		<name>tomiWheatInside29</name>
+		<cmt>Raw-data lat=37.364017379 lon=140.986002641 ellipsoidHeight=105.576 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.57</hdop>
+		<vdop>0.8818162</vdop>
+		<pdop>1.05</pdop>
+		<extensions>
+			<b:pointNumber>29</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:53:57.499</b:starttime>
+				<b:endtime>2025-02-14T11:54:27.374</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0203</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.003</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:9 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2780.1746</b:vectorX>
+				<b:vectorY>889.0600</b:vectorY>
+				<b:vectorZ>2175.0512</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+<wpt lat="37.364030842" lon="140.985983126">
+		<ele>64.4240</ele>
+		<time>2025-02-14T11:55:09.624+09:00</time>
+		<geoidheight>41.1460</geoidheight>
+		<name>tomiWheatInside30</name>
+		<cmt>Raw-data lat=37.364030842 lon=140.985983126 ellipsoidHeight=105.57 Measurement_time_sec=30</cmt>
+		<fix>dgps</fix>
+		<sat>32</sat>
+		<hdop>0.57</hdop>
+		<vdop>0.869885</vdop>
+		<pdop>1.04</pdop>
+		<extensions>
+			<b:pointNumber>30</b:pointNumber>
+			<b:coordGenaration>JGD2011_R</b:coordGenaration>
+			<b:measurement>
+				<b:geoidSystem>GSIGEO 2011 V2.1</b:geoidSystem>
+				<b:starttime>2025-02-14T11:54:39.749</b:starttime>
+				<b:endtime>2025-02-14T11:55:09.624</b:endtime>
+				<b:epochs>240</b:epochs>
+				<b:epochInterval>0.125</b:epochInterval>
+				<b:satMinEle>15.0</b:satMinEle>
+				<b:stddevDistanceMeter>0.0112</b:stddevDistanceMeter>
+				<b:stddevHeightMeter>0.0027</b:stddevHeightMeter>
+				<b:lastHacc>0.014</b:lastHacc>
+				<b:lastVacc>0.01</b:lastVacc>
+				<b:fixMode>3D DGNSS FIXED</b:fixMode>
+				<b:enableTiltCorrection>false</b:enableTiltCorrection>
+				<b:tiltAntHeight>0.0</b:tiltAntHeight>
+				<b:antennaHeightNote>2.0</b:antennaHeightNote>
+				<b:group>0</b:group>
+				<b:index>0</b:index>
+				<b:carrierWaveSats>G:9 R:4 E:7 B:8 </b:carrierWaveSats>
+				<b:signals>L1 L2 E1 E5b B2I B1 L1OF L2OF </b:signals>
+				<b:receiverName>DG-PRO1RWS_main HPG 1.13</b:receiverName>
+				<b:vectorX>2781.9712</b:vectorX>
+				<b:vectorY>889.8294</b:vectorY>
+				<b:vectorZ>2176.2352</b:vectorZ>
+				<b:baseStation>
+					<b:host></b:host>
+					<b:mountPoint></b:mountPoint>
+					<b:definedCoordinateType>0</b:definedCoordinateType>
+					<b:ecefX>-3946528.664100</b:ecefX>
+					<b:ecefY>3194291.058700</b:ecefY>
+					<b:ecefZ>3847467.619200</b:ecefZ>
+					<b:antennaHeight>0.0000</b:antennaHeight>
+				</b:baseStation>
+			</b:measurement>
+		</extensions>
+</wpt>
+</gpx>
