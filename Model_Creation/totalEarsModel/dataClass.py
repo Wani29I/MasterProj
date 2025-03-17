@@ -26,14 +26,13 @@ class WheatEarDataset(Dataset):
         self.label_col = label_col
         self.height = height
         self.width = width
-        self.transform = self.get_transform()
 
     def __len__(self):
         return len(self.data)
 
     def __getitem__(self, idx):
+
         # Load RGB image
-        
         rgb_path = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
         rgb = Image.open(rgb_path).convert("RGB")
         rgb = np.array(rgb)  # (H, W, 3)
