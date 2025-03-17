@@ -208,6 +208,43 @@ def normalizeDSM(dsmPath):
     print("Normalized DSM Max:", normalized_dsm.max())
     print("Normalized DSM Shape:", normalized_dsm.shape)
 
+def resize_rgb_return_array(input_path, target_size=(512, 256)):
+    """
+    Resize RGB image and return as NumPy array (no saving).
+
+    Args:
+        input_path (str): Path to input RGB image.
+        target_size (tuple): (width, height) to resize.
+
+    Returns:
+        np.ndarray: Resized RGB image as array.
+    """
+    img = Image.open(input_path).convert("RGB")
+    img_resized = img.resize(target_size, Image.BILINEAR)  # Smooth resize
+    return np.array(img_resized)
+
+
+def resize_dsm_return_array(input_dsm_path, target_width=512, target_height=256):
+    """
+    Resize DSM and return as NumPy array (no saving).
+
+    Args:
+        input_dsm_path (str): Path to DSM file.
+        target_width (int): Desired width.
+        target_height (int): Desired height.
+
+    Returns:
+        np.ndarray: Resized DSM array.
+    """
+    with rasterio.open(input_dsm_path) as src:
+        dsm_resized = src.read(
+            out_shape=(src.count, target_height, target_width),
+            resampling=Resampling.bilinear
+        )[0]  # Return band 1
+
+    return dsm_resized
+
+
 if __name__ == '__main__':
     mainPath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData"
     dataList = openAndSplitData("RGB_DSM_totEarNum.csv")
