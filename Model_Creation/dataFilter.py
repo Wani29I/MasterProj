@@ -185,9 +185,10 @@ def writeFileCSV(dataList, fileName):
 # selectedDataAugMethod = selectDataByAugmentMethod(allData, augmentMethod)
 # dataByDate = selectDataByDate(allData, dateList[17:])
 # filteredData = filterDataColumn(allData, dataColumn, testDataFilter)
+
 if __name__ == '__main__':
-    dataFilePath = "D:/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     dataFilePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
+    dataFilePath = "D:/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     selectedDataKeyDateList = ["202404251118", "202404301146", "202405071327", "202405131248", 
                     "202405171307", "202405221319", "202405271230", "202405311536", 
                     "202406041351", "202406071509", "202406111255", "202406141237", 
@@ -199,9 +200,11 @@ if __name__ == '__main__':
                 "totEarNum", "avgEarSize", "20StrawWerightBeforeDry", "20StrawWerightAfterDry", 
                 "strawWeightDecreasePercent", "totalSeedNum", "seedNumLessThan2MM", "totalSeedWeightBeforeDry", 
                 "seedLessThan2MMWeightBeforeDry", "totalSeedWeightAfterDry", "seedLessThan2MMWeightAfterDry", "DSMPath"]
-    selectedDataColumn = ["imagePath", "DSMPath", "totEarNum"]
+    
+
+    selectedDataColumn = ["imagePath", "DSMPath", "avgEarSize"]
 
     allData = openAndSplitData(dataFilePath)
     filteredData = filterData(allData, [], selectedDataKeyDateList, selectedRawImgKey, augmentMethod, selectedDataColumn, dataColumn)
 
-    writeFileCSV(filteredData, "RGB_DSM_totEarNum.csv")
+    writeFileCSV(filteredData, "RGB_DSM_avgEarSize.csv")
