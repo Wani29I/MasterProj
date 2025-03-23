@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 from torchvision.models import convnext_tiny, ConvNeXt_Tiny_Weights
 
-class ConvNeXtWheatModel(nn.Module):
+class ConvNeXtTinyWheatModel(nn.Module):
     def __init__(self):
-        super(ConvNeXtWheatModel, self).__init__()
+        super(ConvNeXtTinyWheatModel, self).__init__()
 
         # ✅ Pretrained ConvNeXt-Tiny for RGB (3-channel)
         self.rgb_model = convnext_tiny(weights=ConvNeXt_Tiny_Weights.IMAGENET1K_V1)
