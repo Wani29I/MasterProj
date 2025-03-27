@@ -208,3 +208,4 @@ if __name__ == '__main__':
     filteredData = filterData(allData, [], selectedDataKeyDateList, selectedRawImgKey, augmentMethod, selectedDataColumn, dataColumn)
 
     writeFileCSV(filteredData, "RGB_DSM_avgEarSize.csv")
+    
