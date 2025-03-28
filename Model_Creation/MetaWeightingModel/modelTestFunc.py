@@ -1,8 +1,50 @@
 import torch
 import numpy as np
+import pandas as pd
+from tqdm import tqdm
 import matplotlib.pyplot as plt
+import torch.nn.functional as F
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from sklearn.metrics import mean_squared_error, root_mean_squared_error, mean_absolute_error, r2_score
+
+def new_test_model(model, test_loader, device):
+    model.eval()
+    preds, stds, targets = [], [], []
+
+    with torch.no_grad():
+        for rgb_batch, dsm_batch, label_batch in tqdm(test_loader):
+            rgb_batch, dsm_batch = rgb_batch.to(device), dsm_batch.to(device)
+            output = model(rgb_batch, dsm_batch)  # [B, 2]
+
+            pred_mean = output[:, 0].cpu().numpy()
+            pred_logvar = output[:, 1].cpu().numpy()
+            pred_std = (torch.exp(0.5 * output[:, 1])).cpu().numpy()
+
+            label_batch = label_batch.squeeze().cpu().numpy()
+
+            preds.extend(pred_mean)
+            stds.extend(pred_std)
+            targets.extend(label_batch)
+
+    # ✅ Metrics
+    r2 = r2_score(targets, preds)
+    mae = mean_absolute_error(targets, preds)
+    rmse = root_mean_squared_error(targets, preds)
+
+    print(f"\n📊 Test Results:")
+    print(f"✅ R² Score : {r2:.4f}")
+    print(f"✅ MAE      : {mae:.4f}")
+    print(f"✅ RMSE     : {rmse:.4f}")
+
+    # ✅ Save predictions for analysis (optional)
+    df = pd.DataFrame({
+        "true": targets,
+        "predicted": preds,
+        "predicted_std": stds
+    })
+    df.to_csv("model_predictions_with_confidence.csv", index=False)
+
+    return df, r2, mae, rmse
 
 # ✅ Test the model on validation set
 def test_model(model, test_loader):
