@@ -174,6 +174,13 @@ def deleteNull(filteredData):
 
     return returnData
 
+def addDataColumn(dataList, selectedDataColumn):
+    returnData = []
+
+    
+
+    return returnData
+
 
 def writeFileCSV(dataList, fileName):
     '''
@@ -232,7 +239,7 @@ if __name__ == '__main__':
                 "seedLessThan2MMWeightBeforeDry", "totalSeedWeightAfterDry", "seedLessThan2MMWeightAfterDry", "DSMPath"]
     
     # select data to be filtered
-    selectedDataColumn = ["imagePath", "DSMPath", "SPAD"]
+    selectedDataColumn = ["imagePath", "DSMPath", "avgEarSize"]
 
     # get all data from file
     allData = openAndSplitData(dataFilePath)
@@ -243,6 +250,9 @@ if __name__ == '__main__':
     # delete data line with null
     finalData = deleteNull(filteredData)
 
+    # add data column
+    finalData.insert(0, selectedDataColumn)
+
     # save data as csv
-    writeFileCSV(finalData, "RGB_DSM_SPAD.csv")
+    writeFileCSV(finalData, "RGB_DSM_avgEarSize.csv")
     
