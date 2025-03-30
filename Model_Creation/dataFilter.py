@@ -232,14 +232,14 @@ if __name__ == '__main__':
                     "202406171112"]
     selectedRawImgKey = [ "original", "raw1", "raw2", "raw3"]
     augmentMethod = ['original', 'flipped', 'rotated', 'zoomed', 'brightenOriginal', 'darkenOriginal', 'brightenFlipped', 'darkenFlipped', 'jittered', 'noisy']
-    dataColumn = [ "imagePath", "DataKey","DATE", "Height", "SPAD", "LAI", "leafWidth", "leafLength", 
+    dataColumn = [ "rgb", "DataKey","DATE", "Height", "SPAD", "LAI", "leafWidth", "leafLength", 
                 "centerEarWeight", "centerEarNum", "sideEarWeight", "sideEarNum", "totEarWeight",	
                 "totEarNum", "avgEarSize", "20StrawWerightBeforeDry", "20StrawWerightAfterDry", 
                 "strawWeightDecreasePercent", "totalSeedNum", "seedNumLessThan2MM", "totalSeedWeightBeforeDry", 
-                "seedLessThan2MMWeightBeforeDry", "totalSeedWeightAfterDry", "seedLessThan2MMWeightAfterDry", "DSMPath"]
+                "seedLessThan2MMWeightBeforeDry", "totalSeedWeightAfterDry", "seedLessThan2MMWeightAfterDry", "dsm"]
     
     # select data to be filtered
-    selectedDataColumn = ["imagePath", "DSMPath", "avgEarSize"]
+    selectedDataColumn = ["rgb", "dsm", "avgEarSize"]
 
     # get all data from file
     allData = openAndSplitData(dataFilePath)

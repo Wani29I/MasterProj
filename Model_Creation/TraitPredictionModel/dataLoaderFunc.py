@@ -10,7 +10,6 @@ from dataClass import WheatEarDataset
 
 def loadSplitData(dataPath):
     # Load dataset
-    # df = pd.read_csv("/Users/ice/Desktop/MasterResearch/MasterProj/Model_Creation/totalEarsModel/RGB_DSM_totEarNum.csv")
     df = pd.read_csv(dataPath)
 
     # Train-Validation-Test Split (80%-10%-10%)
@@ -27,11 +26,11 @@ def loadSplitData(dataPath):
 
     return train_df, val_df, test_df
 
-def createLoader(train_df, val_df, test_df):
+def createLoader(train_df, val_df, test_df, traitName):
     # Create dataset instances for each split
-    train_dataset = WheatEarDataset(train_df)
-    val_dataset = WheatEarDataset(val_df)
-    test_dataset = WheatEarDataset(test_df)
+    train_dataset = WheatEarDataset(train_df, label_col = traitName)
+    val_dataset = WheatEarDataset(val_df, label_col = traitName)
+    test_dataset = WheatEarDataset(test_df, label_col = traitName)
 
     # Create DataLoaders
     train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True, num_workers=4)
