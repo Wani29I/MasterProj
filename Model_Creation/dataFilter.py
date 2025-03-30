@@ -147,8 +147,38 @@ def filterData(allData, dateKeyList = [], dateList = [], ImgTypeList = [], Augme
 
     return returnData
 
+def deleteNull(filteredData):
+    '''
+    delete line if line have null value
+    '''
+    returnData = []
+    null = False
+
+    # loop into each line
+    for eachLine in filteredData:
+        
+        # loop check each data if the data is '' (null)
+        for data in eachLine:
+            if(data == ''):
+                # if null: set null = True
+                null = True
+
+        # if not null: append to return data
+        if(not null):
+           returnData.append(eachLine)
+
+           # set null value back to False
+        null = False
+
+    print("original data:", len(filteredData), "----- deleted null data:", len(returnData))
+
+    return returnData
+
+
 def writeFileCSV(dataList, fileName):
-    # print(content)
+    '''
+    write file as csv 
+    '''
     file = open(fileName, "a")
 
     for data in dataList:
@@ -201,11 +231,18 @@ if __name__ == '__main__':
                 "strawWeightDecreasePercent", "totalSeedNum", "seedNumLessThan2MM", "totalSeedWeightBeforeDry", 
                 "seedLessThan2MMWeightBeforeDry", "totalSeedWeightAfterDry", "seedLessThan2MMWeightAfterDry", "DSMPath"]
     
+    # select data to be filtered
+    selectedDataColumn = ["imagePath", "DSMPath", "SPAD"]
 
-    selectedDataColumn = ["imagePath", "DSMPath", "avgEarSize"]
-
+    # get all data from file
     allData = openAndSplitData(dataFilePath)
+
+    # filter data
     filteredData = filterData(allData, [], selectedDataKeyDateList, selectedRawImgKey, augmentMethod, selectedDataColumn, dataColumn)
 
-    writeFileCSV(filteredData, "RGB_DSM_avgEarSize.csv")
+    # delete data line with null
+    finalData = deleteNull(filteredData)
+
+    # save data as csv
+    writeFileCSV(finalData, "RGB_DSM_SPAD.csv")
     

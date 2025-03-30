@@ -11,7 +11,7 @@ from dataClass import WheatEarDataset
 def loadSplitData(dataPath):
     # Load dataset
     # df = pd.read_csv("/Users/ice/Desktop/MasterResearch/MasterProj/Model_Creation/totalEarsModel/RGB_DSM_totEarNum.csv")
-    df = pd.read_csv("C:/Users/pacha/Desktop/masterProj/MasterProj/Model_Creation/MetaWeightingModel/WheatEarCountModel/RGB_DSM_totEarNum.csv")
+    df = pd.read_csv(dataPath)
 
     # Train-Validation-Test Split (80%-10%-10%)
     train_df, temp_df = train_test_split(df, test_size=0.2, random_state=42)
