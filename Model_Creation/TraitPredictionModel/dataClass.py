@@ -33,15 +33,15 @@ class WheatEarDataset(Dataset):
     def __getitem__(self, idx):
 
         # Load RGB image
-        # rgb_path = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
-        rgb_path = "D:/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
+        rgb_path = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
+        # rgb_path = "D:/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
         
         rgb = Image.open(rgb_path).convert("RGB")
         rgb = np.array(rgb)  # (H, W, 3)
 
         # Load DSM
-        # dsm_path = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
-        dsm_path = "D:/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
+        dsm_path = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
+        # dsm_path = "D:/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
         
         with rasterio.open(dsm_path) as src:
             dsm = src.read(1).astype(np.float32)
