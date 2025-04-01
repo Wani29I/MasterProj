@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from sklearn.model_selection import train_test_split
-from dataLoaderFunc import loadSplitData, createLoader
+from dataLoaderFunc import loadSplitData, createLoader, loadSplitData_no_leak
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, root_mean_squared_error
 
 # ✅ Custom Gaussian NLL Loss
@@ -148,7 +148,7 @@ def setAndTrainModel(dataPath, traitName, model, savePath = "./",  num_epochs = 
     device = setDevice()
 
     # get train_loader, val_loader, test_loader from data
-    train_df, val_df, test_df = loadSplitData(dataPath)
+    train_df, val_df, test_df = loadSplitData_no_leak(dataPath)
     train_loader, val_loader, test_loader = createLoader(train_df, val_df, test_df, traitName)
     modelName = model().to(device)
     optimizer = optim.Adam(modelName.parameters(), lr=1e-4)
@@ -275,6 +275,6 @@ def setAndTestModel(dataPath, traitName, model, modelPath):
     else:
         EfficientNetV2Model.load_state_dict(torch.load(modelPath, map_location=torch.device("cpu")))
     EfficientNetV2Model.eval()
-    
+
     # Run test
     df_results, r2, mae, rmse = new_test_model(EfficientNetV2Model, test_loader, device)

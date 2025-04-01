@@ -224,8 +224,8 @@ def writeFileCSV(dataList, fileName):
 # filteredData = filterDataColumn(allData, dataColumn, testDataFilter)
 
 if __name__ == '__main__':
-    dataFilePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     dataFilePath = "D:/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
+    dataFilePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     selectedDataKeyDateList = ["202404251118", "202404301146", "202405071327", "202405131248", 
                     "202405171307", "202405221319", "202405271230", "202405311536", 
                     "202406041351", "202406071509", "202406111255", "202406141237", 
@@ -239,7 +239,7 @@ if __name__ == '__main__':
                 "seedLessThan2MMWeightBeforeDry", "totalSeedWeightAfterDry", "seedLessThan2MMWeightAfterDry", "dsm"]
     
     # select data to be filtered
-    selectedDataColumn = ["rgb", "dsm", "avgEarSize"]
+    selectedDataColumn = ["DataKey", "rgb", "dsm", "totEarNum"]
 
     # get all data from file
     allData = openAndSplitData(dataFilePath)
@@ -254,5 +254,5 @@ if __name__ == '__main__':
     finalData.insert(0, selectedDataColumn)
 
     # save data as csv
-    writeFileCSV(finalData, "RGB_DSM_avgEarSize.csv")
+    writeFileCSV(finalData, "DataKey_RGB_DSM_totEarNum.csv")
     

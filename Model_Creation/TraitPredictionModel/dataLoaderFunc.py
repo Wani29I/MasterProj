@@ -3,6 +3,7 @@ import sys
 import pandas as pd
 from torch.utils.data import DataLoader
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GroupShuffleSplit
 
 # Get current working directory instead of __file__
 sys.path.append(os.path.abspath(os.path.join(os.getcwd(), "..")))
@@ -24,6 +25,28 @@ def loadSplitData(dataPath):
     # Print sizes
     print(f"Train Size: {len(train_df)}, Validation Size: {len(val_df)}, Test Size: {len(test_df)}")
 
+    return train_df, val_df, test_df
+
+def loadSplitData_no_leak(dataPath, group_col="DataKey", val_size=0.1, test_size=0.1):
+    df = pd.read_csv(dataPath)
+
+    # Split off validation + test first using GroupShuffleSplit
+    gss = GroupShuffleSplit(n_splits=1, test_size=val_size + test_size, random_state=42)
+    groups = df[group_col]
+    train_idx, temp_idx = next(gss.split(df, groups=groups))
+
+    train_df = df.iloc[train_idx].reset_index(drop=True)
+    temp_df = df.iloc[temp_idx].reset_index(drop=True)
+
+    # Now split temp into val and test
+    gss2 = GroupShuffleSplit(n_splits=1, test_size=0.5, random_state=42)
+    groups_temp = temp_df[group_col]
+    val_idx, test_idx = next(gss2.split(temp_df, groups=groups_temp))
+
+    val_df = temp_df.iloc[val_idx].reset_index(drop=True)
+    test_df = temp_df.iloc[test_idx].reset_index(drop=True)
+
+    print(f"✅ Safe Split → Train: {len(train_df)}, Val: {len(val_df)}, Test: {len(test_df)}")
     return train_df, val_df, test_df
 
 def createLoader(train_df, val_df, test_df, traitName):
