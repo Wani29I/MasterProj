@@ -2,14 +2,16 @@ import os
 import sys
 import torch
 import numpy as np
+import pandas as pd
 from tqdm import tqdm
 import torch.nn as nn
 import torch.optim as optim
 import matplotlib.pyplot as plt
+import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from dataLoaderFunc import loadSplitData, createLoader
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, root_mean_squared_error
 
 # ✅ Custom Gaussian NLL Loss
 def gaussian_nll_loss(pred_mean, pred_logvar, target):
@@ -126,7 +128,7 @@ def setDevice():
     print(f"✅ Using device: {device}")
     return device
 
-def setAllTrainModel(dataPath, traitName, model, savePath = "./",  num_epochs = 10):
+def setAndTrainModel(dataPath, traitName, model, savePath = "./",  num_epochs = 10):
     '''
     set all data and train model
     dataPath, traitName, model, num_epochs
@@ -154,3 +156,125 @@ def setAllTrainModel(dataPath, traitName, model, savePath = "./",  num_epochs = 
 
     # train and save model
     train_model_laplace(modelName, train_loader, val_loader, optimizer, scheduler, device, saveModelPath,  num_epochs = num_epochs)
+
+def new_test_model(model, test_loader, device):
+    model.eval()
+    preds, stds, targets = [], [], []
+
+    with torch.no_grad():
+        for rgb_batch, dsm_batch, label_batch in tqdm(test_loader):
+            rgb_batch, dsm_batch = rgb_batch.to(device), dsm_batch.to(device)
+            output = model(rgb_batch, dsm_batch)  # [B, 2]
+
+            pred_mean = output[:, 0].cpu().numpy()
+            pred_logvar = output[:, 1].cpu().numpy()
+            pred_std = (torch.exp(0.5 * output[:, 1])).cpu().numpy()
+
+            label_batch = label_batch.squeeze().cpu().numpy()
+
+            preds.extend(pred_mean)
+            stds.extend(pred_std)
+            targets.extend(label_batch)
+
+    # ✅ Metrics
+    r2 = r2_score(targets, preds)
+    mae = mean_absolute_error(targets, preds)
+    rmse = root_mean_squared_error(targets, preds)
+
+    print(f"\n📊 Test Results:")
+    print(f"✅ R² Score : {r2:.4f}")
+    print(f"✅ MAE      : {mae:.4f}")
+    print(f"✅ RMSE     : {rmse:.4f}")
+
+    # ✅ Save predictions for analysis (optional)
+    df = pd.DataFrame({
+        "true": targets,
+        "predicted": preds,
+        "predicted_std": stds
+    })
+    df.to_csv("model_predictions_with_confidence.csv", index=False)
+
+    return df, r2, mae, rmse
+
+# ✅ Test the model on validation set
+def test_model(model, test_loader):
+    if torch.backends.mps.is_available():
+        device = "mps"  # ✅ Use Apple Metal (Mac M1/M2)
+        torch.set_default_tensor_type(torch.FloatTensor)
+    elif torch.cuda.is_available():
+        device = "cuda"  # ✅ Use NVIDIA CUDA (Windows RTX 4060)
+    else:
+        device = "cpu"  # ✅ Default to CPU if no GPU is available
+    model.eval()
+    predictions, actuals = [], []
+
+    with torch.no_grad():
+        for rgb_batch, dsm_batch, label_batch in test_loader:
+            rgb_batch, dsm_batch = rgb_batch.to(device), dsm_batch.to(device)
+            outputs = model(rgb_batch, dsm_batch)
+            predictions.extend(outputs.cpu().numpy().flatten())
+            actuals.extend(label_batch.cpu().numpy().flatten())
+
+    return predictions, actuals
+
+def evaluate_model(model, dataloader, device, plot_predictions=False):
+    model.eval()
+    all_preds = []
+    all_labels = []
+
+    with torch.no_grad():
+        for rgb_batch, dsm_batch, labels in dataloader:
+            rgb_batch, dsm_batch = rgb_batch.to(device), dsm_batch.to(device)
+            labels = labels.to(device)
+
+            outputs = model(rgb_batch, dsm_batch).squeeze()
+            all_preds.extend(outputs.cpu().numpy())
+            all_labels.extend(labels.cpu().numpy())
+
+    all_preds = np.array(all_preds)
+    all_labels = np.array(all_labels)
+
+    # ✅ Evaluation Metrics
+    mae = mean_absolute_error(all_labels, all_preds)
+    mse = mean_squared_error(all_labels, all_preds)
+    rmse = np.sqrt(mse)  # ✅ Manual RMSE
+    r2 = r2_score(all_labels, all_preds)
+
+    print("📊 Evaluation Results:")
+    print(f"✅ MAE:   {mae:.2f}")
+    print(f"✅ RMSE:  {rmse:.2f}")
+    print(f"✅ R²:    {r2:.4f}")
+
+    # ✅ Optional: Plot Predictions vs Ground Truth
+    if plot_predictions:
+        plt.figure(figsize=(8, 6))
+        plt.scatter(all_labels, all_preds, alpha=0.5)
+        plt.plot([all_labels.min(), all_labels.max()], [all_labels.min(), all_labels.max()], 'r--')
+        plt.xlabel("True Value")
+        plt.ylabel("Predicted Value")
+        plt.title("Predicted vs. True Value")
+        plt.grid(True)
+        plt.tight_layout()
+        plt.show()
+
+def setAndTestModel(dataPath, traitName, model, modelPath):
+    '''
+    set data, device and test model
+    '''
+    # get data
+    train_df, val_df, test_df = loadSplitData(dataPath)
+    train_loader, val_loader, test_loader = createLoader(train_df, val_df, test_df, traitName)
+    
+    # set device
+    device = setDevice()
+
+    # load model
+    EfficientNetV2Model = model().to(device)
+    if(device == "cuda"):
+        EfficientNetV2Model.load_state_dict(torch.load(modelPath))
+    else:
+        EfficientNetV2Model.load_state_dict(torch.load(modelPath, map_location=torch.device("cpu")))
+    EfficientNetV2Model.eval()
+    
+    # Run test
+    df_results, r2, mae, rmse = new_test_model(EfficientNetV2Model, test_loader, device)
