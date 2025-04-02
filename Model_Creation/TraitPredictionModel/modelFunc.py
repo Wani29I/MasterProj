@@ -262,7 +262,7 @@ def setAndTestModel(dataPath, traitName, model, modelPath):
     set data, device and test model
     '''
     # get data
-    train_df, val_df, test_df = loadSplitData(dataPath)
+    train_df, val_df, test_df = loadSplitData_no_leak(dataPath)
     train_loader, val_loader, test_loader = createLoader(train_df, val_df, test_df, traitName)
     
     # set device
