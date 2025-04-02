@@ -49,18 +49,18 @@ def loadSplitData_no_leak(dataPath, group_col="DataKey", val_size=0.1, test_size
     print(f"✅ Safe Split → Train: {len(train_df)}, Val: {len(val_df)}, Test: {len(test_df)}")
     return train_df, val_df, test_df
 
-def createLoader(train_df, val_df, test_df, traitName):
+def createLoader(train_df, val_df, test_df, traitName, extra_input_col=None):
     # Create dataset instances for each split
-    train_dataset = WheatEarDataset(train_df, label_col = traitName)
-    val_dataset = WheatEarDataset(val_df, label_col = traitName)
-    test_dataset = WheatEarDataset(test_df, label_col = traitName)
+    train_dataset = WheatEarDataset(train_df, label_col=traitName, extra_input_col=extra_input_col)
+    val_dataset   = WheatEarDataset(val_df,   label_col=traitName, extra_input_col=extra_input_col)
+    test_dataset  = WheatEarDataset(test_df,  label_col=traitName, extra_input_col=extra_input_col)
 
     # Create DataLoaders
     train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True, num_workers=4)
-    val_loader = DataLoader(val_dataset, batch_size=16, shuffle=False, num_workers=4)  # No shuffle for validation
-    test_loader = DataLoader(test_dataset, batch_size=16, shuffle=False, num_workers=4)  # No shuffle for testing
+    val_loader   = DataLoader(val_dataset,   batch_size=16, shuffle=False, num_workers=4)
+    test_loader  = DataLoader(test_dataset,  batch_size=16, shuffle=False, num_workers=4)
 
-    # Check sizes
+    # Log batch counts
     print(f"Train Batches: {len(train_loader)}, Validation Batches: {len(val_loader)}, Test Batches: {len(test_loader)}")
 
     return train_loader, val_loader, test_loader

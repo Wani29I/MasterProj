@@ -174,12 +174,29 @@ def deleteNull(filteredData):
 
     return returnData
 
-def addDataColumn(dataList, selectedDataColumn):
+def addTime(dataList, selectedDataColumn):
+    '''
+    add time to data
+    get data list and selected column and return new of both
+    '''
     returnData = []
 
-    
+    # loop into every line of data
+    for dataLine in dataList:
+        DataKey = dataLine[0]
 
-    return returnData
+        # calculate time from data key
+        hhmm = int(DataKey[8:12])
+        time_float = (hhmm // 100) + (hhmm % 100) / 60.0  
+
+        # add time to each line
+        dataLine.append(str(time_float))
+        returnData.append(dataLine)
+
+    # add column "time"
+    selectedDataColumn.append('time')
+
+    return returnData, selectedDataColumn
 
 
 def writeFileCSV(dataList, fileName):
@@ -239,7 +256,7 @@ if __name__ == '__main__':
                 "seedLessThan2MMWeightBeforeDry", "totalSeedWeightAfterDry", "seedLessThan2MMWeightAfterDry", "dsm"]
     
     # select data to be filtered
-    selectedDataColumn = ["DataKey", "rgb", "dsm", "totEarNum"]
+    selectedDataColumn = ["DataKey", "rgb", "dsm", "totEarWeight", "LAI"]
 
     # get all data from file
     allData = openAndSplitData(dataFilePath)
@@ -250,9 +267,12 @@ if __name__ == '__main__':
     # delete data line with null
     finalData = deleteNull(filteredData)
 
+    # add time to data
+    finalData, selectedDataColumn = addTime(finalData, selectedDataColumn)
+
     # add data column
     finalData.insert(0, selectedDataColumn)
 
     # save data as csv
-    writeFileCSV(finalData, "DataKey_RGB_DSM_totEarNum.csv")
+    writeFileCSV(finalData, "DataKey_RGB_DSM_totEarWeight_LAI_time.csv")
     

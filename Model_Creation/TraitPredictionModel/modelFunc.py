@@ -117,6 +117,56 @@ def train_model_laplace(model, train_loader, val_loader, optimizer, scheduler, d
         # ✅ Save Model
         torch.save(model.state_dict(), f"{fileName}{epoch+1}.pth")
 
+def train_model_laplace_addoneinput(model, train_loader, val_loader, optimizer, scheduler, device, fileName, num_epochs=10):
+    for epoch in range(num_epochs):
+        model.train()
+        train_loss = 0.0
+
+        for rgb_batch, dsm_batch, ear_weight_batch, label_batch in tqdm(train_loader, desc=f"Epoch {epoch+1}/{num_epochs}"):
+            rgb_batch = rgb_batch.to(device)
+            dsm_batch = dsm_batch.to(device)
+            ear_weight_batch = ear_weight_batch.to(device)
+            label_batch = label_batch.to(device)
+
+            optimizer.zero_grad()
+            output = model(rgb_batch, dsm_batch, ear_weight_batch)  # 🆕 pass ear weight
+            pred_mean = output[:, 0]
+            pred_logvar = output[:, 1]
+
+            loss = laplace_nll_loss(pred_mean, pred_logvar, label_batch.squeeze())
+            loss.backward()
+            optimizer.step()
+
+            train_loss += loss.item()
+
+        train_loss /= len(train_loader)
+
+        # ✅ Validation
+        model.eval()
+        val_loss = 0.0
+        with torch.no_grad():
+            for rgb_batch, dsm_batch, ear_weight_batch, label_batch in val_loader:
+                rgb_batch = rgb_batch.to(device)
+                dsm_batch = dsm_batch.to(device)
+                ear_weight_batch = ear_weight_batch.to(device)
+                label_batch = label_batch.to(device)
+
+                output = model(rgb_batch, dsm_batch, ear_weight_batch)
+                pred_mean = output[:, 0]
+                pred_logvar = output[:, 1]
+
+                loss = laplace_nll_loss(pred_mean, pred_logvar, label_batch.squeeze())
+                val_loss += loss.item()
+
+        val_loss /= len(val_loader)
+        scheduler.step(val_loss)
+
+        print(f"✅ Epoch {epoch+1} | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f}")
+
+        # ✅ Save Model
+        torch.save(model.state_dict(), f"{fileName}{epoch+1}.pth")
+
+
 def setDevice():
     if torch.backends.mps.is_available():
         device = "mps"  # ✅ Use Apple Metal (Mac M1/M2)
@@ -156,6 +206,35 @@ def setAndTrainModel(dataPath, traitName, model, savePath = "./",  num_epochs = 
 
     # train and save model
     train_model_laplace(modelName, train_loader, val_loader, optimizer, scheduler, device, saveModelPath,  num_epochs = num_epochs)
+
+def setAndTrainModel_addoneinput(dataPath, extraInputName, traitName, model, savePath = "./",  num_epochs = 10):
+    '''
+    set all data and train model
+    dataPath, traitName, model, num_epochs
+    '''
+    # set model name and path to save model 
+    modelName = model.__name__ + "_" + traitName + "_extra" + extraInputName
+    saveModelPath = savePath + "/" + modelName
+
+    # check if path to save exist
+    if(not os.path.exists(savePath)):
+        print("Path doesn't exists.")
+        return 
+    
+    print("Save model to: ", saveModelPath)
+
+    # set device cpu/cuda/mps
+    device = setDevice()
+
+    # get train_loader, val_loader, test_loader from data
+    train_df, val_df, test_df = loadSplitData_no_leak(dataPath)
+    train_loader, val_loader, test_loader = createLoader(train_df, val_df, test_df, traitName=traitName, extra_input_col=extraInputName)
+    modelName = model().to(device)
+    optimizer = optim.Adam(modelName.parameters(), lr=1e-4)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=2)
+
+    # train and save model
+    train_model_laplace_addoneinput(modelName, train_loader, val_loader, optimizer, scheduler, device, saveModelPath,  num_epochs = num_epochs)
 
 def new_test_model(model, test_loader, device):
     model.eval()
