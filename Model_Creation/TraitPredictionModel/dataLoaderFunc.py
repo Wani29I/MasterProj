@@ -49,11 +49,11 @@ def loadSplitData_no_leak(dataPath, group_col="DataKey", val_size=0.1, test_size
     print(f"✅ Safe Split → Train: {len(train_df)}, Val: {len(val_df)}, Test: {len(test_df)}")
     return train_df, val_df, test_df
 
-def createLoader(train_df, val_df, test_df, traitName, extra_input_col=None):
+def createLoader(train_df, val_df, test_df, traitName, extra_input_cols=None):
     # Create dataset instances for each split
-    train_dataset = WheatEarDataset(train_df, label_col=traitName, extra_input_col=extra_input_col)
-    val_dataset   = WheatEarDataset(val_df,   label_col=traitName, extra_input_col=extra_input_col)
-    test_dataset  = WheatEarDataset(test_df,  label_col=traitName, extra_input_col=extra_input_col)
+    train_dataset = WheatEarDataset(train_df, label_col=traitName, extra_input_cols=extra_input_cols)
+    val_dataset   = WheatEarDataset(val_df,   label_col=traitName, extra_input_cols=extra_input_cols)
+    test_dataset  = WheatEarDataset(test_df,  label_col=traitName, extra_input_cols=extra_input_cols)
 
     # Create DataLoaders
     train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True, num_workers=4)

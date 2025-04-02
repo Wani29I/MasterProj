@@ -9,13 +9,13 @@ from rgbdsmAlignment import resize_dsm_return_array, resize_rgb_return_array, no
 
 class WheatEarDataset(Dataset):
     def __init__(self, dataframe, key_col='DataKey', rgb_col='rgb', dsm_col='dsm', label_col='totWheatEars',
-                 extra_input_col =None, height=256, width=512):
+                 extra_input_cols =None, height=256, width=512):
         self.data = dataframe
         self.key_col = key_col
         self.rgb_col = rgb_col
         self.dsm_col = dsm_col
         self.label_col = label_col
-        self.extra_input_col = extra_input_col  # Can be None
+        self.extra_input_cols = extra_input_cols  # Can be None
         self.height = height
         self.width = width
 
@@ -41,8 +41,12 @@ class WheatEarDataset(Dataset):
 
         label = torch.tensor([self.data.loc[idx, self.label_col]], dtype=torch.float32)
 
-        if self.extra_input_col:
-            extra_input = torch.tensor([self.data.loc[idx, self.extra_input_col]], dtype=torch.float32)
+        if self.extra_input_cols:
+            if isinstance(self.extra_input_cols, list):
+                extra_values = [self.data.loc[idx, col] for col in self.extra_input_cols]
+                extra_input = torch.tensor(extra_values, dtype=torch.float32)
+            else:
+                extra_input = torch.tensor([self.data.loc[idx, self.extra_input_cols]], dtype=torch.float32)
             return rgb_tensor, dsm_tensor, extra_input, label
         else:
             return rgb_tensor, dsm_tensor, label
