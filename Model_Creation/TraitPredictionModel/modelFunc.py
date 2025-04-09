@@ -441,5 +441,8 @@ def setAndTestModel(dataPath, traitName, model, modelPath):
         EfficientNetV2Model.load_state_dict(torch.load(modelPath, map_location=torch.device("cpu")))
     EfficientNetV2Model.eval()
 
+    print("traitName: ", traitName)
+    print("model: ", model.__name__)
+
     # Run test
     df_results, r2, mae, rmse = new_test_model(EfficientNetV2Model, test_loader, device)
