@@ -215,8 +215,6 @@ def train_model_laplace_addextrainput(model, train_loader, val_loader, optimizer
         # ✅ Save model
         torch.save(model.state_dict(), f"{fileName}{epoch+1}.pth")
 
-
-
 def setDevice():
     if torch.backends.mps.is_available():
         device = "mps"  # ✅ Use Apple Metal (Mac M1/M2)
@@ -321,7 +319,6 @@ def setAndTrainModel_addextrainput(dataPath, extraInputName, traitName, model, s
         modelInstance, train_loader, val_loader, optimizer, scheduler, device, saveModelPath, num_epochs=num_epochs
     )
 
-
 def new_test_model(model, test_loader, device):
     model.eval()
     preds, stds, targets = [], [], []
@@ -360,27 +357,6 @@ def new_test_model(model, test_loader, device):
     df.to_csv("model_predictions_with_confidence.csv", index=False)
 
     return df, r2, mae, rmse
-
-# ✅ Test the model on validation set
-def test_model(model, test_loader):
-    if torch.backends.mps.is_available():
-        device = "mps"  # ✅ Use Apple Metal (Mac M1/M2)
-        torch.set_default_tensor_type(torch.FloatTensor)
-    elif torch.cuda.is_available():
-        device = "cuda"  # ✅ Use NVIDIA CUDA (Windows RTX 4060)
-    else:
-        device = "cpu"  # ✅ Default to CPU if no GPU is available
-    model.eval()
-    predictions, actuals = [], []
-
-    with torch.no_grad():
-        for rgb_batch, dsm_batch, label_batch in test_loader:
-            rgb_batch, dsm_batch = rgb_batch.to(device), dsm_batch.to(device)
-            outputs = model(rgb_batch, dsm_batch)
-            predictions.extend(outputs.cpu().numpy().flatten())
-            actuals.extend(label_batch.cpu().numpy().flatten())
-
-    return predictions, actuals
 
 def evaluate_model(model, dataloader, device, plot_predictions=False):
     model.eval()
@@ -446,3 +422,72 @@ def setAndTestModel(dataPath, traitName, model, modelPath):
 
     # Run test
     df_results, r2, mae, rmse = new_test_model(EfficientNetV2Model, test_loader, device)
+
+def new_test_model_with_extra_input(model, test_loader, device):
+    model.eval()
+    preds, stds, targets = [], [], []
+
+    with torch.no_grad():
+        for rgb_batch, dsm_batch, extra_input_batch, label_batch in tqdm(test_loader):
+            # Move batches to the correct device
+            rgb_batch, dsm_batch, extra_input_batch = rgb_batch.to(device), dsm_batch.to(device), extra_input_batch.to(device)
+            
+            # Run the model with RGB, DSM, and extra input
+            output = model(rgb_batch, dsm_batch, extra_input_batch)  # [B, 2]
+
+            # Extract prediction and log variance
+            pred_mean = output[:, 0].cpu().numpy()
+            pred_logvar = output[:, 1].cpu().numpy()
+            pred_std = (torch.exp(0.5 * output[:, 1])).cpu().numpy()
+
+            label_batch = label_batch.squeeze().cpu().numpy()
+
+            preds.extend(pred_mean)
+            stds.extend(pred_std)
+            targets.extend(label_batch)
+
+    # Calculate Metrics
+    r2 = r2_score(targets, preds)
+    mae = mean_absolute_error(targets, preds)
+    rmse = root_mean_squared_error(targets, preds)
+
+    print(f"\n📊 Test Results:")
+    print(f"✅ R² Score : {r2:.4f}")
+    print(f"✅ MAE      : {mae:.4f}")
+    print(f"✅ RMSE     : {rmse:.4f}")
+
+    # Save predictions for analysis (optional)
+    df = pd.DataFrame({
+        "true": targets,
+        "predicted": preds,
+        "predicted_std": stds
+    })
+    df.to_csv("model_predictions_with_confidence.csv", index=False)
+
+    return df, r2, mae, rmse
+
+
+def setAndTestModel_with_extra_input(dataPath, traitName, model, modelPath, extraInputName):
+    '''
+    Set data, device, and test model with extra inputs.
+    '''
+    # Get data
+    train_df, val_df, test_df = loadSplitData_no_leak(dataPath)
+    train_loader, val_loader, test_loader = createLoader(train_df, val_df, test_df, traitName, extra_input_cols=extraInputName)
+    
+    # Set device (CPU, CUDA, MPS)
+    device = setDevice()
+
+    # Load model
+    model_instance = model().to(device)
+    if(device == "cuda"):
+        model_instance.load_state_dict(torch.load(modelPath))
+    else:
+        model_instance.load_state_dict(torch.load(modelPath, map_location=torch.device("cpu")))
+    model_instance.eval()
+
+    print("traitName: ", traitName)
+    print("model: ", model.__name__)
+
+    # Run test with extra input
+    df_results, r2, mae, rmse = new_test_model_with_extra_input(model_instance, test_loader, device)
