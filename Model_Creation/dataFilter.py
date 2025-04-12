@@ -256,7 +256,7 @@ if __name__ == '__main__':
                 "seedLessThan2MMWeightBeforeDry", "totalSeedWeightAfterDry", "seedLessThan2MMWeightAfterDry", "dsm"]
     
     # select data to be filtered
-    selectedDataColumn = ["DataKey", "rgb", "dsm", "20StrawWeightBeforeDry", "20StrawWeightAfterDry"]
+    selectedDataColumn = ["DataKey", "rgb", "dsm", "Height"]
 
     # get all data from file
     allData = openAndSplitData(dataFilePath)
@@ -274,5 +274,5 @@ if __name__ == '__main__':
     finalData.insert(0, selectedDataColumn)
 
     # save data as csv
-    writeFileCSV(finalData, "DataKey_RGB_DSM_20StrawWeightBeforeDry_20StrawWeightAfterDry.csv")
+    writeFileCSV(finalData, "DataKey_RGB_DSM_Height.csv")
     
