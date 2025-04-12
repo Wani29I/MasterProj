@@ -5,6 +5,7 @@ import rasterio
 import numpy as np
 from PIL import Image
 from pathlib import Path
+from datetime import datetime
 from rasterio.mask import mask
 from rasterio.plot import reshape_as_image
 from shapely.geometry import Polygon, mapping
@@ -198,6 +199,34 @@ def addTime(dataList, selectedDataColumn):
 
     return returnData, selectedDataColumn
 
+def getDayFromImagePath(allDataList, selectedDataColumn):
+    returnData = []
+
+    # add "days" to data column
+    selectedDataColumn.append("days")
+
+    # plant date
+    plantDate = "20231101"
+    plantDate = datetime.strptime(plantDate, "%Y%m%d")
+
+    # loop into every line
+    for dataLine in allDataList:
+
+        # get only datekey from RGB path
+        dateTime = dataLine[1].split('/')[2].split('_')[1]
+
+        # get date from dateTime
+        date = str(dateTime[:8])
+        date = datetime.strptime(date, "%Y%m%d")
+
+        # Calculate Days After Sowing (DAS)
+        days = (date - plantDate).days
+
+        dataLine.append(str(days))
+        returnData.append(dataLine)
+
+
+    return returnData, selectedDataColumn
 
 def writeFileCSV(dataList, fileName):
     '''
@@ -243,6 +272,13 @@ def writeFileCSV(dataList, fileName):
 if __name__ == '__main__':
     dataFilePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     dataFilePath = "D:/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
+    allDateList = ['202401181250', '202401221100', '202401291321', '202402071317', '202402081107', 
+            '202402131116', '202402191131', '202402261154', '202403041133', '202403111217', 
+            '202403191047', '202403251407', '202404011045', '202404101010', '202404151134', 
+            '202404171400', '202404221142', '202404251118', '202404301146', '202405071327', 
+            '202405131248', '202405171307', '202405221319', '202405271230', '202405311536', 
+            '202406041351', '202406071509', '202406111255', '202406141237', '202406171112', 
+            '202406241205']
     selectedDataKeyDateList = ["202404251118", "202404301146", "202405071327", "202405131248", 
                     "202405171307", "202405221319", "202405271230", "202405311536", 
                     "202406041351", "202406071509", "202406111255", "202406141237", 
@@ -256,7 +292,7 @@ if __name__ == '__main__':
                 "seedLessThan2MMWeightBeforeDry", "totalSeedWeightAfterDry", "seedLessThan2MMWeightAfterDry", "dsm"]
     
     # select data to be filtered
-    selectedDataColumn = ["DataKey", "rgb", "dsm", "Height"]
+    selectedDataColumn = ["DataKey", "rgb", "dsm"]
 
     # get all data from file
     allData = openAndSplitData(dataFilePath)
@@ -270,9 +306,11 @@ if __name__ == '__main__':
     # add time to data
     # finalData, selectedDataColumn = addTime(finalData, selectedDataColumn)
 
+    # add date to data
+    finalData, selectedDataColumn = getDayFromImagePath(finalData, selectedDataColumn)
+
     # add data column
     finalData.insert(0, selectedDataColumn)
 
     # save data as csv
-    writeFileCSV(finalData, "DataKey_RGB_DSM_Height.csv")
-    
+    writeFileCSV(finalData, "DataKey_RGB_DSM_days__NoERR_From3thM.csv")

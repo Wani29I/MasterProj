@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from torchvision.models import efficientnet_v2_s, EfficientNet_V2_S_Weights
 
-class EfficientNetV2S_Confidence_Addoneextrainput(nn.Module):
+class EfficientNetV2SConfidenceAddoneextrainput(nn.Module):
     def __init__(self):
         super().__init__()
 
@@ -77,9 +77,9 @@ class EfficientNetV2S_Confidence_Addoneextrainput(nn.Module):
 
         return self.fc(combined)  # [B, 2] → [mean, logvar]
 
-class EfficientNetV2S_Confidence_Add2Inputs(nn.Module):
+class EfficientNetV2SConfidenceAdd2Inputs(nn.Module):
     def __init__(self):
-        super(EfficientNetV2S_Confidence_Add2Inputs, self).__init__()
+        super(EfficientNetV2SConfidenceAdd2Inputs, self).__init__()
 
         # ✅ Pretrained EfficientNetV2-S for RGB
         self.rgb_model = efficientnet_v2_s(weights=EfficientNet_V2_S_Weights.IMAGENET1K_V1)

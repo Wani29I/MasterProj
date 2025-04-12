@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 import timm
 
-class MobileViTV2_Confidence_Addoneextrainput(nn.Module):
+class MobileViTV2ConfidenceAddoneextrainput(nn.Module):
     def __init__(self):
-        super(MobileViTV2_Confidence_Addoneextrainput, self).__init__()
+        super(MobileViTV2ConfidenceAddoneextrainput, self).__init__()
 
         # RGB Backbone
         self.rgb_model = timm.create_model('mobilevitv2_100', pretrained=True, num_classes=0, global_pool='avg')

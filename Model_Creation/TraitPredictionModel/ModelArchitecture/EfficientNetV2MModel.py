@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 from torchvision.models import efficientnet_v2_m, EfficientNet_V2_M_Weights
 
-class EfficientNetV2M_WheatModelWithConfidence(nn.Module):
+class EfficientNetV2MWheatModelWithConfidence(nn.Module):
     def __init__(self):
-        super(EfficientNetV2M_WheatModelWithConfidence, self).__init__()
+        super(EfficientNetV2MWheatModelWithConfidence, self).__init__()
 
         # ✅ Load pretrained EfficientNetV2-M for RGB
         self.rgb_model = efficientnet_v2_m(weights=EfficientNet_V2_M_Weights.IMAGENET1K_V1)

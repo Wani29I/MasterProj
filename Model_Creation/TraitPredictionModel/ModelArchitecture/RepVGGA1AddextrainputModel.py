@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 from timm import create_model
 
-class RepVGGA1_Confidence_Addoneextrainput(nn.Module):
+class RepVGGA1ConfidenceAddoneextrainput(nn.Module):
     def __init__(self):
-        super(RepVGGA1_Confidence_Addoneextrainput, self).__init__()
+        super(RepVGGA1ConfidenceAddoneextrainput, self).__init__()
 
         # ✅ Pretrained RepVGG-A1 for RGB input
         self.rgb_model = create_model("repvgg_a1", pretrained=True)
@@ -66,9 +66,9 @@ class RepVGGA1_Confidence_Addoneextrainput(nn.Module):
         combined = torch.cat((rgb_feat, dsm_feat, extra_feat), dim=1)
         return self.fc(combined)
 
-class RepVGGA1_Confidence_Add2Inputs(nn.Module):
+class RepVGGA1ConfidenceAdd2Inputs(nn.Module):
     def __init__(self):
-        super(RepVGGA1_Confidence_Add2Inputs, self).__init__()
+        super(RepVGGA1ConfidenceAdd2Inputs, self).__init__()
 
         # ✅ Pretrained RepVGG-A1 for RGB input
         self.rgb_model = create_model("repvgg_a1", pretrained=True)

@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 from timm import create_model
 
-class RepVGG_B1g4Model(nn.Module):
+class RepVGGB1g4Model(nn.Module):
     def __init__(self):
-        super(RepVGG_B1g4Model, self).__init__()
+        super(RepVGGB1g4Model, self).__init__()
 
         # ✅ Load pretrained RepVGG-B1g4 from timm
         self.rgb_model = create_model("repvgg_b1g4", pretrained=True, num_classes=0, global_pool="avg")

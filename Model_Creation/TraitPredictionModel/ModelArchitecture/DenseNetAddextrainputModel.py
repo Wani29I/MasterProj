@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 from torchvision.models import densenet121, DenseNet121_Weights
 
-class DenseNet_Confidence_Addoneextrainput(nn.Module):
+class DenseNetConfidenceAddoneextrainput(nn.Module):
     def __init__(self):
-        super(DenseNet_Confidence_Addoneextrainput, self).__init__()
+        super(DenseNetConfidenceAddoneextrainput, self).__init__()
 
         # ✅ Pretrained DenseNet for RGB
         self.rgb_model = densenet121(weights=DenseNet121_Weights.IMAGENET1K_V1)
@@ -67,9 +67,9 @@ class DenseNet_Confidence_Addoneextrainput(nn.Module):
         combined = torch.cat((rgb_feat, dsm_feat, extra_feat), dim=1)
         return self.fc(combined)  # [B, 2]
 
-class DenseNet_Confidence_Add2Inputs(nn.Module):
+class DenseNetConfidenceAdd2Inputs(nn.Module):
     def __init__(self):
-        super(DenseNet_Confidence_Add2Inputs, self).__init__()
+        super(DenseNetConfidenceAdd2Inputs, self).__init__()
 
         # ✅ Pretrained DenseNet121 for RGB
         self.rgb_model = densenet121(weights=DenseNet121_Weights.IMAGENET1K_V1)

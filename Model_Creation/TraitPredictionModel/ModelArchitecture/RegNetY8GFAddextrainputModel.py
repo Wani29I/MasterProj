@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 from torchvision.models import regnet_y_8gf, RegNet_Y_8GF_Weights
 
-class RegNetY8GF_Confidence_Addoneextrainput(nn.Module):
+class RegNetY8GFConfidenceAddoneextrainput(nn.Module):
     def __init__(self):
-        super(RegNetY8GF_Confidence_Addoneextrainput, self).__init__()
+        super(RegNetY8GFConfidenceAddoneextrainput, self).__init__()
 
         # ✅ Pretrained RegNetY-8GF for RGB
         self.rgb_model = regnet_y_8gf(weights=RegNet_Y_8GF_Weights.IMAGENET1K_V1)
@@ -59,9 +59,9 @@ class RegNetY8GF_Confidence_Addoneextrainput(nn.Module):
         combined = torch.cat((rgb_feat, dsm_feat, extra_feat), dim=1)
         return self.fc(combined)
 
-class RegNetY_Confidence_Add2Inputs(nn.Module):
+class RegNetYConfidenceAdd2Inputs(nn.Module):
     def __init__(self):
-        super(RegNetY_Confidence_Add2Inputs, self).__init__()
+        super(RegNetYConfidenceAdd2Inputs, self).__init__()
 
         # ✅ Pretrained RegNetY-8GF for RGB input
         self.rgb_model = regnet_y_8gf(weights=RegNet_Y_8GF_Weights.IMAGENET1K_V1)

@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 import timm
 
-class ConvNeXtTiny_Confidence_Addoneextrainput(nn.Module):
+class ConvNeXtTinyConfidenceAddoneextrainput(nn.Module):
     def __init__(self):
-        super(ConvNeXtTiny_Confidence_Addoneextrainput, self).__init__()
+        super(ConvNeXtTinyConfidenceAddoneextrainput, self).__init__()
 
         self.rgb_model = timm.create_model('convnext_tiny', pretrained=True, num_classes=0, global_pool='avg')
 
