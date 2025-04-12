@@ -221,7 +221,7 @@ def writeFileCSV(dataList, fileName):
 # augmentMethod = ['original', 'flipped', 'rotated', 'zoomed', 'brightenOriginal', 'darkenOriginal', 'brightenFlipped', 'darkenFlipped', 'jittered', 'noisy']
 # dataColumn = [ "imagePath", "DataKey","DATE", "Height", "SPAD", "LAI", "leafWidth", "leafLength", 
 #               "centerEarWeight", "centerEarNum", "sideEarWeight", "sideEarNum", "totEarWeight",	
-#               "totEarNum", "avgEarSize", "20StrawWerightBeforeDry", "20StrawWerightAfterDry", 
+#               "totEarNum", "avgEarSize", "20StrawWeightBeforeDry", "20StrawWeightAfterDry", 
 #               "strawWeightDecreasePercent", "totalSeedNum", "seedNumLessThan2MM", "totalSeedWeightBeforeDry", 
 #               "seedLessThan2MMWeightBeforeDry", "totalSeedWeightAfterDry", "seedLessThan2MMWeightAfterDry", "DSMPath"]
 # dateList = ['202401181250', '202401221100', '202401291321', '202402071317', '202402081107', 
@@ -241,8 +241,8 @@ def writeFileCSV(dataList, fileName):
 # filteredData = filterDataColumn(allData, dataColumn, testDataFilter)
 
 if __name__ == '__main__':
-    dataFilePath = "D:/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     dataFilePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
+    dataFilePath = "D:/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     selectedDataKeyDateList = ["202404251118", "202404301146", "202405071327", "202405131248", 
                     "202405171307", "202405221319", "202405271230", "202405311536", 
                     "202406041351", "202406071509", "202406111255", "202406141237", 
@@ -251,12 +251,12 @@ if __name__ == '__main__':
     augmentMethod = ['original', 'flipped', 'rotated', 'zoomed', 'brightenOriginal', 'darkenOriginal', 'brightenFlipped', 'darkenFlipped', 'jittered', 'noisy']
     dataColumn = [ "rgb", "DataKey","DATE", "Height", "SPAD", "LAI", "leafWidth", "leafLength", 
                 "centerEarWeight", "centerEarNum", "sideEarWeight", "sideEarNum", "totEarWeight",	
-                "totEarNum", "avgEarSize", "20StrawWerightBeforeDry", "20StrawWerightAfterDry", 
+                "totEarNum", "avgEarSize", "20StrawWeightBeforeDry", "20StrawWeightAfterDry", 
                 "strawWeightDecreasePercent", "totalSeedNum", "seedNumLessThan2MM", "totalSeedWeightBeforeDry", 
                 "seedLessThan2MMWeightBeforeDry", "totalSeedWeightAfterDry", "seedLessThan2MMWeightAfterDry", "dsm"]
     
     # select data to be filtered
-    selectedDataColumn = ["DataKey", "rgb", "dsm", "LAI"]
+    selectedDataColumn = ["DataKey", "rgb", "dsm", "20StrawWeightBeforeDry", "20StrawWeightAfterDry"]
 
     # get all data from file
     allData = openAndSplitData(dataFilePath)
@@ -268,11 +268,11 @@ if __name__ == '__main__':
     finalData = deleteNull(filteredData)
 
     # add time to data
-    finalData, selectedDataColumn = addTime(finalData, selectedDataColumn)
+    # finalData, selectedDataColumn = addTime(finalData, selectedDataColumn)
 
     # add data column
     finalData.insert(0, selectedDataColumn)
 
     # save data as csv
-    writeFileCSV(finalData, "DataKey_RGB_DSM_LAI_time.csv")
+    writeFileCSV(finalData, "DataKey_RGB_DSM_20StrawWeightBeforeDry_20StrawWeightAfterDry.csv")
     
