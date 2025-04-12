@@ -289,7 +289,7 @@ def setAndTrainModel_addextrainput(dataPath, extraInputName, traitName, model, s
     Set all data and train model with extra tabular input(s)
     extraInputName can be a single column (str) or list of columns
     """
-    modelName = model.__name__ + "_" + traitName + "_extra" + (
+    modelName = model.__name__ + "_" + traitName + "_extra_" + (
         extraInputName if isinstance(extraInputName, str) else "_".join(extraInputName)
     )
     saveModelPath = os.path.join(savePath, modelName)
