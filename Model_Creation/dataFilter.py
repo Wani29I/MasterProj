@@ -272,19 +272,25 @@ def writeFileCSV(dataList, fileName):
 if __name__ == '__main__':
     dataFilePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     dataFilePath = "D:/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
-    allDateList = ['202401181250', '202401221100', '202401291321', '202402071317', '202402081107', 
-            '202402131116', '202402191131', '202402261154', '202403041133', '202403111217', 
+    delErrDateList = ['202401181250', '202401221100', '202401291321', '202402081107', 
+            '202402131116', '202402191131', '202403041133', '202403111217', 
             '202403191047', '202403251407', '202404011045', '202404101010', '202404151134', 
             '202404171400', '202404221142', '202404251118', '202404301146', '202405071327', 
             '202405131248', '202405171307', '202405221319', '202405271230', '202405311536', 
-            '202406041351', '202406071509', '202406111255', '202406141237', '202406171112', 
-            '202406241205']
+            '202406041351', '202406071509', '202406111255', '202406141237', '202406171112']
     selectedDataKeyDateList = ["202404251118", "202404301146", "202405071327", "202405131248", 
                     "202405171307", "202405221319", "202405271230", "202405311536", 
                     "202406041351", "202406071509", "202406111255", "202406141237", 
                     "202406171112"]
+    selectedDataKeyDateList = ['202403041133', '202403111217', 
+            '202403191047', '202403251407', '202404011045', '202404101010', '202404151134', 
+            '202404171400', '202404221142', '202404251118', '202404301146', '202405071327', 
+            '202405131248', '202405171307', '202405221319', '202405271230', '202405311536', 
+            '202406041351', '202406071509', '202406111255', '202406141237', '202406171112']
     selectedRawImgKey = [ "original", "raw1", "raw2", "raw3"]
+    selectedRawImgKey = [ "original", "raw1"]
     augmentMethod = ['original', 'flipped', 'rotated', 'zoomed', 'brightenOriginal', 'darkenOriginal', 'brightenFlipped', 'darkenFlipped', 'jittered', 'noisy']
+    augmentMethod = ['original', 'flipped', 'rotated', 'zoomed', 'jittered', 'noisy']
     dataColumn = [ "rgb", "DataKey","DATE", "Height", "SPAD", "LAI", "leafWidth", "leafLength", 
                 "centerEarWeight", "centerEarNum", "sideEarWeight", "sideEarNum", "totEarWeight",	
                 "totEarNum", "avgEarSize", "20StrawWeightBeforeDry", "20StrawWeightAfterDry", 
@@ -313,4 +319,4 @@ if __name__ == '__main__':
     finalData.insert(0, selectedDataColumn)
 
     # save data as csv
-    writeFileCSV(finalData, "DataKey_RGB_DSM_days__NoERR_From3thM.csv")
+    writeFileCSV(finalData, "DataKey_RGB_DSM_days__NoERR_From3thM_delRaw23Aug6.csv")

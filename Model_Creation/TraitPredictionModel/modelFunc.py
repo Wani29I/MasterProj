@@ -226,13 +226,17 @@ def setDevice():
     print(f"✅ Using device: {device}")
     return device
 
-def setAndTrainModel(dataPath, traitName, model, savePath = "./",  num_epochs = 10):
+def setAndTrainModel(dataPath, traitName, model, savePath = "./",  num_epochs = 10, extraModelName = ""):
     '''
     set all data and train model
     dataPath, traitName, model, num_epochs
     '''
     # set model name and path to save model 
     modelName = model.__name__ + "_" + traitName
+
+    if(extraModelName != ""):
+        modelName += '_' + extraModelName
+
     saveModelPath = savePath + "/" + modelName
 
     # check if path to save exist
@@ -284,7 +288,7 @@ def setAndTrainModel_addoneinput(dataPath, extraInputName, traitName, model, sav
     # train and save model
     train_model_laplace_addoneinput(modelName, train_loader, val_loader, optimizer, scheduler, device, saveModelPath,  num_epochs = num_epochs)
 
-def setAndTrainModel_addextrainput(dataPath, extraInputName, traitName, model, savePath="./", num_epochs=10):
+def setAndTrainModel_addextrainput(dataPath, extraInputName, traitName, model, savePath="./", num_epochs=10, extraModelName = ""):
     """
     Set all data and train model with extra tabular input(s)
     extraInputName can be a single column (str) or list of columns
@@ -292,6 +296,10 @@ def setAndTrainModel_addextrainput(dataPath, extraInputName, traitName, model, s
     modelName = model.__name__ + "_" + traitName + "_extra_" + (
         extraInputName if isinstance(extraInputName, str) else "_".join(extraInputName)
     )
+
+    if(extraModelName != ""):
+        modelName += '_' + extraModelName
+
     saveModelPath = os.path.join(savePath, modelName)
 
     if not os.path.exists(savePath):
