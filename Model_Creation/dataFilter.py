@@ -313,4 +313,4 @@ if __name__ == '__main__':
     finalData.insert(0, selectedDataColumn)
 
     # save data as csv
-    writeFileCSV(finalData, "DataKey_RGB_DSM_totEarWeight_totEarNum__Raw=1.csv")
+    writeFileCSV(finalData, "DataKey_RGB_DSM_totEarWeight_totEarNum__Raw1.csv")
