@@ -233,7 +233,8 @@ def setAndTrainModel(dataPath, traitName, model, savePath = "./",  num_epochs = 
     '''
 
     # set model name and path to save model 
-    modelName = "modelFor-" + traitName + "_Backbone-" + model.__name__ + "_dataFile-" + dataPath.split("/")[-1].split(".")[0] + "_"
+    # modelName = "M-" + traitName + "_B-" + model.__name__ + "_D-" + dataPath.split("/")[-1].split(".")[0] + "_"
+    modelName = "M-" + traitName + "_B-" + model.__name__ + "_D-" + "_"
     print(modelName)
     saveModelPath = savePath + "/" + modelName
 
@@ -262,9 +263,14 @@ def setAndTrainModel_addextrainput(dataPath, extraInputName, traitName, model, s
     Set all data and train model with extra tabular input(s)
     extraInputName can be a single column (str) or list of columns
     """
-    modelName = "modelFor-" + traitName + "_Backbone-" + model.__name__ + "_dataFile-" + dataPath.split("/")[-1].split(".")[0] + "-extraInput-" + (
+    # modelName = "M-" + traitName + "_B-" + model.__name__ + "_D-" + dataPath.split("/")[-1].split(".")[0] + "-E-" + (
+    #     extraInputName if isinstance(extraInputName, str) else "-".join(extraInputName)
+    # ) + "_"
+    
+    modelName = "M-" + traitName + "_B-" + model.__name__ + "-E-" + (
         extraInputName if isinstance(extraInputName, str) else "-".join(extraInputName)
     ) + "_"
+    
     saveModelPath = os.path.join(savePath, modelName)
 
     if not os.path.exists(savePath):

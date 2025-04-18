@@ -8,7 +8,7 @@ from albumentations.pytorch import ToTensorV2
 from rgbdsmAlignment import resize_dsm_return_array, resize_rgb_return_array, normalize_dsm
 
 class WheatEarDataset(Dataset):
-    def __init__(self, dataframe, rgb_col='rgb', dsm_col='dsm', label_col='totWheatEars', 
+    def __init__(self, dataframe, rgb_col='rgb', dsm_col='dsm', label_col='targetData', 
                  height=256, width=512):
         """
         Dataset for RGB + DSM + wheat ear count.
