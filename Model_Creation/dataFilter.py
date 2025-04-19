@@ -272,6 +272,7 @@ def writeFileCSV(dataList, fileName):
 if __name__ == '__main__':
     dataFilePath = "D:/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     dataFilePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
+    dataFilePath = "I:/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     delErrDateList = ['202401181250', '202401221100', '202401291321', '202402081107', 
             '202402131116', '202402191131', '202403041133', '202403111217', 
             '202403191047', '202403251407', '202404011045', '202404101010', '202404151134', 
