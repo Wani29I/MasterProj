@@ -470,3 +470,241 @@ def setAndTestModel_with_extra_input(dataPath, traitName, model, modelPath, extr
 
     # Run test with extra input
     df_results, r2, mae, rmse = new_test_model_with_extra_input(model_instance, test_loader, device)
+
+def root_mean_squared_error(y_true, y_pred):
+    return np.sqrt(mean_squared_error(y_true, y_pred))
+
+def test_model_with_plot(model, test_loader, device, output_csv="model_predictions_with_confidence.csv", plot_title="Prediction with Confidence"):
+    model.eval()
+    preds, stds, targets = [], [], []
+
+    with torch.no_grad():
+        for rgb_batch, dsm_batch, label_batch in tqdm(test_loader, desc="Testing"):
+            rgb_batch, dsm_batch = rgb_batch.to(device), dsm_batch.to(device)
+            output = model(rgb_batch, dsm_batch)  # output shape: [B, 2]
+
+            pred_mean = output[:, 0].cpu().numpy()
+            pred_std = (torch.exp(0.5 * output[:, 1])).cpu().numpy()
+            label_batch = label_batch.squeeze().cpu().numpy()
+
+            preds.extend(pred_mean)
+            stds.extend(pred_std)
+            targets.extend(label_batch)
+
+    # Metrics
+    r2 = r2_score(targets, preds)
+    mae = mean_absolute_error(targets, preds)
+    rmse = root_mean_squared_error(targets, preds)
+
+    print(f"\n Test Results:")
+    print(f" R² Score : {r2:.4f}")
+    print(f" MAE      : {mae:.4f}")
+    print(f" RMSE     : {rmse:.4f}")
+
+    # Save predictions and confidence intervals
+    df = pd.DataFrame({
+        "true": targets,
+        "predicted": preds,
+        "predicted_std": stds,
+        "lower_95CI": np.array(preds) - 1.96 * np.array(stds),
+        "upper_95CI": np.array(preds) + 1.96 * np.array(stds)
+    })
+    df.to_csv(output_csv, index=False)
+
+    # Plot
+    x = np.arange(len(preds))
+    plt.figure(figsize=(14, 6))
+    plt.plot(x, preds, label="Predicted", color="blue")
+    plt.fill_between(x, df["lower_95CI"], df["upper_95CI"], color="blue", alpha=0.3, label="95% Confidence Interval")
+    plt.scatter(x, targets, color="black", s=10, label="True Values", alpha=0.6)
+    plt.title(plot_title)
+    plt.xlabel("Sample Index")
+    plt.ylabel("Trait Value")
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+    return df, r2, mae, rmse
+
+def test_model_with_scatter_plot_final(
+    model, test_loader, device,
+    output_csv="model_predictions_with_confidence.csv",
+    plot_title="Predicted vs True (±95% CI)",
+    save_path="scatter_plot_confidence.png"
+):
+    model.eval()
+    preds, stds, targets = [], [], []
+
+    with torch.no_grad():
+        for rgb_batch, dsm_batch, label_batch in tqdm(test_loader, desc="Testing"):
+            rgb_batch = rgb_batch.to(device)
+            dsm_batch = dsm_batch.to(device)
+
+            output = model(rgb_batch, dsm_batch)  # output shape: [B, 2]
+            pred_mean = output[:, 0].cpu().numpy()
+            pred_std = (torch.exp(0.5 * output[:, 1])).cpu().numpy()
+            label_batch = label_batch.squeeze().cpu().numpy()
+
+            preds.extend(pred_mean)
+            stds.extend(pred_std)
+            targets.extend(label_batch)
+
+    # Metrics
+    r2 = r2_score(targets, preds)
+    mae = mean_absolute_error(targets, preds)
+    rmse = root_mean_squared_error(targets, preds)
+
+    print(f"\n📊 Test Results:")
+    print(f"✅ R² Score : {r2:.4f}")
+    print(f"✅ MAE      : {mae:.4f}")
+    print(f"✅ RMSE     : {rmse:.4f}")
+
+    # Save predictions
+    df = pd.DataFrame({
+        "true": targets,
+        "predicted": preds,
+        "predicted_std": stds,
+        "lower_95CI": np.array(preds) - 1.96 * np.array(stds),
+        "upper_95CI": np.array(preds) + 1.96 * np.array(stds)
+    })
+    df.to_csv(output_csv, index=False)
+
+    # Clean, compact plot
+    plt.figure(figsize=(6, 6), dpi=150)
+    plt.errorbar(
+        targets, preds,
+        yerr=1.96 * np.array(stds),
+        fmt='o', ecolor='gray', alpha=0.5,
+        markersize=3, capsize=2, label='Prediction ±95% CI'
+    )
+    plt.plot([min(targets), max(targets)], [min(targets), max(targets)], 'r--', label='Ideal: y = x')
+    plt.title(plot_title, fontsize=12)
+    plt.xlabel("True Value", fontsize=10)
+    plt.ylabel("Predicted Value", fontsize=10)
+    plt.xticks(fontsize=9)
+    plt.yticks(fontsize=9)
+    plt.legend(fontsize=9)
+    plt.grid(True, linestyle='--', alpha=0.4)
+    plt.tight_layout()
+    plt.savefig(save_path, dpi=300)
+    plt.show()
+
+    return df, r2, mae, rmse
+
+def test_model_extra_input_with_scatter_plot_final(
+    model, test_loader, device,
+    output_csv="model_predictions_with_confidence.csv",
+    plot_title="Predicted vs True (±95% CI, with Extra Input)",
+    save_path="scatter_plot_confidence_extra_input.png"
+):
+    model.eval()
+    preds, stds, targets = [], [], []
+
+    with torch.no_grad():
+        for rgb_batch, dsm_batch, extra_input_batch, label_batch in tqdm(test_loader, desc="Testing"):
+            rgb_batch = rgb_batch.to(device)
+            dsm_batch = dsm_batch.to(device)
+            extra_input_batch = extra_input_batch.to(device)
+
+            output = model(rgb_batch, dsm_batch, extra_input_batch)  # [B, 2]
+            pred_mean = output[:, 0].cpu().numpy()
+            pred_std = (torch.exp(0.5 * output[:, 1])).cpu().numpy()
+            label_batch = label_batch.squeeze().cpu().numpy()
+
+            preds.extend(pred_mean)
+            stds.extend(pred_std)
+            targets.extend(label_batch)
+
+    # Metrics
+    r2 = r2_score(targets, preds)
+    mae = mean_absolute_error(targets, preds)
+    rmse = root_mean_squared_error(targets, preds)
+
+    print(f"\n📊 Test Results:")
+    print(f"✅ R² Score : {r2:.4f}")
+    print(f"✅ MAE      : {mae:.4f}")
+    print(f"✅ RMSE     : {rmse:.4f}")
+
+    # Save predictions
+    df = pd.DataFrame({
+        "true": targets,
+        "predicted": preds,
+        "predicted_std": stds,
+        "lower_95CI": np.array(preds) - 1.96 * np.array(stds),
+        "upper_95CI": np.array(preds) + 1.96 * np.array(stds)
+    })
+    df.to_csv(output_csv, index=False)
+
+    # Compact scatter plot
+    plt.figure(figsize=(6, 6), dpi=150)
+    plt.errorbar(
+        targets, preds,
+        yerr=1.96 * np.array(stds),
+        fmt='o', ecolor='gray', alpha=0.5,
+        markersize=3, capsize=2, label='Prediction ±95% CI'
+    )
+    plt.plot([min(targets), max(targets)], [min(targets), max(targets)], 'r--', label='Ideal: y = x')
+    plt.title(plot_title, fontsize=12)
+    plt.xlabel("True Value", fontsize=10)
+    plt.ylabel("Predicted Value", fontsize=10)
+    plt.xticks(fontsize=9)
+    plt.yticks(fontsize=9)
+    plt.legend(fontsize=9)
+    plt.grid(True, linestyle='--', alpha=0.4)
+    plt.tight_layout()
+    plt.savefig(save_path, dpi=300)
+    plt.show()
+
+    return df, r2, mae, rmse
+
+def setAndTestPlotModel(dataPath, traitName, model, modelPath):
+    '''
+    set data, device and test model
+    '''
+    # get data
+    train_df, val_df, test_df = loadSplitData_no_leak(dataPath)
+    train_loader, val_loader, test_loader = createLoader(train_df, val_df, test_df, traitName)
+    
+    # set device
+    device = setDevice()
+
+    # load model
+    loadedModel = model().to(device)
+    if(device == "cuda"):
+        loadedModel.load_state_dict(torch.load(modelPath))
+    else:
+        loadedModel.load_state_dict(torch.load(modelPath, map_location=torch.device("cpu")))
+    loadedModel.eval()
+
+    print("traitName: ", traitName)
+    print("model: ", model.__name__)
+
+    # Run test
+    df_results, r2, mae, rmse = test_model_with_scatter_plot_final(loadedModel, test_loader, device)
+
+
+def setAndTestPlotModel_with_extra_input(dataPath, traitName, model, modelPath, extraInputName):
+    '''
+    Set data, device, and test model with extra inputs.
+    '''
+    # Get data
+    train_df, val_df, test_df = loadSplitData_no_leak(dataPath)
+    train_loader, val_loader, test_loader = createLoader(train_df, val_df, test_df, traitName, extra_input_cols=extraInputName)
+    
+    # Set device (CPU, CUDA, MPS)
+    device = setDevice()
+
+    # Load model
+    model_instance = model().to(device)
+    if(device == "cuda"):
+        model_instance.load_state_dict(torch.load(modelPath))
+    else:
+        model_instance.load_state_dict(torch.load(modelPath, map_location=torch.device("cpu")))
+    model_instance.eval()
+
+    print("traitName: ", traitName)
+    print("model: ", model.__name__)
+
+    # Run test with extra input
+    df_results, r2, mae, rmse = test_model_extra_input_with_scatter_plot_final(model_instance, test_loader, device)
