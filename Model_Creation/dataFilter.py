@@ -273,6 +273,8 @@ if __name__ == '__main__':
     dataFilePath = "D:/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     dataFilePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     dataFilePath = "I:/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
+    dataFilePath = "D:/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
+
     delErrDateList = ['202401181250', '202401221100', '202401291321', '202402081107', 
             '202402131116', '202402191131', '202403041133', '202403111217', 
             '202403191047', '202403251407', '202404011045', '202404101010', '202404151134', 
@@ -293,7 +295,7 @@ if __name__ == '__main__':
                 "seedLessThan2MMWeightBeforeDry", "totalSeedWeightAfterDry", "seedLessThan2MMWeightAfterDry", "dsm"]
     
     # select data to be filtered
-    selectedDataColumn = ["DataKey", "rgb", "dsm", "totEarWeight", "totEarNum"]
+    selectedDataColumn = ["DataKey", "rgb", "dsm", "LAI", "SPAD", "Height", "totalSeedNum", "totalSeedWeightAfterDry", "totEarNum", "totEarWeight"]
 
     # get all data from file
     allData = openAndSplitData(dataFilePath)
@@ -307,11 +309,11 @@ if __name__ == '__main__':
     # add time to data
     # finalData, selectedDataColumn = addTime(finalData, selectedDataColumn)
 
-    # add date to data
-    # finalData, selectedDataColumn = getDayFromImagePath(finalData, selectedDataColumn)
+    # add days(age) to data
+    finalData, selectedDataColumn = getDayFromImagePath(finalData, selectedDataColumn)
 
     # add data column
     finalData.insert(0, selectedDataColumn)
 
     # save data as csv
-    writeFileCSV(finalData, "DataKey_RGB_DSM_totEarWeight_totEarNum__Raw1.csv")
+    writeFileCSV(finalData, "DataKey_RGB_DSM_LAI_SPAD_Height_totalSeedNum_totalSeedWeightAfterDry_totEarNum_totEarWeight_day_Raw1.csv")

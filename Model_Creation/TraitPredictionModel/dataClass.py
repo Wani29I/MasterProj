@@ -5,11 +5,11 @@ import rasterio
 import numpy as np
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
-from rgbdsmAlignment import resize_dsm_return_array, resize_rgb_return_array, normalize_dsm
+from .rgbdsmAlignment import resize_dsm_return_array, resize_rgb_return_array, normalize_dsm
 
 class WheatEarDataset(Dataset):
     def __init__(self, dataframe, key_col='DataKey', rgb_col='rgb', dsm_col='dsm', label_col='targetData',
-                 extra_input_cols =None, height=256, width=512):
+                 extra_input_cols=None, height=256, width=512):
         self.data = dataframe
         self.key_col = key_col
         self.rgb_col = rgb_col
@@ -23,18 +23,12 @@ class WheatEarDataset(Dataset):
         return len(self.data)
 
     def __getitem__(self, idx):
-
         # Load RGB image
         # rgb_path = "D:/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
         # rgb_path = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
         # rgb_path = "F:/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
         # rgb_path = "I:/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
-<<<<<<< HEAD
-        # rgb_path = "/Volumes/PortableSSD/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
-        rgb_path = "H:/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
-=======
-        rgb_path = "/Volumes/PortableSSD/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
->>>>>>> 8d98846dd64ee60a423b8f3023c00ac1caaf0bdd
+        rgb_path = "D:/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
         rgb = resize_rgb_return_array(rgb_path, target_size=(512, 256)) / 255.0
         rgb_tensor = torch.tensor(rgb, dtype=torch.float32).permute(2, 0, 1)
         # Load DSM
@@ -42,26 +36,24 @@ class WheatEarDataset(Dataset):
         # dsm_path = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
         # dsm_path = "F:/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
         # dsm_path = "I:/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
-<<<<<<< HEAD
-        # dsm_path = "/Volumes/PortableSSD/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
-        dsm_path = "H:/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
-=======
-        dsm_path = "/Volumes/PortableSSD/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
->>>>>>> 8d98846dd64ee60a423b8f3023c00ac1caaf0bdd
+        dsm_path = "D:/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
         dsm = resize_dsm_return_array(dsm_path, target_width=512, target_height=256)
         dsm = normalize_dsm(dsm)
         dsm_tensor = torch.tensor(dsm, dtype=torch.float32).unsqueeze(0)
 
+        # Load label and DataKey
         label = torch.tensor([self.data.loc[idx, self.label_col]], dtype=torch.float32)
+        datakey = self.data.loc[idx, self.key_col]
 
+        # Return with or without extra input
         if self.extra_input_cols:
             if isinstance(self.extra_input_cols, list):
                 extra_values = [self.data.loc[idx, col] for col in self.extra_input_cols]
                 extra_input = torch.tensor(extra_values, dtype=torch.float32)
             else:
                 extra_input = torch.tensor([self.data.loc[idx, self.extra_input_cols]], dtype=torch.float32)
-            return rgb_tensor, dsm_tensor, extra_input, label
+            return rgb_tensor, dsm_tensor, extra_input, label, datakey
         else:
-            return rgb_tensor, dsm_tensor, label
+            return rgb_tensor, dsm_tensor, label, datakey
 
 
