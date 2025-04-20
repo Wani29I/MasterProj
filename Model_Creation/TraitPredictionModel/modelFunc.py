@@ -234,7 +234,7 @@ def setAndTrainModel(dataPath, traitName, model, savePath = "./",  num_epochs = 
 
     # set model name and path to save model 
     # modelName = "M-" + traitName + "_B-" + model.__name__ + "_D-" + dataPath.split("/")[-1].split(".")[0] + "_"
-    modelName = "M-" + traitName + "_B-" + model.__name__ + "_D-" + "_"
+    modelName = "M-" + traitName + "_B-" + model.__name__ + "_"
     print(modelName)
     saveModelPath = savePath + "/" + modelName
 
