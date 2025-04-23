@@ -601,11 +601,18 @@ def setAndTestPlotModel_with_extra_input(dataPath, traitName, model, modelPath, 
 
 
 
+import matplotlib.pyplot as plt
+from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
+import torch
+from tqdm import tqdm
+import numpy as np
+
+
 def testModelByDate(
     model, test_loader, device,
     output_csv="model_predictions_with_confidence.csv",
-    plot_title="Predicted vs True (±95% CI)",
-    save_path="scatter_plot_confidence.png"
+    plot_title="Performance by Date",
+    save_path="metrics_by_date.png"
 ):
     model.eval()
     preds, stds, targets, RGBpaths = [], [], [], []
@@ -625,35 +632,59 @@ def testModelByDate(
             targets.extend(label_batch.flatten().tolist())
             RGBpaths.extend(RGBpaths_batch)
 
-    
-    currentDate = RGBpaths[0].split('/')[-1].split("_")[1]
-    currentPreds = []
-    currentTargets = []
-    currentStds = []
+    # Store metrics by date
+    metrics_by_date = {}
+    currentDate = RGBpaths[0].split('/')[-1].split("_")[1][:8]
+    currentPreds, currentTargets, currentStds = [], [], []
 
-    for predCount in range(len(preds)):
-        Date = RGBpaths[predCount].split('/')[-1].split("_")[1]
+    for i in range(len(preds)):
+        Date = RGBpaths[i].split('/')[-1].split("_")[1][:8]
 
-        if(Date != currentDate):
-
-            # Metrics
+        if Date != currentDate:
             r2 = r2_score(currentTargets, currentPreds)
             mae = mean_absolute_error(currentTargets, currentPreds)
-            rmse = root_mean_squared_error(currentTargets, currentPreds)
-
+            rmse = np.sqrt(mean_squared_error(currentTargets, currentPreds))
             print(f"\nTest Results:")
+            print(f"Date     : {currentDate}")
             print(f"R² Score : {r2:.4f}")
             print(f"MAE      : {mae:.4f}")
             print(f"RMSE     : {rmse:.4f}")
-
+            
+            metrics_by_date[currentDate] = r2
             currentDate = Date
-            currentPreds = []
-            currentTargets = []
-            currentStds = []
-        
-        currentPreds.append(preds[predCount])
-        currentTargets.append(targets[predCount])
-        currentStds.append(stds[predCount])
+            currentPreds, currentTargets, currentStds = [], [], []
+
+        currentPreds.append(preds[i])
+        currentTargets.append(targets[i])
+        currentStds.append(stds[i])
+
+    # Last group
+    if currentPreds:
+        r2 = r2_score(currentTargets, currentPreds)
+        mae = mean_absolute_error(currentTargets, currentPreds)
+        rmse = np.sqrt(mean_squared_error(currentTargets, currentPreds))
+        print(f"\nTest Results:")
+        print(f"Date     : {currentDate}")
+        print(f"R² Score : {r2:.4f}")
+        print(f"MAE      : {mae:.4f}")
+        print(f"RMSE     : {rmse:.4f}")
+        metrics_by_date[currentDate] = r2
+
+    # Plotting only R² scores
+    dates = list(metrics_by_date.keys())
+    r2s = list(metrics_by_date.values())
+
+    plt.figure(figsize=(12, 6))
+    plt.title(plot_title)
+    plt.xlabel("Date")
+    plt.ylabel("R² Score")
+    plt.plot(dates, r2s, label="R² Score", marker='o', color='blue')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.legend()
+    plt.savefig(save_path)
+    plt.show()
+
 
 def setAndTestModelByDate(dataPath, traitName, model, modelPath):
     '''
