@@ -5,7 +5,7 @@ import rasterio
 import numpy as np
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
-from .rgbdsmAlignment import resize_dsm_return_array, resize_rgb_return_array, normalize_dsm
+from rgbdsmAlignment import resize_dsm_return_array, resize_rgb_return_array, normalize_dsm
 
 class WheatEarDataset(Dataset):
     def __init__(self, dataframe, key_col='DataKey', rgb_col='rgb', dsm_col='dsm', label_col='targetData',
@@ -28,7 +28,9 @@ class WheatEarDataset(Dataset):
         # rgb_path = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
         # rgb_path = "F:/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
         # rgb_path = "I:/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
-        rgb_path = "D:/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
+        # rgb_path = "D:/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
+        rgb_path = "/Volumes/PortableSSD/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
+        # rgb_path = "E:/dataForProcess/mainData" + self.data.loc[idx, self.rgb_col]
         rgb = resize_rgb_return_array(rgb_path, target_size=(512, 256)) / 255.0
         rgb_tensor = torch.tensor(rgb, dtype=torch.float32).permute(2, 0, 1)
         # Load DSM
@@ -36,7 +38,10 @@ class WheatEarDataset(Dataset):
         # dsm_path = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
         # dsm_path = "F:/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
         # dsm_path = "I:/ice-wheat/data/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
-        dsm_path = "D:/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
+        # dsm_path = "D:/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
+        dsm_path = "/Volumes/PortableSSD/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
+        # dsm_path = "E:/dataForProcess/mainData" + self.data.loc[idx, self.dsm_col]
+
         dsm = resize_dsm_return_array(dsm_path, target_width=512, target_height=256)
         dsm = normalize_dsm(dsm)
         dsm_tensor = torch.tensor(dsm, dtype=torch.float32).unsqueeze(0)
@@ -52,8 +57,8 @@ class WheatEarDataset(Dataset):
                 extra_input = torch.tensor(extra_values, dtype=torch.float32)
             else:
                 extra_input = torch.tensor([self.data.loc[idx, self.extra_input_cols]], dtype=torch.float32)
-            return rgb_tensor, dsm_tensor, extra_input, label, datakey
+            return rgb_tensor, dsm_tensor, extra_input, label, rgb_path
         else:
-            return rgb_tensor, dsm_tensor, label, datakey
+            return rgb_tensor, dsm_tensor, label, rgb_path
 
 

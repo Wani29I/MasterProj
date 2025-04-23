@@ -269,11 +269,14 @@ def writeFileCSV(dataList, fileName):
 # dataByDate = selectDataByDate(allData, dateList[17:])
 # filteredData = filterDataColumn(allData, dataColumn, testDataFilter)
 
+
 if __name__ == '__main__':
     dataFilePath = "D:/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     dataFilePath = "/Volumes/HD-PCFSU3-A/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     dataFilePath = "I:/ice-wheat/data/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
     dataFilePath = "D:/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
+    dataFilePath = "E:/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
+    dataFilePath = "/Volumes/PortableSSD/dataForProcess/mainData/completeLabelDataLinkedDSM.txt"
 
     delErrDateList = ['202401181250', '202401221100', '202401291321', '202402081107', 
             '202402131116', '202402191131', '202403041133', '202403111217', 
@@ -288,6 +291,7 @@ if __name__ == '__main__':
     selectedRawImgKey = [ "original", "raw1", "raw2", "raw3"]
     selectedRawImgKey = [ "original", "raw1"]
     augmentMethod = ['original', 'flipped', 'rotated', 'zoomed', 'brightenOriginal', 'darkenOriginal', 'brightenFlipped', 'darkenFlipped', 'jittered', 'noisy']
+    # augmentMethod = ['original', 'flipped', 'rotated', 'zoomed', 'jittered', 'noisy']
     dataColumn = [ "rgb", "DataKey","DATE", "Height", "SPAD", "LAI", "leafWidth", "leafLength", 
                 "centerEarWeight", "centerEarNum", "sideEarWeight", "sideEarNum", "totEarWeight",	
                 "totEarNum", "avgEarSize", "20StrawWeightBeforeDry", "20StrawWeightAfterDry", 
@@ -295,7 +299,11 @@ if __name__ == '__main__':
                 "seedLessThan2MMWeightBeforeDry", "totalSeedWeightAfterDry", "seedLessThan2MMWeightAfterDry", "dsm"]
     
     # select data to be filtered
-    selectedDataColumn = ["DataKey", "rgb", "dsm", "LAI", "SPAD", "Height", "totalSeedNum", "totalSeedWeightAfterDry", "totEarNum", "totEarWeight"]
+    # selectedDataColumn = ["DataKey", "rgb", "dsm"]
+
+    selectedDataColumn = [ "DataKey", "rgb", "dsm", "Height", "LAI", "SPAD", "leafWidth", "leafLength"]
+    
+    selectedDataColumn = [ "DataKey", "rgb", "dsm", "Height", "LAI", "SPAD", "leafWidth", "leafLength","dsm"]
 
     # get all data from file
     allData = openAndSplitData(dataFilePath)
@@ -307,7 +315,7 @@ if __name__ == '__main__':
     finalData = deleteNull(filteredData)
 
     # add time to data
-    # finalData, selectedDataColumn = addTime(finalData, selectedDataColumn)
+    finalData, selectedDataColumn = addTime(finalData, selectedDataColumn)
 
     # add days(age) to data
     finalData, selectedDataColumn = getDayFromImagePath(finalData, selectedDataColumn)
@@ -316,4 +324,5 @@ if __name__ == '__main__':
     finalData.insert(0, selectedDataColumn)
 
     # save data as csv
-    writeFileCSV(finalData, "DataKey_RGB_DSM_LAI_SPAD_Height_totalSeedNum_totalSeedWeightAfterDry_totEarNum_totEarWeight_day_Raw1.csv")
+    # writeFileCSV(finalData, "DataKey_RGB_DSM_LAI_SPAD_Height_totalSeedNum_totalSeedWeightAfterDry_totEarNum_totEarWeight_day_Raw1.csv")
+    # writeFileCSV(finalData, "allWeeklyData_raw3_day13.csv")
