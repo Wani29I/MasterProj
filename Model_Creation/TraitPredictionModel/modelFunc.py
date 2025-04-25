@@ -24,23 +24,41 @@ def laplace_nll_loss(pred_mean, pred_logvar, target):
     loss = torch.abs(target - pred_mean) / scale + pred_logvar
     return torch.mean(loss)
 
-# Full Training Function
-def train_model_laplace(model, train_loader, val_loader, optimizer, scheduler, device, fileName,  num_epochs=10):
-    for epoch in range(num_epochs):
+def train_model_laplace(
+    model, 
+    train_loader, 
+    val_loader, 
+    optimizer, 
+    scheduler, 
+    device, 
+    fileName,  
+    use_extra_input=False,
+    max_epochs=50, 
+    patience=7  # Number of epochs to wait before stopping
+):
+    best_val_loss = float("inf")
+    epochs_without_improvement = 0
+
+    for epoch in range(max_epochs):
         model.train()
         train_loss = 0.0
 
-        for rgb_batch, dsm_batch, label_batch in tqdm(train_loader, desc=f"Epoch {epoch+1}/{num_epochs}"):
-            rgb_batch = rgb_batch.to(device)
-            dsm_batch = dsm_batch.to(device)
+        for batch in tqdm(train_loader, desc=f"Epoch {epoch+1}/{max_epochs}"):
+            if use_extra_input:
+                rgb_batch, dsm_batch, extra_input, label_batch, _ = batch
+                extra_input = extra_input.to(device)
+                output = model(rgb_batch.to(device), dsm_batch.to(device), extra_input)
+            else:
+                rgb_batch, dsm_batch, label_batch, _ = batch
+                output = model(rgb_batch.to(device), dsm_batch.to(device))
+
             label_batch = label_batch.to(device)
 
-            optimizer.zero_grad()
-            output = model(rgb_batch, dsm_batch)  # [B, 2]
             pred_mean = output[:, 0]
             pred_logvar = output[:, 1]
-
             loss = laplace_nll_loss(pred_mean, pred_logvar, label_batch.squeeze())
+
+            optimizer.zero_grad()
             loss.backward()
             optimizer.step()
 
@@ -52,16 +70,20 @@ def train_model_laplace(model, train_loader, val_loader, optimizer, scheduler, d
         model.eval()
         val_loss = 0.0
         with torch.no_grad():
-            for rgb_batch, dsm_batch, label_batch in val_loader:
-                rgb_batch = rgb_batch.to(device)
-                dsm_batch = dsm_batch.to(device)
-                label_batch = label_batch.to(device)
+            for batch in val_loader:
+                if use_extra_input:
+                    rgb_batch, dsm_batch, extra_input, label_batch, _ = batch
+                    extra_input = extra_input.to(device)
+                    output = model(rgb_batch.to(device), dsm_batch.to(device), extra_input)
+                else:
+                    rgb_batch, dsm_batch, label_batch, _ = batch
+                    output = model(rgb_batch.to(device), dsm_batch.to(device))
 
-                output = model(rgb_batch, dsm_batch)
+                label_batch = label_batch.to(device)
                 pred_mean = output[:, 0]
                 pred_logvar = output[:, 1]
-
                 loss = laplace_nll_loss(pred_mean, pred_logvar, label_batch.squeeze())
+
                 val_loss += loss.item()
 
         val_loss /= len(val_loader)
@@ -69,15 +91,40 @@ def train_model_laplace(model, train_loader, val_loader, optimizer, scheduler, d
 
         print(f"Epoch {epoch+1} | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f}")
 
-        # Save Model
-        torch.save(model.state_dict(), f"{fileName}.pth")
+        # Early stopping logic
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            epochs_without_improvement = 0
+            torch.save(model.state_dict(), f"{fileName}.pth")
+            print(f"✅ Best model updated and saved at Epoch {epoch+1}")
+        else:
+            epochs_without_improvement += 1
+            print(f"⚠️ No improvement for {epochs_without_improvement} epoch(s)")
 
-def train_model_laplace_addextrainput(model, train_loader, val_loader, optimizer, scheduler, device, fileName, num_epochs=10):
-    for epoch in range(num_epochs):
+        if epochs_without_improvement >= patience:
+            print(f"⏹️ Early stopping triggered after {epoch+1} epochs.")
+            break
+
+
+def train_model_laplace_addextrainput(
+    model, 
+    train_loader, 
+    val_loader, 
+    optimizer, 
+    scheduler, 
+    device, 
+    fileName, 
+    max_epochs=50, 
+    patience=7
+):
+    best_val_loss = float("inf")
+    epochs_without_improvement = 0
+
+    for epoch in range(max_epochs):
         model.train()
         train_loss = 0.0
 
-        for rgb_batch, dsm_batch, extra_input_batch, label_batch in tqdm(train_loader, desc=f"Epoch {epoch+1}/{num_epochs}"):
+        for rgb_batch, dsm_batch, extra_input_batch, label_batch, _ in tqdm(train_loader, desc=f"Epoch {epoch+1}/{max_epochs}"):
             rgb_batch = rgb_batch.to(device)
             dsm_batch = dsm_batch.to(device)
             extra_input_batch = extra_input_batch.to(device)
@@ -100,7 +147,7 @@ def train_model_laplace_addextrainput(model, train_loader, val_loader, optimizer
         model.eval()
         val_loss = 0.0
         with torch.no_grad():
-            for rgb_batch, dsm_batch, extra_input_batch, label_batch in val_loader:
+            for rgb_batch, dsm_batch, extra_input_batch, label_batch, _ in val_loader:
                 rgb_batch = rgb_batch.to(device)
                 dsm_batch = dsm_batch.to(device)
                 extra_input_batch = extra_input_batch.to(device)
@@ -118,8 +165,21 @@ def train_model_laplace_addextrainput(model, train_loader, val_loader, optimizer
 
         print(f"Epoch {epoch+1} | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f}")
 
-        # Save model
-        torch.save(model.state_dict(), f"{fileName}{epoch+1}.pth")
+        # Save best model only
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            epochs_without_improvement = 0
+            torch.save(model.state_dict(), f"{fileName}.pth")
+            print(f"✅ Best model saved at Epoch {epoch+1}")
+        else:
+            epochs_without_improvement += 1
+            print(f"⚠️ No improvement for {epochs_without_improvement} epoch(s)")
+
+        # Early stopping check
+        if epochs_without_improvement >= patience:
+            print(f"⏹️ Early stopping triggered after {epoch+1} epochs.")
+            break
+
 
 def setDevice():
     if torch.backends.mps.is_available():
@@ -132,7 +192,7 @@ def setDevice():
     print(f"Using device: {device}")
     return device
 
-def setAndTrainModel(dataPath, traitName, model, extraName = "none",  savePath = "./",  num_epochs = 10):
+def setAndTrainModel(dataPath, traitName, model,  savePath = "./", extraName = "none"):
     '''
     set all data and train model
     dataPath, traitName, model, num_epochs
@@ -166,9 +226,9 @@ def setAndTrainModel(dataPath, traitName, model, extraName = "none",  savePath =
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=2)
 
     # train and save model
-    train_model_laplace(modelName, train_loader, val_loader, optimizer, scheduler, device, saveModelPath,  num_epochs = num_epochs)
+    train_model_laplace(modelName, train_loader, val_loader, optimizer, scheduler, device, saveModelPath)
 
-def setAndTrainModel_addextrainput(dataPath, extraInputName, traitName, model, extraName = "none", savePath="./", num_epochs=10):
+def setAndTrainModel_addextrainput(dataPath, extraInputName, traitName, model, savePath="./", extraName = "none"):
     """
     Set all data and train model with extra tabular input(s)
     extraInputName can be a single column (str) or list of columns
@@ -207,7 +267,7 @@ def setAndTrainModel_addextrainput(dataPath, extraInputName, traitName, model, e
 
     # Train model
     train_model_laplace_addextrainput(
-        modelInstance, train_loader, val_loader, optimizer, scheduler, device, saveModelPath, num_epochs=num_epochs
+        modelInstance, train_loader, val_loader, optimizer, scheduler, device, saveModelPath
     )
 
 def root_mean_squared_error(y_true, y_pred):
@@ -599,15 +659,6 @@ def setAndTestPlotModel_with_extra_input(dataPath, traitName, model, modelPath, 
 
     return df_results, r2, mae, rmse
 
-
-
-import matplotlib.pyplot as plt
-from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
-import torch
-from tqdm import tqdm
-import numpy as np
-
-
 def testModelByDate(
     model, test_loader, device,
     output_csv="model_predictions_with_confidence.csv",
@@ -641,16 +692,16 @@ def testModelByDate(
         Date = RGBpaths[i].split('/')[-1].split("_")[1][:8]
 
         if Date != currentDate:
-            r2 = r2_score(currentTargets, currentPreds)
-            mae = mean_absolute_error(currentTargets, currentPreds)
-            rmse = np.sqrt(mean_squared_error(currentTargets, currentPreds))
-            print(f"\nTest Results:")
-            print(f"Date     : {currentDate}")
-            print(f"R² Score : {r2:.4f}")
-            print(f"MAE      : {mae:.4f}")
-            print(f"RMSE     : {rmse:.4f}")
-            
-            metrics_by_date[currentDate] = r2
+            if currentTargets and currentPreds:
+                r2 = r2_score(currentTargets, currentPreds)
+                mae = mean_absolute_error(currentTargets, currentPreds)
+                rmse = np.sqrt(mean_squared_error(currentTargets, currentPreds))
+                print(f"\nTest Results:")
+                print(f"Date     : {currentDate}")
+                print(f"R² Score : {r2:.4f}")
+                print(f"MAE      : {mae:.4f}")
+                print(f"RMSE     : {rmse:.4f}")
+                metrics_by_date[currentDate] = r2
             currentDate = Date
             currentPreds, currentTargets, currentStds = [], [], []
 
@@ -659,7 +710,7 @@ def testModelByDate(
         currentStds.append(stds[i])
 
     # Last group
-    if currentPreds:
+    if currentTargets and currentPreds:
         r2 = r2_score(currentTargets, currentPreds)
         mae = mean_absolute_error(currentTargets, currentPreds)
         rmse = np.sqrt(mean_squared_error(currentTargets, currentPreds))
@@ -670,7 +721,7 @@ def testModelByDate(
         print(f"RMSE     : {rmse:.4f}")
         metrics_by_date[currentDate] = r2
 
-    # Plotting only R² scores
+    # Plotting only R² scores with labels
     dates = list(metrics_by_date.keys())
     r2s = list(metrics_by_date.values())
 
@@ -679,7 +730,11 @@ def testModelByDate(
     plt.xlabel("Date")
     plt.ylabel("R² Score")
     plt.plot(dates, r2s, label="R² Score", marker='o', color='blue')
-    plt.xticks(rotation=45)
+
+    for i, (date, r2) in enumerate(zip(dates, r2s)):
+        plt.text(i, r2 + 0.01, f"{r2:.2f}", ha='center', fontsize=8, rotation=0, color='black')
+
+    plt.xticks(ticks=range(len(dates)), labels=dates, rotation=45)
     plt.tight_layout()
     plt.legend()
     plt.savefig(save_path)
