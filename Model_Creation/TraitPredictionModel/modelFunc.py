@@ -105,7 +105,6 @@ def train_model_laplace(
             print(f"⏹️ Early stopping triggered after {epoch+1} epochs.")
             break
 
-
 def train_model_laplace_addextrainput(
     model, 
     train_loader, 
@@ -273,74 +272,6 @@ def setAndTrainModel_addextrainput(dataPath, extraInputName, traitName, model, s
 def root_mean_squared_error(y_true, y_pred):
     return np.sqrt(mean_squared_error(y_true, y_pred))
 
-
-def test_model_with_scatter_plot_final(
-    model, test_loader, device,
-    output_csv="model_predictions_with_confidence.csv",
-    plot_title="Predicted vs True (±95% CI)",
-    save_path="scatter_plot_confidence.png"
-):
-    model.eval()
-
-    preds, stds, targets, RGBpaths = [], [], [], []
-    
-    with torch.no_grad():
-        for rgb_batch, dsm_batch, label_batch, RGBpaths_batch in tqdm(test_loader, desc="Testing"):
-            rgb_batch = rgb_batch.to(device)
-            dsm_batch = dsm_batch.to(device)
-
-            output = model(rgb_batch, dsm_batch)  # [B, 2]
-            pred_mean = output[:, 0].cpu().numpy()
-            pred_std = (torch.exp(0.5 * output[:, 1])).cpu().numpy()
-            label_batch = label_batch.squeeze().cpu().numpy()
-
-            preds.extend(pred_mean)
-            stds.extend(pred_std)
-            targets.extend(label_batch.flatten().tolist())  # fixed
-            RGBpaths.extend(RGBpaths_batch)
-
-    # Metrics
-    r2 = r2_score(targets, preds)
-    mae = mean_absolute_error(targets, preds)
-    rmse = root_mean_squared_error(targets, preds)
-
-    print(f"\nTest Results:")
-    print(f"R² Score : {r2:.4f}")
-    print(f"MAE      : {mae:.4f}")
-    print(f"RMSE     : {rmse:.4f}")
-
-    # Save predictions
-    df = pd.DataFrame({
-        "true": targets,
-        "predicted": preds,
-        "predicted_std": stds,
-        "lower_95CI": np.array(preds) - 1.96 * np.array(stds),
-        "upper_95CI": np.array(preds) + 1.96 * np.array(stds)
-    })
-    df.to_csv(output_csv, index=False)
-
-    # Clean, compact plot
-    plt.figure(figsize=(6, 6), dpi=150)
-    plt.errorbar(
-        targets, preds,
-        yerr=1.96 * np.array(stds),
-        fmt='o', ecolor='gray', alpha=0.5,
-        markersize=3, capsize=2, label='Prediction ±95% CI'
-    )
-    plt.plot([min(targets), max(targets)], [min(targets), max(targets)], 'r--', label='Ideal: y = x')
-    plt.title(plot_title, fontsize=12)
-    plt.xlabel("True Value", fontsize=10)
-    plt.ylabel("Predicted Value", fontsize=10)
-    plt.xticks(fontsize=9)
-    plt.yticks(fontsize=9)
-    plt.legend(fontsize=9)
-    plt.grid(True, linestyle='--', alpha=0.4)
-    plt.tight_layout()
-    plt.savefig(save_path, dpi=300)
-    plt.show()
-
-    return df, r2, mae, rmse
-
 def test_model_with_scatter_plot_shapeConfidence(
     model, test_loader, device,
     output_csv="model_predictions_with_confidence.csv",
@@ -416,74 +347,6 @@ def test_model_with_scatter_plot_shapeConfidence(
     plot_group(low_conf, 'x', 'Low Confidence', 'crimson')
 
     # Identity line
-    plt.plot([min(targets), max(targets)], [min(targets), max(targets)], 'r--', label='Ideal: y = x')
-    plt.title(plot_title, fontsize=12)
-    plt.xlabel("True Value", fontsize=10)
-    plt.ylabel("Predicted Value", fontsize=10)
-    plt.xticks(fontsize=9)
-    plt.yticks(fontsize=9)
-    plt.legend(fontsize=9)
-    plt.grid(True, linestyle='--', alpha=0.4)
-    plt.tight_layout()
-    plt.savefig(save_path, dpi=300)
-    plt.show()
-
-    return df, r2, mae, rmse
-
-
-def test_model_extra_input_with_scatter_plot_final(
-    model, test_loader, device,
-    output_csv="model_predictions_with_confidence.csv",
-    plot_title="Predicted vs True (±95% CI, with Extra Input)",
-    save_path="scatter_plot_confidence_extra_input.png"
-):
-    model.eval()
-    preds, stds, targets, RGBpaths = [], [], [], []
-    
-    with torch.no_grad():
-        for rgb_batch, dsm_batch, extra_input_batch, label_batch, RGBpaths_batch in tqdm(test_loader, desc="Testing"):
-            rgb_batch = rgb_batch.to(device)
-            dsm_batch = dsm_batch.to(device)
-            extra_input_batch = extra_input_batch.to(device)
-
-            output = model(rgb_batch, dsm_batch, extra_input_batch)  # [B, 2]
-            pred_mean = output[:, 0].cpu().numpy()
-            pred_std = (torch.exp(0.5 * output[:, 1])).cpu().numpy()
-            label_batch = label_batch.squeeze().cpu().numpy()
-
-            preds.extend(pred_mean)
-            stds.extend(pred_std)
-            targets.extend(label_batch)
-            RGBpaths.extend(RGBpaths_batch)
-
-    # Metrics
-    r2 = r2_score(targets, preds)
-    mae = mean_absolute_error(targets, preds)
-    rmse = root_mean_squared_error(targets, preds)
-
-    print(f"\nTest Results:")
-    print(f"R² Score : {r2:.4f}")
-    print(f"MAE      : {mae:.4f}")
-    print(f"RMSE     : {rmse:.4f}")
-
-    # Save predictions
-    df = pd.DataFrame({
-        "true": targets,
-        "predicted": preds,
-        "predicted_std": stds,
-        "lower_95CI": np.array(preds) - 1.96 * np.array(stds),
-        "upper_95CI": np.array(preds) + 1.96 * np.array(stds)
-    })
-    df.to_csv(output_csv, index=False)
-
-    # Compact scatter plot
-    plt.figure(figsize=(6, 6), dpi=150)
-    plt.errorbar(
-        targets, preds,
-        yerr=1.96 * np.array(stds),
-        fmt='o', ecolor='gray', alpha=0.5,
-        markersize=3, capsize=2, label='Prediction ±95% CI'
-    )
     plt.plot([min(targets), max(targets)], [min(targets), max(targets)], 'r--', label='Ideal: y = x')
     plt.title(plot_title, fontsize=12)
     plt.xlabel("True Value", fontsize=10)
@@ -589,7 +452,6 @@ def test_model_extra_input_with_scatter_plot_shapeConfidence(
 
     return df, r2, mae, rmse
 
-
 def setAndTestPlotModel(dataPath, traitName, model, modelPath):
     '''
     set data, device and test model
@@ -617,7 +479,6 @@ def setAndTestPlotModel(dataPath, traitName, model, modelPath):
                                                                    output_csv= "./ModelTestResult/" + traitName + "_predictions_with_confidence.csv",
                                                                    plot_title= traitName + ": Predicted vs True Value",
                                                                    save_path= "./ModelTestResult/" + traitName + "_scatter_plot_confidence.png")
-
 
 def setAndTestPlotModel_with_extra_input(dataPath, traitName, model, modelPath, extraInputName):
     '''
