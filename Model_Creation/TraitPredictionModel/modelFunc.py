@@ -20,10 +20,16 @@ def gaussian_nll_loss(pred_mean, pred_logvar, target):
     return torch.mean(precision * (target - pred_mean)**2 + pred_logvar)
 
 # Laplace NLL Loss (Robust + Confidence-Aware)
-def laplace_nll_loss(pred_mean, pred_logvar, target):
+def laplace_nll_loss(pred_mean, pred_logvar, target, lambda_reg=0.01):
+    """
+    Laplace Negative Log Likelihood loss with regularization to prevent overconfidence.
+    """
     scale = torch.exp(pred_logvar)  # predicted Laplace scale
     loss = torch.abs(target - pred_mean) / scale + pred_logvar
-    return torch.mean(loss)
+
+    # Regularization to penalize overconfident predictions (i.e., too low std)
+    reg_term = lambda_reg * torch.mean(torch.exp(-pred_logvar))  # inverse scale penalization
+    return torch.mean(loss) + reg_term
 
 def train_model_laplace(
     model, 
