@@ -7,6 +7,7 @@ from tqdm import tqdm
 import torch.nn as nn
 import torch.optim as optim
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from sklearn.model_selection import train_test_split
@@ -33,8 +34,9 @@ def train_model_laplace(
     device, 
     fileName,  
     use_extra_input=False,
-    max_epochs=50, 
-    patience=7  # Number of epochs to wait before stopping
+    max_epochs=40, 
+    patience=5,  # Number of epochs to wait before stopping
+    min_epochs=10  # Force training to run at least this many epochs
 ):
     best_val_loss = float("inf")
     epochs_without_improvement = 0
@@ -91,17 +93,18 @@ def train_model_laplace(
 
         print(f"Epoch {epoch+1} | Train Loss: {train_loss:.4f} | Val Loss: {val_loss:.4f}")
 
-        # Early stopping logic
+        # Early stopping logic with min_epochs
         if val_loss < best_val_loss:
             best_val_loss = val_loss
             epochs_without_improvement = 0
             torch.save(model.state_dict(), f"{fileName}.pth")
             print(f"✅ Best model updated and saved at Epoch {epoch+1}")
         else:
-            epochs_without_improvement += 1
+            if epoch + 1 >= min_epochs:
+                epochs_without_improvement += 1
             print(f"⚠️ No improvement for {epochs_without_improvement} epoch(s)")
 
-        if epochs_without_improvement >= patience:
+        if epoch + 1 >= min_epochs and epochs_without_improvement >= patience:
             print(f"⏹️ Early stopping triggered after {epoch+1} epochs.")
             break
 
@@ -113,8 +116,9 @@ def train_model_laplace_addextrainput(
     scheduler, 
     device, 
     fileName, 
-    max_epochs=50, 
-    patience=7
+    max_epochs=40, 
+    patience=5,
+    min_epochs=10
 ):
     best_val_loss = float("inf")
     epochs_without_improvement = 0
@@ -171,14 +175,14 @@ def train_model_laplace_addextrainput(
             torch.save(model.state_dict(), f"{fileName}.pth")
             print(f"✅ Best model saved at Epoch {epoch+1}")
         else:
-            epochs_without_improvement += 1
+            if epoch + 1 >= min_epochs:
+                epochs_without_improvement += 1
             print(f"⚠️ No improvement for {epochs_without_improvement} epoch(s)")
 
         # Early stopping check
-        if epochs_without_improvement >= patience:
+        if epoch + 1 >= min_epochs and epochs_without_improvement >= patience:
             print(f"⏹️ Early stopping triggered after {epoch+1} epochs.")
             break
-
 
 def setDevice():
     if torch.backends.mps.is_available():
@@ -339,6 +343,22 @@ def test_model_with_scatter_plot_shapeConfidence(
         t, p = zip(*data)
         plt.scatter(t, p, marker=marker, alpha=0.7, s=20, label=label, color=color)
 
+    legend_elements = [
+        Line2D([0], [0], linestyle='--', color='red', label='Ideal: y = x'),
+        Line2D([0], [0], color='w', label=f'R² = {r2:.4f}'),
+    ]
+    if very_high_conf:
+        legend_elements.append(Line2D([0], [0], marker='o', color='w', label='Very High Confidence', 
+                                    markerfacecolor='lime', markersize=6))
+    if high_conf:
+        legend_elements.append(Line2D([0], [0], marker='s', color='w', label='High Confidence', 
+                                    markerfacecolor='skyblue', markersize=6))
+    if mid_conf:
+        legend_elements.append(Line2D([0], [0], marker='^', color='w', label='Mid Confidence', 
+                                    markerfacecolor='coral', markersize=6))
+    if low_conf:
+        legend_elements.append(Line2D([0], [0], marker='x', color='w', label='Low Confidence', 
+                                    markerfacecolor='crimson', markersize=6))
     # Plotting
     plt.figure(figsize=(6, 6), dpi=150)
     plot_group(very_high_conf, 'o', 'Very High Confidence', 'lime')
@@ -353,7 +373,7 @@ def test_model_with_scatter_plot_shapeConfidence(
     plt.ylabel("Predicted Value", fontsize=10)
     plt.xticks(fontsize=9)
     plt.yticks(fontsize=9)
-    plt.legend(fontsize=9)
+    plt.legend(handles=legend_elements, fontsize=8, loc='upper left', frameon=True)
     plt.grid(True, linestyle='--', alpha=0.4)
     plt.tight_layout()
     plt.savefig(save_path, dpi=300)
@@ -430,6 +450,23 @@ def test_model_extra_input_with_scatter_plot_shapeConfidence(
         t, p = zip(*data)
         plt.scatter(t, p, marker=marker, alpha=0.7, s=20, label=label, color=color)
 
+    legend_elements = [
+        Line2D([0], [0], linestyle='--', color='red', label='Ideal: y = x'),
+        Line2D([0], [0], color='w', label=f'R² = {r2:.4f}'),
+    ]
+    if very_high_conf:
+        legend_elements.append(Line2D([0], [0], marker='o', color='w', label='Very High Confidence', 
+                                    markerfacecolor='lime', markersize=6))
+    if high_conf:
+        legend_elements.append(Line2D([0], [0], marker='s', color='w', label='High Confidence', 
+                                    markerfacecolor='skyblue', markersize=6))
+    if mid_conf:
+        legend_elements.append(Line2D([0], [0], marker='^', color='w', label='Mid Confidence', 
+                                    markerfacecolor='coral', markersize=6))
+    if low_conf:
+        legend_elements.append(Line2D([0], [0], marker='x', color='w', label='Low Confidence', 
+                                    markerfacecolor='crimson', markersize=6))
+
     # Plotting
     plt.figure(figsize=(6, 6), dpi=150)
     plot_group(very_high_conf, 'o', 'Very High Confidence', 'lime')
@@ -444,7 +481,7 @@ def test_model_extra_input_with_scatter_plot_shapeConfidence(
     plt.ylabel("Predicted Value", fontsize=10)
     plt.xticks(fontsize=9)
     plt.yticks(fontsize=9)
-    plt.legend(fontsize=9)
+    plt.legend(handles=legend_elements, fontsize=8, loc='upper left', frameon=True)
     plt.grid(True, linestyle='--', alpha=0.4)
     plt.tight_layout()
     plt.savefig(save_path, dpi=300)
@@ -629,3 +666,143 @@ def setAndTestModelByDate(dataPath, traitName, model, modelPath):
                     output_csv= "./ModelTestResult/" + traitName + "_predictions_with_confidence.csv",
                     plot_title= traitName + ": Predicted vs True Value",
                     save_path= "./ModelTestResult/" + traitName + "_scatter_plot_confidence.png")
+    
+
+def run_test_and_save_results(
+    dataPath,
+    traitName,
+    modelClass,
+    modelPath,
+    result_csv_path="./ModelTestResult/all_test_metrics.csv",
+    output_dir="./ModelTestResult/predictions",
+    plot_dir="./ModelTestResult/plots"
+):
+    # Prepare file paths
+    os.makedirs(output_dir, exist_ok=True)
+    os.makedirs(plot_dir, exist_ok=True)
+
+    model_name = modelClass.__name__
+    plot_filename = f"{traitName}_{model_name}_scatter.png"
+    csv_filename = f"{traitName}_{model_name}_predictions_with_confidence.csv"
+    plot_path = os.path.join(plot_dir, plot_filename)
+    output_csv_path = os.path.join(output_dir, csv_filename)
+
+    # Set device
+    device = setDevice()
+    loaded_model = modelClass().to(device)
+
+    # Load model weights
+    if device == "cuda":
+        loaded_model.load_state_dict(torch.load(modelPath))
+    else:
+        loaded_model.load_state_dict(torch.load(modelPath, map_location=torch.device("cpu")))
+    loaded_model.eval()
+
+    # Load test data
+    _, _, test_loader = createLoader(*loadSplitData_no_leak(dataPath), traitName)
+
+    # Run test and generate plot
+    df_results, r2, mae, rmse = test_model_with_scatter_plot_shapeConfidence(
+        model=loaded_model,
+        test_loader=test_loader,
+        device=device,
+        output_csv=output_csv_path,
+        plot_title=f"{traitName}: Predicted vs True",
+        save_path=plot_path
+    )
+
+
+    # Prepare row for log
+    result_row = {
+        "trait": traitName,
+        "model": model_name,
+        "model_path": modelPath,
+        "data_path": dataPath,
+        "R2": round(r2, 4),
+        "MAE": round(mae, 4),
+        "RMSE": round(rmse, 4),
+        "scatter_plot": plot_path,
+        "prediction_csv": output_csv_path
+    }
+
+    # Append to result log CSV
+    if os.path.exists(result_csv_path):
+        df_log = pd.read_csv(result_csv_path)
+        df_log = pd.concat([df_log, pd.DataFrame([result_row])], ignore_index=True)
+    else:
+        df_log = pd.DataFrame([result_row])
+    
+    df_log.to_csv(result_csv_path, index=False)
+
+    print(f"\n✅ Test results saved to: {result_csv_path}")
+    return result_row
+
+def run_test_and_save_results_with_extra_input(
+    dataPath,
+    traitName,
+    modelClass,
+    modelPath,
+    extraInputName,
+    result_csv_path="./ModelTestResult/all_test_metrics.csv",
+    output_dir="./ModelTestResult/predictions",
+    plot_dir="./ModelTestResult/plots"
+):
+    import os
+    import pandas as pd
+
+    os.makedirs(output_dir, exist_ok=True)
+    os.makedirs(plot_dir, exist_ok=True)
+
+    model_name = modelClass.__name__
+    extra_str = "_".join(extraInputName) if isinstance(extraInputName, list) else str(extraInputName)
+    base_filename = f"{traitName}_{model_name}_{extra_str}"
+
+    plot_path = os.path.join(plot_dir, base_filename + "_scatter.png")
+    output_csv_path = os.path.join(output_dir, base_filename + "_predictions.csv")
+
+    # Set device and load model
+    device = setDevice()
+    model_instance = modelClass().to(device)
+
+    if device == "cuda":
+        model_instance.load_state_dict(torch.load(modelPath))
+    else:
+        model_instance.load_state_dict(torch.load(modelPath, map_location=torch.device("cpu")))
+    model_instance.eval()
+
+    # Load test data with extra inputs
+    _, _, test_loader = createLoader(*loadSplitData_no_leak(dataPath), traitName, extra_input_cols=extraInputName)
+
+    # Run test
+    df_results, r2, mae, rmse = test_model_extra_input_with_scatter_plot_shapeConfidence(
+        model=model_instance,
+        test_loader=test_loader,
+        device=device,
+        output_csv=output_csv_path,
+        plot_title=f"{traitName}: Predicted vs True (Extra: {extra_str})",
+        save_path=plot_path
+    )
+
+    # Save summary
+    result_row = {
+        "trait": traitName,
+        "model": model_name,
+        "extra_input": extra_str,
+        "model_path": modelPath,
+        "data_path": dataPath,
+        "R2": round(r2, 4),
+        "MAE": round(mae, 4),
+        "RMSE": round(rmse, 4),
+        "scatter_plot": plot_path,
+        "prediction_csv": output_csv_path
+    }
+
+    if os.path.exists(result_csv_path):
+        df_log = pd.read_csv(result_csv_path)
+        df_log = pd.concat([df_log, pd.DataFrame([result_row])], ignore_index=True)
+    else:
+        df_log = pd.DataFrame([result_row])
+
+    df_log.to_csv(result_csv_path, index=False)
+    print(f"\n✅ Test results saved to: {result_csv_path}")
+    return result_row

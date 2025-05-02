@@ -5,3 +5,6 @@
 *.pth
 # *.ipynb
 EasyIDP/
+# macOS hidden files
+._*
+.DS_Store
