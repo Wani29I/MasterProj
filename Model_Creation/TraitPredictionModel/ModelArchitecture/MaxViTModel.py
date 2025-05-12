@@ -4,12 +4,12 @@ import torch.nn.functional as F
 import timm
 
 class MaxViTConfidenceModel(nn.Module):
-    def __init__(self, resize_shape=(512, 512)):
+    def __init__(self, resize_shape=(224, 224)):
         super(MaxViTConfidenceModel, self).__init__()
         self.resize_shape = resize_shape  # Must be divisible by 16
 
         self.rgb_model = timm.create_model(
-            'maxvit_small_tf_512.in1k',
+            'maxvit_tiny_tf_224.in1k',
             pretrained=True,
             num_classes=0,
             global_pool='avg'
@@ -30,7 +30,6 @@ class MaxViTConfidenceModel(nn.Module):
 
     def _get_feature_size(self):
         with torch.no_grad():
-            # Use correct resize_shape to prevent MaxViT assertion
             rgb = torch.randn(1, 3, *self.resize_shape)
             dsm = torch.randn(1, 1, *self.resize_shape)
             rgb_feat = self.rgb_model(rgb)
@@ -47,12 +46,12 @@ class MaxViTConfidenceModel(nn.Module):
 
 
 class MaxViTConfidenceAddoneextrainput(nn.Module):
-    def __init__(self, resize_shape=(512, 512)):
+    def __init__(self, resize_shape=(224, 224)):
         super(MaxViTConfidenceAddoneextrainput, self).__init__()
         self.resize_shape = resize_shape
 
         self.rgb_model = timm.create_model(
-            'maxvit_small_tf_512.in1k',
+            'maxvit_tiny_tf_224.in1k',
             pretrained=True,
             num_classes=0,
             global_pool='avg'
@@ -94,13 +93,14 @@ class MaxViTConfidenceAddoneextrainput(nn.Module):
         combined = torch.cat((rgb_feat, dsm_feat, extra_feat), dim=1)
         return self.fc(combined)
 
+
 class MaxViTConfidenceAddtwoextrainput(nn.Module):
-    def __init__(self, resize_shape=(512, 512)):
+    def __init__(self, resize_shape=(224, 224)):
         super(MaxViTConfidenceAddtwoextrainput, self).__init__()
         self.resize_shape = resize_shape
 
         self.rgb_model = timm.create_model(
-            'maxvit_small_tf_512.in1k',
+            'maxvit_tiny_tf_224.in1k',
             pretrained=True,
             num_classes=0,
             global_pool='avg'
