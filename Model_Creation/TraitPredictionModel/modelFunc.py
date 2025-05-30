@@ -252,6 +252,8 @@ def setAndTrainModel_addextrainput(dataPath, extraInputName, traitName, model, s
     if(extraName != "none"):
         modelName = modelName + "_" + extraName
 
+
+
     saveModelPath = os.path.join(savePath, modelName)
 
     if not os.path.exists(savePath):
@@ -679,9 +681,9 @@ def run_test_and_save_results(
     traitName,
     modelClass,
     modelPath,
-    result_csv_path="./ModelTestResult/all_test_metrics.csv",
-    output_dir="./ModelTestResult/predictions",
-    plot_dir="./ModelTestResult/plots"
+    result_csv_path="./ModelTestResult/NoExtraInputModel/all_test_metrics.csv",
+    output_dir="./ModelTestResult/NoExtraInputModel/predictions",
+    plot_dir="./ModelTestResult/NoExtraInputModel/plots"
 ):
     # Prepare file paths
     os.makedirs(output_dir, exist_ok=True)
@@ -749,9 +751,9 @@ def run_test_and_save_results_with_extra_input(
     modelClass,
     modelPath,
     extraInputName,
-    result_csv_path="./ModelTestResult/all_test_metrics.csv",
-    output_dir="./ModelTestResult/predictions",
-    plot_dir="./ModelTestResult/plots"
+    result_csv_path="./ModelTestResult/ExtraInputModel/all_test_metrics.csv",
+    output_dir="./ModelTestResult/ExtraInputModel/predictions",
+    plot_dir="./ModelTestResult/ExtraInputModel/plots"
 ):
     import os
     import pandas as pd
