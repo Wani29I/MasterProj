@@ -681,17 +681,22 @@ def run_test_and_save_results(
     traitName,
     modelClass,
     modelPath,
-    result_csv_path="./ModelTestResult/NoExtraInputModel/all_test_metrics.csv",
-    output_dir="./ModelTestResult/NoExtraInputModel/predictions",
-    plot_dir="./ModelTestResult/NoExtraInputModel/plots"
+    result_csv_path = "./ModelTestResult/NoExtraInputModel/all_test_metrics.csv",
+    output_dir = "./ModelTestResult/NoExtraInputModel/predictions",
+    plot_dir = "./ModelTestResult/NoExtraInputModel/plots",
+    daysData = ""
 ):
     # Prepare file paths
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(plot_dir, exist_ok=True)
 
     model_name = modelClass.__name__
-    plot_filename = f"{traitName}_{model_name}_scatter.png"
-    csv_filename = f"{traitName}_{model_name}_predictions_with_confidence.csv"
+    if(traitName != "days"):
+        csv_filename = f"{traitName}_{model_name}_predictions_with_confidence.csv"
+        plot_filename = f"{traitName}_{model_name}_scatter.png"
+    else:
+        csv_filename = f"days-{daysData}_{model_name}_predictions_with_confidence.csv"
+        plot_filename = f"days-{daysData}_{model_name}_scatter.png"
     plot_path = os.path.join(plot_dir, plot_filename)
     output_csv_path = os.path.join(output_dir, csv_filename)
 
