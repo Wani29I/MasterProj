@@ -8,5 +8,6 @@ EasyIDP/
 # macOS hidden files
 ._*
 .DS_Store
+
 **/plots/
 **/prediction/
