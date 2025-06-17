@@ -1,0 +1,10 @@
+brightenFlipped.jpg
+brightenOriginal.jpg
+darkenFlipped.jpg
+darkenOriginal.jpg
+flipped.jpg
+jittered.jpg
+noisy.jpg
+original.jpg
+rotated.jpg
+zoomed.jpg
