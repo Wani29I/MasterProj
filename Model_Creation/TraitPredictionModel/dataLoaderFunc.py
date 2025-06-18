@@ -27,6 +27,15 @@ def loadSplitData(dataPath):
 
     return train_df, val_df, test_df
 
+def loadTestOnlyData(dataPath):
+    df = pd.read_csv(dataPath)
+    
+    # Optional: filter to original-enhanced image if needed
+    df = df[df['rgb'].str.endswith("original_enhanced_original.jpg")].reset_index(drop=True)
+    
+    print(f"✅ Loaded Test-Only Dataset → Total Samples: {len(df)}")
+    return None, None, df
+
 def loadSplitData_no_leak(dataPath, group_col="DataKey", val_size=0.1, test_size=0.1):
     df = pd.read_csv(dataPath)
 
@@ -66,3 +75,9 @@ def createLoader(train_df, val_df, test_df, traitName, extra_input_cols=None):
     print(f"Train Batches: {len(train_loader)}, Validation Batches: {len(val_loader)}, Test Batches: {len(test_loader)}")
 
     return train_loader, val_loader, test_loader
+
+def createTestOnlyLoader(test_df, traitName, extra_input_cols=None):
+    test_dataset = WheatEarDataset(test_df, label_col=traitName, extra_input_cols=extra_input_cols)
+    test_loader = DataLoader(test_dataset, batch_size=16, shuffle=False, num_workers=4)
+    print(f"Test-Only → Test Batches: {len(test_loader)}")
+    return test_loader

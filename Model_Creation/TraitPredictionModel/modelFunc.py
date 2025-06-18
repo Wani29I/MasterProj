@@ -11,7 +11,7 @@ from matplotlib.lines import Line2D
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from sklearn.model_selection import train_test_split
-from dataLoaderFunc import loadSplitData, createLoader, loadSplitData_no_leak
+from dataLoaderFunc import loadSplitData, createLoader, loadSplitData_no_leak, loadTestOnlyData, createTestOnlyLoader
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, root_mean_squared_error
 
 # Custom Gaussian NLL Loss
@@ -684,7 +684,8 @@ def run_test_and_save_results(
     result_csv_path = "./ModelTestResult/NoExtraInputModel/all_test_metrics.csv",
     output_dir = "./ModelTestResult/NoExtraInputModel/predictions",
     plot_dir = "./ModelTestResult/NoExtraInputModel/plots",
-    daysData = ""
+    daysData = "",
+    use_all_data_as_test = False
 ):
     # Prepare file paths
     os.makedirs(output_dir, exist_ok=True)
@@ -712,7 +713,12 @@ def run_test_and_save_results(
     loaded_model.eval()
 
     # Load test data
-    _, _, test_loader = createLoader(*loadSplitData_no_leak(dataPath), traitName)
+    if use_all_data_as_test:
+        test_df = loadTestOnlyData(dataPath)[2]
+        test_loader = createTestOnlyLoader(test_df, traitName)
+    else:
+        _, _, test_loader = createLoader(*loadSplitData_no_leak(dataPath), traitName)
+
 
     # Run test and generate plot
     df_results, r2, mae, rmse = test_model_with_scatter_plot_shapeConfidence(
@@ -758,10 +764,9 @@ def run_test_and_save_results_with_extra_input(
     extraInputName,
     result_csv_path="./ModelTestResult/ExtraInputModel/all_test_metrics.csv",
     output_dir="./ModelTestResult/ExtraInputModel/predictions",
-    plot_dir="./ModelTestResult/ExtraInputModel/plots"
+    plot_dir="./ModelTestResult/ExtraInputModel/plots",
+    use_all_data_as_test = False
 ):
-    import os
-    import pandas as pd
 
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(plot_dir, exist_ok=True)
@@ -784,7 +789,12 @@ def run_test_and_save_results_with_extra_input(
     model_instance.eval()
 
     # Load test data with extra inputs
-    _, _, test_loader = createLoader(*loadSplitData_no_leak(dataPath), traitName, extra_input_cols=extraInputName)
+    if use_all_data_as_test:
+        test_df = loadTestOnlyData(dataPath)[2]
+        test_loader = createTestOnlyLoader(test_df, traitName, extra_input_cols=extraInputName)
+    else:
+        _, _, test_loader = createLoader(*loadSplitData_no_leak(dataPath), traitName, extra_input_cols=extraInputName)
+
 
     # Run test
     df_results, r2, mae, rmse = test_model_extra_input_with_scatter_plot_shapeConfidence(
