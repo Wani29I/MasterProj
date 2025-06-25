@@ -322,7 +322,8 @@ def test_model_with_scatter_plot_shapeConfidence(
     df = pd.DataFrame({
         "true": targets,
         "predicted": preds,
-        "predicted_std": stds
+        "predicted_std": stds,
+        "rgb_path": RGBpaths
     })
     df.to_csv(output_csv, index=False)
 
@@ -829,3 +830,97 @@ def run_test_and_save_results_with_extra_input(
     df_log.to_csv(result_csv_path, index=False)
     print(f"\n✅ Test results saved to: {result_csv_path}")
     return result_row
+
+
+def testForGrowth(
+    model, test_loader, device,
+    output_csv="model_predictions_with_confidence.csv",
+):
+    model.eval()
+    preds, stds, targets, RGBpaths = [], [], [], []
+
+    with torch.no_grad():
+        for rgb_batch, dsm_batch, label_batch, RGBpaths_batch in tqdm(test_loader, desc="Testing"):
+            rgb_batch = rgb_batch.to(device)
+            dsm_batch = dsm_batch.to(device)
+
+            output = model(rgb_batch, dsm_batch)  # [B, 2]
+            pred_mean = output[:, 0].cpu().numpy()
+            pred_std = (torch.exp(0.5 * output[:, 1])).cpu().numpy()
+            label_batch = label_batch.squeeze().cpu().numpy()
+
+            preds.extend(pred_mean)
+            stds.extend(pred_std)
+            targets.extend(label_batch.flatten().tolist())
+            RGBpaths.extend(RGBpaths_batch)
+    
+    # Store metrics by date
+    metrics_by_date = {}
+    currentDate = RGBpaths[0].split('/')[-1].split("_")[1][:8]
+    currentPreds, currentTargets, currentStds = [], [], []
+
+    # Metrics
+    r2 = r2_score(targets, preds)
+    mae = mean_absolute_error(targets, preds)
+    rmse = root_mean_squared_error(targets, preds)
+
+    
+
+    print(f"\nTest Results:")
+    print(f"R² Score : {r2:.4f}")
+    print(f"MAE      : {mae:.4f}")
+    print(f"RMSE     : {rmse:.4f}")
+
+    # Save predictions
+    df = pd.DataFrame({
+        "rgb_path": RGBpaths,
+        "true": targets,
+        "predicted": preds,
+        "predicted_std": stds
+    })
+    df.to_csv(output_csv, index=False)
+
+    return df, r2, mae, rmse
+
+
+def run_test_growth(
+    dataPath,
+    traitName,
+    modelClass,
+    modelPath,
+    output_dir = "./ModelTestResult/NoExtraInputModel/growthPredictions",
+    use_all_data_as_test = False
+):
+    # Prepare file paths
+    os.makedirs(output_dir, exist_ok=True)
+
+    model_name = modelClass.__name__
+    csv_filename = f"{traitName}_{model_name}_predictions_with_confidence.csv"
+    output_csv_path = os.path.join(output_dir, csv_filename)
+
+    # Set device
+    device = setDevice()
+    loaded_model = modelClass().to(device)
+
+    # Load model weights
+    if device == "cuda":
+        loaded_model.load_state_dict(torch.load(modelPath))
+    else:
+        loaded_model.load_state_dict(torch.load(modelPath, map_location=torch.device("cpu")))
+    loaded_model.eval()
+
+    # Load test data
+    if use_all_data_as_test:
+        test_df = loadTestOnlyData(dataPath)[2]
+        test_loader = createTestOnlyLoader(test_df, traitName)
+    else:
+        _, _, test_loader = createLoader(*loadSplitData_no_leak(dataPath), traitName)
+
+
+    # Run test
+    df_results, r2, mae, rmse = testForGrowth(
+        model=loaded_model,
+        test_loader=test_loader,
+        device=device,
+        output_csv=output_csv_path,
+    )
